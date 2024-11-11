@@ -1,26 +1,72 @@
 body{
-	background-color: #404040;
-
+	background-color: rgb(78,78,78)
 }
 .titulo{
-	position: relative;
-	align-content: center;
-	text-align: center;
-	font-size: 24px;
-	color: white;
-	font-family: cursive;
-	height: 70px;
+	display: flex;
+	width: 99%;
+	background-color:rgb(190,190,190);
+	box-shadow:10px 10px;
 
 }
+.titulo p{
+	font-size: 34px;
+	color: rgb(250, 250, 250);
+	margin: 20px 	auto;
+	width: 45%;
+	height: 70px;
+}
+.title_sub{  
+	position: relative;
+	align-content: center;
+	text-align: left;
+	display: inline-flex;
+	left: 20px;
+
+
+}
+.name{
+text-align: right;
+}
+
+
 .lista{
 	display: flex;
 	width: 90%;
 	
 }
 .lista li{
-	width: 250px;
-	height: 300px;
+	padding: 10px;
+	width: auto;
+	height: auto;
+	max-height: 600px;
+	max-width: 500px;
 	margin: auto;	
 	display: inline-flex;
 	overflow: hidden;
+}
+
+.resumen{
+	display: inline-flex;
+	width: 90%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	height: 50%;
+
+}
+.resumen img{
+	width: 45%;
+	margin: auto;
+	overflow: hidden;
+	max-height: 600px;
+	max-width: 700px;
+}
+.texto{
+
+	width: 40%;
+	min-width: 100px;
+	min-height: 80px;
+	display: flex;
+	margin: auto;
+	text-align: justify;
+	align-content: center;
 }
