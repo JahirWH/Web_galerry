@@ -1,31 +1,28 @@
 body{
-	background-color: rgb(78,78,78)
+	/*background-color: rgb(78,78,78) ;*/
+	background-color: rgb(174, 169, 159);
 }
 .titulo{
-	display: flex;
+	display: block;
 	width: 99%;
-	background-color:rgb(190,190,190);
-	box-shadow:10px 10px;
 
 }
-.titulo p{
-	font-size: 34px;
-	color: rgb(250, 250, 250);
-	margin: 20px 	auto;
-	width: 45%;
-	height: 70px;
-}
-.title_sub{  
+
+
+.title_sub{
+margin-left: 40px; 
+margin-bottom: 5px;
 	position: relative;
-	align-content: center;
-	text-align: left;
-	display: inline-flex;
-	left: 20px;
-
+	font-size: 34px;
+	color: rgb(43, 38, 38);
+	
 
 }
 .name{
-text-align: right;
+	margin-top: 5px;
+	margin-left: 40px;
+	font-size: 19px;
+
 }
 
 
@@ -43,6 +40,24 @@ text-align: right;
 	margin: auto;	
 	display: inline-flex;
 	overflow: hidden;
+	
+}
+.img{
+
+	display: inline-table;
+}
+
+#uno{
+	max-width: 400px;
+	max-height: 500px;	
+}
+#dos{
+	max-width: 250px;
+	max-height: 190px;
+}
+#tres{
+	max-width: 400px;
+	max-height: 300px;
 }
 
 .resumen{
@@ -65,8 +80,21 @@ text-align: right;
 	width: 40%;
 	min-width: 100px;
 	min-height: 80px;
-	display: flex;
+	display: block;
 	margin: auto;
 	text-align: justify;
 	align-content: center;
+}
+.colabora{
+	position: absolute;
+	right:   30px;
+	top: 25px;
+	font-size: 20px;
+		color: rgb(0, 0, 0);
+
+}
+.colabora:hover{
+	cursor: grab;
+	color: #9f140d;
+
 }
