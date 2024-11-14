@@ -1,3 +1,4 @@
+funcion de cambiar la imagen url
 function open(){
 	var ver = document.getElementsByTagName("uno_1");
 	var oculta = document.getElementsByTagName("uno");
