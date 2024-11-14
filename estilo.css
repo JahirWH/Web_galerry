@@ -45,16 +45,22 @@ margin-bottom: 5px;
 .img{
 
 	display: inline-table;
+
 }
 
 #uno{
+	display: none;
 	max-width: 400px;
 	max-height: 500px;	
 }
-#dos{
-	max-width: 250px;
-	max-height: 190px;
+#uno_1{
+	display: block;
 }
+#dos{
+	max-width: 400px;
+	max-height: 390px;
+}
+
 #tres{
 	max-width: 400px;
 	max-height: 300px;
@@ -97,4 +103,8 @@ margin-bottom: 5px;
 	cursor: grab;
 	color: #9f140d;
 
+}
+
+.boton{
+	position: absolute;
 }
