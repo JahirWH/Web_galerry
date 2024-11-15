@@ -1,12 +1,26 @@
-function modal_1(){
-	var d1 = document.getElementById("img1");
-	var d2 = document.getElementById("img2");
+//agrega clase
 
-	if (d1.style.display == "block" ) {
-		d1.style.display = "none"
-		d2.style.display = "block"
-	}else{
-		d1.style.display = "none"
 
+function modal(){
+	var d = document.getElementById("img1");
+	var a = document.getElementById("img2");	
+
+    if (9>2){
+
+		d.classList.toggle("img1_oculta");
+		a.classList.remove("img1_oculta");
+		a.classList.toggle("img1_show");
 	}
+}
+//anadir clase de clase//
+
+function modal1(){
+	var d = document.getElementById("img1");
+	var a = document.getElementById("img2");	
+
+    if (9>2){
+		d.classList.toggle("img1_show");
+		a.classList.toggle("img1_oculta");
+	}
+
 }

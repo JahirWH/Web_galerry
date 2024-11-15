@@ -29,7 +29,6 @@ margin-bottom: 5px;
 	width: auto;
 	height: auto;
 	overflow: hidden;
-	display: block;
 }
 
 .lista{
@@ -43,30 +42,17 @@ margin-bottom: 5px;
 	position: relative;
 	max-height: 600px;
 	max-width: 500px;
-	margin: auto;
-	display: contents;	
 }
-#img2{
-	display: none;
-	max-width: 400px;
-	max-height: 500px;	
+.div{
+	overflow: hidden;
+	position: relative;
 }
-#img1{
-	display: block;
-	max-width: 400px;
-	max-height: 390px;
-	visibility: visible;
-
-}
-#dos{
-	max-width: 400px;
-	max-height: 390px;
+.div img{
+	width: 100%;
+	height: 100%;
 }
 
-#tres{
-	max-width: 400px;
-	max-height: 300px;
-}
+
 
 .resumen{
 	display: inline-flex;
@@ -110,7 +96,30 @@ margin-bottom: 5px;
 }
 
 .boton{
-	position: absolute;
+	position: relative;
 	font-size: 19px;
 	color: blue;
+	z-index: 40;
+}
+
+.show{
+	display: block;
+	max-width: 400px;
+	max-height: 500px;
+}
+.ocultar{
+	visibility: hidden;
+	display: none;
+}
+.img1_show{
+	display: block;
+	max-width: 300px;
+	max-height: 300px;
+	visibility: visible;
+}
+.img1_oculta{
+	display: none;
+	max-width: 300px;
+	max-height: 300px;
+	visibility: hidden;
 }
