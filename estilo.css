@@ -29,9 +29,9 @@ margin-bottom: 5px;
 	width: auto;
 	height: auto;
 	overflow: hidden;
-	display: block;	
-	visibility: visible;
+	display: block;
 }
+
 .lista{
 	display: flex;
 	width: 90%;
@@ -52,7 +52,6 @@ margin-bottom: 5px;
 	max-height: 500px;	
 }
 #img1{
-
 	display: block;
 	max-width: 400px;
 	max-height: 390px;
