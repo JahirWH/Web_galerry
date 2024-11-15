@@ -36,20 +36,28 @@ margin-bottom: 5px;
 	width: 90%;
 	overflow: hidden;
 	margin: auto;
+	margin-top: 60px;
 	
 }
 .orden{
+	display: flex;	
 	position: relative;
-	max-height: 600px;
-	max-width: 500px;
+	max-width: fit-content;
+	margin: auto;
+	background: 13px rgb(245, 240, 240);
+	padding: 13px;
 }
 .div{
 	overflow: hidden;
 	position: relative;
+	max-width: 300px;
+	max-height:fit-content;
 }
 .div img{
 	width: 100%;
 	height: 100%;
+	image-rendering: optimizequality;
+	object-fit: cover	;
 }
 
 
@@ -80,6 +88,7 @@ margin-bottom: 5px;
 	margin: auto;
 	text-align: justify;
 	align-content: center;
+	line-height: 1.4;
 }
 .colabora{
 	position: absolute;
@@ -90,15 +99,16 @@ margin-bottom: 5px;
 
 }
 .colabora:hover{
-	cursor: grab;
+	cursor: pointer;
 	color: #9f140d;
 
 }
 
 .boton{
-	position: relative;
-	font-size: 19px;
-	color: blue;
+	position: absolute;
+	font-size: 17px;
+	color: #000;
+	background-color: transparent;
 	z-index: 40;
 }
 
@@ -113,13 +123,10 @@ margin-bottom: 5px;
 }
 .img1_show{
 	display: block;
-	max-width: 300px;
-	max-height: 300px;
 	visibility: visible;
 }
 .img1_oculta{
 	display: none;
-	max-width: 300px;
-	max-height: 300px;
+
 	visibility: hidden;
 }

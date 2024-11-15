@@ -6,7 +6,7 @@ function modal(){
 	var a = document.getElementById("img2");	
 
     if (9>2){
-
+		d.classList.remove("img1_show");
 		d.classList.toggle("img1_oculta");
 		a.classList.remove("img1_oculta");
 		a.classList.toggle("img1_show");
@@ -19,8 +19,10 @@ function modal1(){
 	var a = document.getElementById("img2");	
 
     if (9>2){
-		d.classList.toggle("img1_show");
+		a.classList.remove("img1_show");
 		a.classList.toggle("img1_oculta");
+		d.classList.remove("img1_oculta");
+		d.classList.toggle("img1_show");
 	}
 
 }
