@@ -25,36 +25,39 @@ margin-bottom: 5px;
 
 }
 
-
+.img{
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	display: block;	
+	visibility: visible;
+}
 .lista{
 	display: flex;
 	width: 90%;
+	overflow: hidden;
+	margin: auto;
 	
 }
-.lista li{
-	padding: 10px;
-	width: auto;
-	height: auto;
+.orden{
+	position: relative;
 	max-height: 600px;
 	max-width: 500px;
-	margin: auto;	
-	display: inline-flex;
-	overflow: hidden;
-	
+	margin: auto;
+	display: contents;	
 }
-.img{
-
-	display: inline-table;
-
-}
-
-#uno{
+#img2{
 	display: none;
 	max-width: 400px;
 	max-height: 500px;	
 }
-#uno_1{
+#img1{
+
 	display: block;
+	max-width: 400px;
+	max-height: 390px;
+	visibility: visible;
+
 }
 #dos{
 	max-width: 400px;
@@ -74,7 +77,9 @@ margin-bottom: 5px;
 	height: 50%;
 
 }
+
 .resumen img{
+
 	width: 45%;
 	margin: auto;
 	overflow: hidden;
@@ -93,7 +98,7 @@ margin-bottom: 5px;
 }
 .colabora{
 	position: absolute;
-	right:   30px;
+	right:  30px;
 	top: 25px;
 	font-size: 20px;
 		color: rgb(0, 0, 0);
@@ -107,4 +112,6 @@ margin-bottom: 5px;
 
 .boton{
 	position: absolute;
+	font-size: 19px;
+	color: blue;
 }

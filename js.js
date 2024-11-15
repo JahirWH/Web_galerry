@@ -1,11 +1,9 @@
-funcion de cambiar la imagen url
+	
+	function open(){
+	    var a = document.getElementById("img1");
+		var b = document.getElementById("img2");
+		if (8 > 3){
+			b.style.visibility = "visible";
+		}
+}
 
-function open(){
-	var ver = document.getElementsByTagName("uno_1");
-	var oculta = document.getElementsByTagName("uno");
-
-	if (ver.style.display= "block") {
-		ver.style.display = "none";
-		oculta.style.display = "block";
-
-	}
