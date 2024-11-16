@@ -33,29 +33,31 @@
 
 			<div class="orden">
 
-				<div id="img1" class="img1_show div">
+				<div id="img1" style="display:block;" class="img1_show div">
 					<button  class="boton" onclick="modal1()">despues</button>
-					<button class="zom" onclick="zoom()">
+					<div  class="zom" onclick="zom()">
 					<img src="calle1-r.jpeg">
-					</button>
+					</div>
 				</div>
 
 				<div id="img2" class="img1_oculta div">
-					<button  class="boton" onclick="modal2()">antes</button>
-
-					<img src="calle1.jpeg">
+					<button  class="boton" onclick="modal1()">antes</button>
+					<img onclick="zom()" src="calle1.jpeg">
 				</div>
 			</div>
 
 
 			<div class="orden">
 				<div id="img3" class="img1_show div">
-					<button  class="boton" onclick="modal3()">Cambio</button>
-					<img src="calle3.jpeg">
+					<button  class="boton" onclick="modal2()">Cambio</button>
+					<script type="text/javascript">
+						
+					</script>
+					<img onclick="zom2()" src="calle3.jpeg">
 				</div>
 
 				<div id="img4" class="img1_oculta div">
-					<button  class="boton" onclick="modal4()">volver</button>
+					<button  class="boton" onclick="modal2()">volver</button>
 					<img src="1.jpg">
 				</div>
 			</div>
@@ -78,9 +80,12 @@
 		</div>
 	
 
-		<div class="vista_grande">
-			<div class="img_zom"> </div>
-			<p>imagen aqui</p>
+		<div id="zom" class="vista_grande">
+
+			<div onclick="zom()" class="img_zom"> 
+				<img src="calle1-r.jpeg">
+			</div>
+			
 		</div>
 
 </body>
