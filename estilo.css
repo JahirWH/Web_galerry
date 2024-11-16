@@ -72,12 +72,16 @@ margin-bottom: 5px;
 }
 
 .resumen img{
-
-	width: 45%;
+	max-height: 500px;
+	max-width: fit-content;
 	margin: auto;
 	overflow: hidden;
-	max-height: 600px;
-	max-width: 700px;
+	padding: 10px;
+	background-color:rgb(62, 62, 64);
+}
+.resumen img:hover{
+		background-color:rgb(92, 92, 94);
+
 }
 .texto{
 
