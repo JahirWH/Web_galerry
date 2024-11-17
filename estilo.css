@@ -45,7 +45,10 @@ margin-bottom: 5px;
 	max-width: fit-content;
 	margin: auto;
 	background: 13px rgb(245, 240, 240);
-	padding: 13px;
+	padding: 10px;
+}
+.orden:hover{
+	background-color: rgb(222, 225, 225);
 }
 .div{
 	overflow: hidden;
@@ -63,11 +66,13 @@ margin-bottom: 5px;
 
 
 .resumen{
-	display: inline-flex;
+	display: flex;
 	width: 90%;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	height: 50%;
+	text-align: center;
+	align-content: center;
 
 }
 
@@ -77,12 +82,9 @@ margin-bottom: 5px;
 	margin: auto;
 	overflow: hidden;
 	padding: 10px;
-	background-color:rgb(62, 62, 64);
-}
-.resumen img:hover{
-		background-color:rgb(92, 92, 94);
+	background-color: #f0eded;
 
-}
+	  }
 .texto{
 
 	width: 40%;
@@ -158,8 +160,9 @@ margin-bottom: 5px;
   width: 100%;
   height: 100%;
   position: relative;
-
+  align-content: center;
     background-color: rgba(0, 0, 0, 0.65);
+    overflow: hidden;
 
 }
 
@@ -170,6 +173,53 @@ margin-bottom: 5px;
 
 .img_zom img{
 	margin: auto;
-	width: 420px;
+	max-height: 600px;
 	height: fit-content;
+	padding: 10px;
+	background-color: #f0eded;
+}
+.up{
+	align-content: center;
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50, 50, 50, 0.6);
+	z-index: 70;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.up_div{
+	z-index: 72;
+	width: 40%;
+	background-color: white;
+	height: 50%;
+	border-radius: 20px;
+	margin: auto;
+	border: solid 3px rgb(20, 20, 20);
+	display: flex;
+
+}
+.up_div p{
+	display: block;
+	margin: auto;
+	text-align: center;
+	font-size: 23px;
+}
+
+.up_div img{
+	display: flex;
+	margin: auto;
+	text-align: center;
+	align-items: center;
+	align-content: center;
+	cursor: pointer;
+	border: solid 2px rgb(10, 30, 30);
+	padding: 20px;
+	border-radius: 10px;
+}
+.up_div img:hover{
+	background-color: rgba(60, 60, 60, 0.4);
 }

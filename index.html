@@ -8,11 +8,11 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-		<div class="titulo">
-			<p class="title_sub">Fotos del recuerdo</p>
-			<p class="name">Tlacuilotepec,Puebla,Mexico</p>
-			<p class="colabora">Colabora</p>
-		</div>
+	<div class="titulo">
+		<p class="title_sub">Fotos del recuerdo</p>
+		<p class="name">Tlacuilotepec,Puebla,Mexico</p>
+		<p onclick="up()" class="colabora">Colabora</p>
+	</div>
 	<div>
 		
 		<ul class="resumen">
@@ -28,39 +28,105 @@
 			</div>
 		</ul>
 
-		
+		<!-- nivel1 -->
 		<div class="lista">
+						<!-- Divisor  -->
+					<!-- Imagen 1  -->
 
 			<div class="orden">
 
 				<div id="img1" style="display:block;" class="img1_show div">
 					<button  class="boton" onclick="modal1()">despues</button>
 					<div  class="zom" onclick="zom()">
-					<img src="calle1-r.jpeg">
+						<img src="calle1-r.jpeg">
 					</div>
 				</div>
 
 				<div id="img2" class="img1_oculta div">
 					<button  class="boton" onclick="modal1()">antes</button>
-					<img onclick="zom()" src="calle1.jpeg">
+					<div  class="zom" onclick="zom()">
+						<img  src="calle1.jpeg">
+					</div>
 				</div>
 			</div>
 
 
+			<!-- Imagen 2  -->
+
 			<div class="orden">
-				<div id="img3" class="img1_show div">
+				<div id="img3" style="display:block;" class="img1_show div">
 					<button  class="boton" onclick="modal2()">Cambio</button>
-					<script type="text/javascript">
-						
-					</script>
-					<img onclick="zom2()" src="calle3.jpeg">
+					<div class="zom" onclick="zom2()">
+						<img  src="calle2.jpg">
+					</div>
 				</div>
 
 				<div id="img4" class="img1_oculta div">
 					<button  class="boton" onclick="modal2()">volver</button>
+					<div class="zom" onclick="zom2()">
+						<img src="calle2.jpg">
+					</div>
+				</div>
+			</div>
+						<!-- Imagen 3  -->
+
+			<div class="orden">
+				<div id="img5" class="img1_show div">
+					<button  class="boton" onclick="modal5()">Cambio</button>
+					<img src="calle2.jpg">
+				</div>
+
+				<div id="img6" class="img1_oculta div">
+					<button  class="boton" onclick="modal6()">volver</button>
 					<img src="1.jpg">
 				</div>
 			</div>
+		</div>
+
+			<!-- nivel 2 -->
+		
+		<div class="lista">
+						<!-- Divisor  -->
+			
+
+
+			<!-- Imagen 2  -->
+
+			<div class="orden">
+				<div id="img3" style="display:block;" class="img1_show div">
+					<button  class="boton" onclick="modal2()">Cambio</button>
+					<div class="zom" onclick="zom2()">
+						<img  src="calle2.jpg">
+					</div>
+				</div>
+
+				<div id="img4" class="img1_oculta div">
+					<button  class="boton" onclick="modal2()">volver</button>
+					<div class="zom" onclick="zom2()">
+						<img src="calle2.jpg">
+					</div>
+				</div>
+			</div>
+					<!-- Imagen 1  -->
+
+			<div class="orden">
+
+				<div id="img1" style="display:block;" class="img1_show div">
+					<button  class="boton" onclick="modal1()">despues</button>
+					<div  class="zom" onclick="zom()">
+						<img src="calle1-r.jpeg">
+					</div>
+				</div>
+
+				<div id="img2" class="img1_oculta div">
+					<button  class="boton" onclick="modal1()">antes</button>
+					<div  class="zom" onclick="zom()">
+						<img  src="calle1.jpeg">
+					</div>
+				</div>
+			</div>
+						<!-- Imagen 3  -->
+
 
 			<div class="orden">
 				<div id="img5" class="img1_show div">
@@ -77,18 +143,37 @@
 
 
 
+	</div>
+	<!-- Divisor de muestra de imagenes en pantalla completa-->
+
+	<div id="zom" class="vista_grande">
+
+		<div onclick="zom()" class="img_zom"> 
+			<img src="calle1-r.jpeg">
 		</div>
-	
 
-		<div id="zom" class="vista_grande">
+	</div>
+	<div id="zom2" class="vista_grande">
 
-			<div onclick="zom()" class="img_zom"> 
-				<img src="calle1-r.jpeg">
-			</div>
+		<div onclick="zom2()" class="img_zom"> 
+			<img src="calle2.jpg">
+		</div>
+
+	</div>
+
+	<!-- subida de imagen -->
+	<div class="up" style="display:none;" id="up" onclick="up()">
+		<div class="up_div">
+			<p>Subir imagen;</p>
 			
+			<img onclick="subir()" src="win.ico">
+
 		</div>
+	</div>
+
+
 
 </body>
 </html>
 
-	
+
