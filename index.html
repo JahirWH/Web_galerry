@@ -17,7 +17,7 @@
 		
 		<ul class="resumen">
 
-			<img src="calle3.jpeg" alt="">
+			<img src="calle3.jpeg" alt="">			
 			<div class="texto">
 				<h2>Resumen</h2>
 				<p style="font-size: 20px;" >
@@ -30,20 +30,23 @@
 
 		<!-- nivel1 -->
 		<div class="lista">
-						<!-- Divisor  -->
-					<!-- Imagen 1  -->
+			<!-- Divisor  -->
+			<!-- Imagen 1  -->
 
 			<div class="orden">
 
 				<div id="img1" style="display:block;" class="img1_show div">
-					<button  class="boton" onclick="modal1()">despues</button>
+					<button  class="boton" onclick="modal1()"><img src="img.png"> </button>
+					<a class="dowload" href="calle1-r.jpeg"  download="calle1" >
+						<img src="descarga.png"> 
+					</a>
 					<div  class="zom" onclick="zom()">
-						<img src="calle1-r.jpeg">
+						<img src="calle1_preview.jpeg">
 					</div>
 				</div>
 
 				<div id="img2" class="img1_oculta div">
-					<button  class="boton" onclick="modal1()">antes</button>
+					<button  class="boton" onclick="modal1()"><img src="img.png" > </button>
 					<div  class="zom" onclick="zom()">
 						<img  src="calle1.jpeg">
 					</div>
@@ -68,7 +71,7 @@
 					</div>
 				</div>
 			</div>
-						<!-- Imagen 3  -->
+			<!-- Imagen 3  -->
 
 			<div class="orden">
 				<div id="img5" class="img1_show div">
@@ -83,10 +86,10 @@
 			</div>
 		</div>
 
-			<!-- nivel 2 -->
+		<!-- nivel 2 -->
 		
 		<div class="lista">
-						<!-- Divisor  -->
+			<!-- Divisor  -->
 			
 
 
@@ -107,7 +110,7 @@
 					</div>
 				</div>
 			</div>
-					<!-- Imagen 1  -->
+			<!-- Imagen 1  -->
 
 			<div class="orden">
 
@@ -125,7 +128,7 @@
 					</div>
 				</div>
 			</div>
-						<!-- Imagen 3  -->
+			<!-- Imagen 3  -->
 
 
 			<div class="orden">
@@ -163,10 +166,15 @@
 
 	<!-- subida de imagen -->
 	<div class="up" style="display:none;" id="up" onclick="up()">
-		<div class="up_div">
-			<p>Subir imagen;</p>
-			
-			<img onclick="subir()" src="win.ico">
+
+		<div class="up_div" >
+			<label for="images" class="drop-container" id="dropcontainer">
+				<span class="drop-title">Da click aqui para subir</span>
+				o
+				<input type="file" id="images" accept="image/*" required>
+			</label>
+
+
 
 		</div>
 	</div>

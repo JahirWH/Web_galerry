@@ -50,6 +50,10 @@ margin-bottom: 5px;
 .orden:hover{
 	background-color: rgb(222, 225, 225);
 }
+
+.orden:hover .dowload, .orden:hover .boton{
+	opacity: 100%;
+}
 .div{
 	overflow: hidden;
 	position: relative;
@@ -72,11 +76,12 @@ margin-bottom: 5px;
 	margin-bottom: 30px;
 	height: 50%;
 	text-align: center;
+	position: relative;
 	align-content: center;
 
 }
 
-.resumen img{
+.resumen  img{
 	max-height: 500px;
 	max-width: fit-content;
 	margin: auto;
@@ -116,6 +121,7 @@ margin-bottom: 5px;
 	color: #000;
 	background-color: transparent;
 	z-index: 40;
+	opacity: 40%;
 }
 
 .show{
@@ -192,7 +198,7 @@ margin-bottom: 5px;
 	right: 0;
 }
 .up_div{
-	z-index: 72;
+	z-index: 100;
 	width: 40%;
 	background-color: white;
 	height: 50%;
@@ -207,6 +213,7 @@ margin-bottom: 5px;
 	margin: auto;
 	text-align: center;
 	font-size: 23px;
+	z-index: 110;
 }
 
 .up_div img{
@@ -218,8 +225,58 @@ margin-bottom: 5px;
 	cursor: pointer;
 	border: solid 2px rgb(10, 30, 30);
 	padding: 20px;
+	z-index: 120;
 	border-radius: 10px;
 }
 .up_div img:hover{
+	  transition: all .2s ease;
 	background-color: rgba(60, 60, 60, 0.4);
+}
+
+
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #555;
+  color: #444;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+  background: #eee;
+  border-color: #111;
+}
+
+.drop-container:hover .drop-title {
+  color: #222;
+}
+
+.drop-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color .2s ease-in-out;
+}
+
+.dowload{
+	position: absolute;
+	right: 3px;
+	width: 25px;
+	object-fit: cover;
+	height: 25px;
+	opacity: 30%;
+}
+.dowload img{
+	
+
+	border: solid 1px rgb(0, 0, 0);
 }
