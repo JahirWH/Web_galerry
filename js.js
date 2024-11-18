@@ -80,4 +80,6 @@ function up() {
 
 //}
 
+//copiar la misma funcion con imagenes diferentes
+
 
