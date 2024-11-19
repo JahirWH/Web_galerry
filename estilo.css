@@ -133,11 +133,11 @@ margin-bottom: 5px;
 	visibility: hidden;
 	display: none;
 }
-.img1_show{
+.img_show{
 	display: block;
 	visibility: visible;
 }
-.img1_oculta{
+.img_oculta{
 	display: none;
 }
 .zom{
@@ -279,4 +279,7 @@ margin-bottom: 5px;
 	
 
 	border: solid 1px rgb(0, 0, 0);
+}
+#i1,#i2,#i3,#i4,#i5,#i6,#i7,#i8,#i9{
+	display: none;
 }
