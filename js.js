@@ -28,19 +28,28 @@ zoomDiv.style.display = (zoomDiv.style.display === "none" || zoomDiv.style.displ
 }
 // Función para mostrar una imagen en el div #f2
 
-
-pediente
 function showImage2() {
 	var f2 = document.getElementById("f2");
 	f2.style.display = "block" ; 
 }
 
+function showImage3() {
+	var f2 = document.getElementById("f3");
+	f2.style.display = "block" ; 
+}
 
 function close1(){
 	var f1 = document.getElementById("f1");
 f1.style.display = "none";  
 }
-
+function close2(){
+	var f1 = document.getElementById("f2");
+f1.style.display = "none"; 
+}
+function close3(){
+	var f1 = document.getElementById("f3");
+f1.style.display = "none";  
+}
 
 // Función para abrir la vista previa de las imágenes en zoom
 function modal1() {

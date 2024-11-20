@@ -47,7 +47,7 @@
 
 			<div id="img2"  class=" img_oculta div">
 				<button   class="boton" onclick="modal1()"><img src="img.png" > </button>
-				<div  class="zom" onclick="zom()">
+				<div  class="zom" onclick="zom() , showImage1()">
 					<img  src="calle1.jpeg">
 				</div>
 			</div>
@@ -70,44 +70,45 @@
 
 			<div id="img4" class="img_oculta div ">
 				<button  class="boton" onclick="modal2()"><img src="img.png"> </button>
-				<div class="zom" onclick="zom()">
+				<div class="zom" onclick="zom() , showImage2()">
 					<img src="calle2-r.jpeg">
 				</div>
 			</div>
 		</div>
 
 		<!-- Imagen 3  -->
-		<!--
+		
 		<div class="orden">
 
 			<div  id="img5" style="display:block;" class="img_show div ">
 				<button  class="boton" onclick="modal3()"><img src="img.png"> </button>
-				<a class="dowload" href="calle4-r.jpg"  download="calle2" >
+				<a class="dowload" href="calle4-r.jpg"  download="calle4" >
 					<img src="descarga.png"> 
 				</a>
-				<div onclick="zom()"  class="zom">
-					<img src="calle4-r.jpg">
+				<div onclick="zom() , showImage3()"  class="zom">
+					<img src="calle4_preview.jpg">
 				</div>
 			</div>
 
 			<div id="img6" class="img_oculta div ">
 				<button  class="boton" onclick="modal3()"><img src="img.png"> </button>
-				<div class="zom" onclick="zom()">
+				<div class="zom" onclick="zom() , showImage3()">
 					<img src="calle4.jpeg">
 				</div>
 			</div>
 		</div>
-		-->
+		
 
 	</div>
 	<!-- Divisor de muestra de imagenes en pantalla completa-->
 
 
 	<div id="zom" class="vista_grande"  style="display:none;">
-		<div onclick="zom()" class="img_zom"> 
+		<div onclick="zom() , close1() , close2() , close3()" class="img_zom"> 
 
 			<img   id="f1"  class="img_oculta"  src="calle1-r.jpeg">
 			<img   id="f2"  class="img_oculta"  src="calle2-r.jpeg">
+			<img   id="f3"  class="img_oculta"  src="calle4-r.jpg">
 			
 			
 		</div>
