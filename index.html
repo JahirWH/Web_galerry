@@ -14,129 +14,125 @@
 		<p onclick="up()" class="colabora">Colabora</p>
 	</div>
 
-		
-		<ul class="resumen">
 
-			<img src="calle3.jpeg" alt="">			
-			<div class="texto">
-				<h2>Resumen</h2>
-				<p style="font-size: 20px;" >
-					Este es un pequena galeria de fotos restauradas que nos muestran
-					como era el municipio hace tiempo.puedes colaborar mandando una foto antigua que tengas no importa el estado, trataremos de restaurarla para subirla preciona colaborar o ponte en contacto atraves de el corre <a href="">correopersonal@proton.me</a> 
+	<ul class="resumen">
 
-				</p>
-			</div>
-		</ul>
+		<img src="calle3.jpeg" alt="">			
+		<div class="texto">
+			<h2>Resumen</h2>
+			<p style="font-size: 20px;" >
+				Este es un pequena galeria de fotos restauradas que nos muestran
+				como era el municipio hace tiempo.puedes colaborar mandando una foto antigua que tengas no importa el estado, trataremos de restaurarla para subirla preciona colaborar o ponte en contacto atraves de el corre <a href="">correopersonal@proton.me</a> 
 
-		<!-- nivel1 -->
-		<div class="lista">
-			<!-- Divisor  -->
-			<!-- Imagen 1  -->
-
-			<div class="orden">
-
-				<div  id="img1" style="display:block;" class=" img_show div img1">
-					<button  class="boton" onclick="modal1()"><img src="img.png"> </button>
-					<a class="dowload" href="calle1-r.jpeg"  download="calle1" >
-						<img src="descarga.png"> 
-					</a>
-					<div onclick="zom() " class="zom">	
-						<img src="calle1_preview.jpeg">
-					</div>
-				</div>
-
-				<div id="img2"  class=" img_oculta div img2">
-					<button   class="boton" onclick="modal1()"><img src="img.png" > </button>
-					<div  class="zom" onclick="zom()">
-						<img  src="calle1.jpeg">
-					</div>
-				</div>
-			</div>
-
-			<!-- Imagen 2  -->
-
-			<div class="orden">
-
-				<div  id="img3" style="display:block;" class="img_show div ">
-					<button  class="boton" onclick="modal2()"><img src="img.png"> </button>
-					<a class="dowload" href="calle2.jpeg"  download="calle2" >
-						<img src="descarga.png"> 
-					</a>
-					<div onclick="zom() ,i()"  class="zom">
-						<img src="calle2_preview.jpeg">
-					</div>
-				</div>
-
-				<div id="img4" class="img_oculta div ">
-					<button  class="boton" onclick="modal2()"><img src="img.png"> </button>
-					<div class="zom" onclick="zom()">
-						<img src="calle2-r.jpeg">
-					</div>
-				</div>
-			</div>
-
-			<!-- Imagen 3  -->
-
-			<div class="orden">
-
-				<div  id="img5" style="display:block;" class="img_show div ">
-					<button  class="boton" onclick="modal3()"><img src="img.png"> </button>
-					<a class="dowload" href="calle4-r.jpg"  download="calle2" >
-						<img src="descarga.png"> 
-					</a>
-					<div onclick="zom()"  class="zom">
-						<img src="calle4-r.jpg">
-					</div>
-				</div>
-
-				<div id="img6" class="img_oculta div ">
-					<button  class="boton" onclick="modal3()"><img src="img.png"> </button>
-					<div class="zom" onclick="zom()">
-						<img src="calle4.jpeg">
-					</div>
-				</div>
-			</div>
-
-
+			</p>
 		</div>
-		<!-- Divisor de muestra de imagenes en pantalla completa-->
+	</ul>
 
+	<!-- nivel1 -->
+	<div class="lista">
+		<!-- Divisor  -->
+		<!-- Imagen 1  -->
 
-		<div id="zom" class="vista_grande">
-			<div onclick="zom()" class="img_zom"> 
+		<div class="orden">
 
-				<img  id="i1" class="show"  src="calle1-r.jpeg">
-				<img  id="i2" class="show" src="calle4.jpg">
-				<img  id="i3" class="show" src="calle1-r.jpeg">
-				<img  id="i4" class="show" src="calle1-r.jpeg">
-				<img  id="i5" class="show" src="calle1-r.jpeg">
-				<img  id="i6" class="show" src="calle1-r.jpeg">
-				<img  id="i7" class="show" src="calle1-r.jpeg">
-				<img  id="i8" class="show" src="calle1-r.jpeg">
-				<img  id="i9" class="show" src="calle1-r.jpeg">
+			<div  id="img1" style="display:block;" class=" img_show div ">
+				<button  class="boton" onclick="modal1()"><img src="img.png"> </button>
+				<a href="calle1-r.jpeg" download="calle" class="dowload">
+					<img src="descarga.png" alt="calle" >
+				</a> 
+				<div onclick="zom() , showImage1()" class="zom">
+					<img    src="calle1_preview.jpeg">
+				</div>
+			</div>
+
+			<div id="img2"  class=" img_oculta div">
+				<button   class="boton" onclick="modal1()"><img src="img.png" > </button>
+				<div  class="zom" onclick="zom()">
+					<img  src="calle1.jpeg">
+				</div>
 			</div>
 		</div>
 
+		<!-- Imagen 2  -->
 
+		<div class="orden">
 
+			<div  id="img3" style="display:block;" class="img_show div ">
+				<button  class="boton" onclick="modal2()"><img src="img.png"> </button>
+				<a  href="calle2.jpeg"  download="calle2" class="dowload" >
+					<img src="descarga.png"> 
 
-		<!-- subida de imagen -->
-		<div class="up" style="display:none;" id="up" onclick="up()">
+				</a>
+				<div   onclick="zom() , showImage2()" class="zom">
+					<img  src="calle2_preview.jpeg">
+				</div>
+			</div>
 
-			<div class="up_div" >
-				<label for="images" class="drop-container" id="dropcontainer">
-					<span class="drop-title">Da click aqui para subir</span>
-					o
-					<input type="file" id="images" accept="image/*" required>
-				</label>
-
-
-
+			<div id="img4" class="img_oculta div ">
+				<button  class="boton" onclick="modal2()"><img src="img.png"> </button>
+				<div class="zom" onclick="zom()">
+					<img src="calle2-r.jpeg">
+				</div>
 			</div>
 		</div>
 
+		<!-- Imagen 3  -->
+		<!--
+		<div class="orden">
+
+			<div  id="img5" style="display:block;" class="img_show div ">
+				<button  class="boton" onclick="modal3()"><img src="img.png"> </button>
+				<a class="dowload" href="calle4-r.jpg"  download="calle2" >
+					<img src="descarga.png"> 
+				</a>
+				<div onclick="zom()"  class="zom">
+					<img src="calle4-r.jpg">
+				</div>
+			</div>
+
+			<div id="img6" class="img_oculta div ">
+				<button  class="boton" onclick="modal3()"><img src="img.png"> </button>
+				<div class="zom" onclick="zom()">
+					<img src="calle4.jpeg">
+				</div>
+			</div>
+		</div>
+		-->
+
+	</div>
+	<!-- Divisor de muestra de imagenes en pantalla completa-->
 
 
-	</body>
+	<div id="zom" class="vista_grande"  style="display:none;">
+		<div onclick="zom()" class="img_zom"> 
+
+			<img   id="f1"  class="img_oculta"  src="calle1-r.jpeg">
+			<img   id="f2"  class="img_oculta"  src="calle2-r.jpeg">
+			
+			
+		</div>
+	</div>
+
+
+
+
+	<!-- subida de imagen -->
+	<div class="up" style="display:none;" id="up" onclick="up()">
+
+		<div class="up_div" >
+			<label for="images" class="drop-container" id="dropcontainer">
+				<span class="drop-title">Da click aqui para subir</span>
+				o
+				<input type="file" id="images" accept="image/*" required>
+			</label>
+
+
+
+		</div>
+	</div>
+
+
+
+</body>
 </html>
 

@@ -124,15 +124,6 @@ margin-bottom: 5px;
 	opacity: 40%;
 }
 
-.show{
-	display: block;
-	max-width: 400px;
-	max-height: 500px;
-}
-.ocultar{
-	visibility: hidden;
-	display: none;
-}
 
 .img_show{
 display: block;
@@ -200,16 +191,14 @@ display: none;
 	left: 0;
 	right: 0;
 }
-.up_div{
-	z-index: 100;
-	width: 40%;
-	background-color: white;
-	height: 50%;
-	border-radius: 20px;
-	margin: auto;
-	border: solid 3px rgb(20, 20, 20);
-	display: flex;
-
+.up_div {
+    width: 40%;
+    height: 50%;
+    background-color: white;
+    border-radius: 20px;
+    margin: auto;
+    border: solid 3px rgb(20, 20, 20);
+    display: flex;
 }
 .up_div p{
 	display: block;
@@ -279,12 +268,10 @@ display: none;
 	opacity: 30%;
 }
 .dowload img{
-	
-
 	border: solid 1px rgb(0, 0, 0);
 }
 
 
 .show{
-	display: flex;
+display: none;
 }
