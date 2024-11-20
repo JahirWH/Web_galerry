@@ -133,13 +133,15 @@ margin-bottom: 5px;
 	visibility: hidden;
 	display: none;
 }
+
 .img_show{
-	display: block;
-	visibility: visible;
+display: block;
 }
+
 .img_oculta{
-	display: none;
+display: none;
 }
+
 .zom{
 	list-style: none;
 	border-style: none;
@@ -156,6 +158,7 @@ margin-bottom: 5px;
   left: 0;
   right: 0;
   display: none;
+
 
 }
 
@@ -280,6 +283,8 @@ margin-bottom: 5px;
 
 	border: solid 1px rgb(0, 0, 0);
 }
-#i1,#i2,#i3,#i4,#i5,#i6,#i7,#i8,#i9{
-	display: none;
+
+
+.show{
+	display: flex;
 }
