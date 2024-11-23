@@ -200,6 +200,11 @@ display: none;
     border: solid 3px rgb(20, 20, 20);
     display: flex;
 }
+.up_frame{
+	width: 100%;
+	height: auto;
+	display: grid;
+}
 .up_div p{
 	display: block;
 	margin: auto;
@@ -274,4 +279,26 @@ display: none;
 
 .show{
 display: none;
+}
+.btn-envio{
+	width: 30%;
+	margin: auto;
+	height: auto;
+	list-style: none;
+	font-size: 16px;
+	background-color: #d3d3d4;
+	color: #474545;
+	border: solid 1px black;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 5px;
+
+}
+.btn-envio:hover{
+	transition-timing-function: 0.5s;
+	background-color: #a3a2a2;
+	color: rgb(15, 15, 15);
+	padding: 5px;
 }

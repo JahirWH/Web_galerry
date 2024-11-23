@@ -101,6 +101,7 @@
 		
 
 	</div>
+	<p style="justify-content: center; text-align: center;">Imagenes faltantes en proceso...</p>
 	<!-- Divisor de muestra de imagenes en pantalla completa-->
 
 
@@ -122,13 +123,13 @@
 		<!-- Formulario para subir imagen -->
 	<div class="up" style="display:none;" id="up" onclick="up()">
 	    <div class="up_div">
-	        <form action="subir_imagen.php" method="POST" enctype="multipart/form-data">
+	        <form class="up_frame" action="subir_imagen.php" method="POST" enctype="multipart/form-data">
 	            <label for="images" class="drop-container" id="dropcontainer">
 	                <span  class="drop-title">Da click aqui para subir</span>
 	                o
 	                <input type="file" id="images" name="imagen" accept="image/*" required>
 	            </label>
-	            <input type="submit" value="enviar">
+	            <input type="submit" class="btn-envio" value="ENVIAR">
 	        </form>
 	    </div>
 	</div>
