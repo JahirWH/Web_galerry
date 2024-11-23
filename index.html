@@ -1,143 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<link rel="icon" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732331199/iglesia_yzhb7b.ico" type="image/x-icon"
-	<script type="text/javascript" src="js.js"></script>
-	<title>Recuerdos</title>
-	<link rel="stylesheet" href="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre nuestra galería de fotos restauradas del municipio de Tlacuilotepec, Puebla. Colabora enviando tus fotos antiguas y preserva nuestra historia.">
+    <meta name="keywords" content="fotos restauradas, Tlacuilotepec, Puebla, historia, fotos antiguas, colaboración, galería de fotos">
+    <meta name="wh" content="web-galeri">
+    <title>Galería de Fotos Restauradas - Tlacuilotepec, Puebla</title>
+    <link rel="icon" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732331199/iglesia_yzhb7b.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script type="text/javascript" src="js.js"></script>
 </head>
 <body>
-	<div class="titulo">
-		<p class="title_sub">Fotos del recuerdo</p>
-		<p class="name">Tlacuilotepec,Puebla,Mexico</p>
-		<p onclick="up()" class="colabora">Colabora</p>
-	</div>
 
+    <header class="titulo">
+        <h1>Fotos del Recuerdo</h1>
+        <p class="name">Tlacuilotepec, Puebla, México</p>
+        <p onclick="up()" class="colabora">Colabora</p>
+    </header>
 
-	<ul class="resumen">
+    <main>
+        <section class="resumen">
+            <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" alt="Foto histórica de Tlacuilotepec">
+            <div class="texto">
+                <h2>Resumen</h2>
+                <p style="font-size: 20px;">
+                    Esta es una pequeña galería de fotos restauradas que nos muestran cómo era el municipio hace años. Puedes colaborar enviándonos una foto antigua que tengas, no importa su estado. Las restauraremos y las subiremos a nuestra galería. ¡Tu colaboración es muy valiosa! Ponte en contacto a través del correo <a href="mailto:correopersonal@proton.me">correopersonal@proton.me</a>.
+                </p>
+            </div>
+        </section>
 
-		<img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" alt="">			
-		<div class="texto">
-			<h2>Resumen</h2>
-			<p style="font-size: 20px;" >
-				Este es un pequena galeria de fotos restauradas que nos muestran
-				como era el municipio hace tiempo.puedes colaborar mandando una foto antigua que tengas no importa el estado, trataremos de restaurarla para subirla preciona colaborar o ponte en contacto atraves de el corre <a href="">correopersonal@proton.me</a> 
+        <!-- Galería de imágenes -->
+        <section class="lista">
+            <!-- Imagen 1 -->
+            <div class="orden">
+                <div id="img1" class="img_show div" style="display:block;">
+                    <button class="boton" onclick="modal1()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
+                    </button>
+                    <a href="https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg" download="calle1" class="dowload">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle">
+                    </a>
+                    <div class="zom" onclick="zom(), showImage1()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324582/calle1_preview_utnl69.jpg" alt="Vista previa de la calle">
+                    </div>
+                </div>
+                
+                <div id="img2" class="img_oculta div">
+                    <button class="boton" onclick="modal1()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
+                    </button>
+                    <div class="zom" onclick="zom(), showImage1()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg" alt="Otra vista de la calle histórica">
+                    </div>
+                </div>
+            </div>
 
-			</p>
-		</div>
-	</ul>
+            <!-- Imagen 2 -->
+            <div class="orden">
+                <div id="img3" class="img_show div" style="display:block;">
+                    <button class="boton" onclick="modal2()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
+                    </button>
+                    <a href="https://res.cloudinary.com/dr9van0op/image/upload/v1732324936/calle2-r_x5jphi.jpg" download="calle2" class="dowload">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle">
+                    </a>
+                    <div class="zom" onclick="zom(), showImage2()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324651/calle2_preview_c3tjkk.jpg" alt="Vista previa de otra calle histórica">
+                    </div>
+                </div>
 
-	<!-- nivel1 -->
-	<div class="lista">
-		<!-- Divisor  -->
-		<!-- Imagen 1  -->
+				<div id="img4" class="img_oculta div">
+                    <button class="boton" onclick="modal2()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
+                    </button>
+                    <div class="zom" onclick="zom(), showImage2()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg" alt="Otra vista de la calle histórica">
+                    </div>
+                </div>
+            </div>
 
-		<div class="orden">
+            <!-- Imagen 4 -->
+            <div class="orden">
+                <div id="img5" class="img_show div" style="display:block;">
+                    <button class="boton" onclick="modal3()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
+                    </button>
+                    <a href="https://res.cloudinary.com/dr9van0op/image/upload/v1732325018/calle4-r_tdeksh.jpg" download="calle4" class="dowload">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle">
+                    </a>
+                    <div class="zom" onclick="zom(), showImage3()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324616/calle4_preview_zhb8m4.jpg" alt="Vista previa de la calle 4 restaurada">
+                    </div>
+                </div>
 
-			<div  id="img1" style="display:block;" class=" img_show div ">
-				<button  class="boton" onclick="modal1()"><img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png"> </button>
-				<a href="https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg" download="calle" class="dowload">
-					<img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="calle" >
-				</a> 
-				<div onclick="zom() , showImage1()" class="zom">
-					<img    src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324582/calle1_preview_utnl69.jpg">
+				<div id="img6" class="img_oculta div">
+                    <button class="boton" onclick="modal3()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
+                    </button>
+                    <div class="zom" onclick="zom(), showImage3()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg" alt="Otra vista de la calle histórica">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-				</div>
-			</div>
+        <p style="justify-content: center; text-align: center;">Imágenes faltantes en proceso...</p>
 
-			<div id="img2"  class=" img_oculta div">
-				<button   class="boton" onclick="modal1()"><img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png" > </button>
-				<div  class="zom" onclick="zom() , showImage1()">
-					<img  src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg">
-				</div>
-			</div>
-		</div>
+        <!-- Vista a gran escala -->
+        <div id="zom" class="vista_grande" style="display:none;">
+            <div onclick="zom(), close1(), close2(), close3()" class="img_zom">
+                <img id="f1" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg">
+                <img id="f2" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324936/calle2-r_x5jphi.jpg">
+                <img id="f3" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325018/calle4-r_tdeksh.jpg">
+            </div>
+        </div>
 
-		<!-- Imagen 2  -->
-
-		<div class="orden">
-
-			<div  id="img3" style="display:block;" class="img_show div ">
-				<button  class="boton" onclick="modal2()"><img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png"> </button>
-				<a  href="calle2.jpeg"  download="calle2" class="dowload" >
-					<img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png"> 
-
-				</a>
-				<div   onclick="zom() , showImage2()" class="zom">
-					<img  src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324651/calle2_preview_c3tjkk.jpg">
-				</div>
-			</div>
-
-			<div id="img4" class="img_oculta div ">
-				<button  class="boton" onclick="modal2()"><img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png"> </button>
-				<div class="zom" onclick="zom() , showImage2()">
-					<img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324651/calle2_preview_c3tjkk.jpg">
-				</div>
-			</div>
-		</div>
-
-		<!-- Imagen 3  -->
-		
-		<div class="orden">
-
-			<div  id="img5" style="display:block;" class="img_show div ">
-				<button  class="boton" onclick="modal3()"><img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png"> </button>
-				<a class="dowload" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732325018/calle4-r_tdeksh.jpg"  download="calle4" >
-					<img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png"> 
-				</a>
-				<div onclick="zom() , showImage3()"  class="zom">
-					<img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324616/calle4_preview_zhb8m4.jpg">
-				</div>
-			</div>
-
-			<div id="img6" class="img_oculta div ">
-				<button  class="boton" onclick="modal3()"><img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png"> </button>
-				<div class="zom" onclick="zom() , showImage3()">
-					<img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324809/calle4_ij4gzu.jpg">
-				</div>
-			</div>
-		</div>
-		
-
-	</div>
-	<p style="justify-content: center; text-align: center;">Imagenes faltantes en proceso...</p>
-	<!-- Divisor de muestra de imagenes en pantalla completa-->
-
-
-	<div id="zom" class="vista_grande"  style="display:none;">
-		<div onclick="zom() , close1() , close2() , close3()" class="img_zom"> 
-
-			<img   id="f1"  class="img_oculta"  src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg">
-			<img   id="f2"  class="img_oculta"  src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324936/calle2-r_x5jphi.jpg">
-			<img   id="f3"  class="img_oculta"  src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325018/calle4-r_tdeksh.jpg">
-			
-			
-		</div>
-	</div>
-
-
-
-
-		<!-- subida de imagen -->
-		<!-- Formulario para subir imagen -->
-	<div class="up" style="display:none;" id="up" onclick="up()">
-	    <div class="up_div">
-	        <form class="up_frame" action="subir_imagen.php" method="POST" enctype="multipart/form-data">
-	            <label for="images" class="drop-container" id="dropcontainer">
-	                <span  class="drop-title">Da click aqui para subir</span>
-	                o
-	                <input type="file" id="images" name="imagen" accept="image/*" required>
-	            </label>
-	            <input type="submit" class="btn-envio" value="ENVIAR">
-	        </form>
-	    </div>
-	</div>
-
-
-
+        <!-- Formulario de subida de imágenes -->
+        <div class="up" style="display:none;" id="up" onclick="up()">
+            <div class="up_div">
+                <form class="up_frame" action="subir_imagen.php" method="POST" enctype="multipart/form-data">
+                    <label for="images" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">Da click aquí para subir</span>
+                        o
+                        <input type="file" id="images" name="imagen" accept="image/*" required>
+                    </label>
+                    <input type="submit" class="btn-envio" value="ENVIAR">
+                </form>
+            </div>
+        </div>
+    </main>
 
 </body>
 </html>
-
