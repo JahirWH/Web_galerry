@@ -44,7 +44,7 @@ body {
     position: relative;
     max-width: fit-content;
     margin: auto;
-    background: rgb(245, 240, 240);
+    background: rgba(227, 224, 224, 0.47);
     padding: 10px;
 }
 
@@ -70,12 +70,16 @@ body {
     height: 100%;
     image-rendering: optimizequality;
     object-fit: cover;
+    transition: 1.5s ease;
+}
+.div img:hover {
+transform: scale(1.2);
 }
 
 /* Resumen */
 .resumen {
     display: flex;
-    width: 90%;
+    width: 98%;
     margin-top: 30px;
     margin-bottom: 30px;
     height: 50%;
@@ -83,6 +87,7 @@ body {
     position: relative;
     align-content: center;
     flex-wrap: wrap; /* Para la alineación responsiva */
+   
 }
 
 .resumen img {
@@ -94,10 +99,11 @@ body {
     background-color: #f0eded;
 }
 
+
 /* Texto */
 .texto {
     width: 40%;
-    min-width: 100px;
+    min-width: 80px;
     min-height: 80px;
     display: block;
     margin: auto;
@@ -280,6 +286,8 @@ body {
     object-fit: cover;
     height: 25px;
     opacity: 30%;
+    z-index: 1;
+
 }
 
 .dowload img {
@@ -362,4 +370,8 @@ body {
         flex-direction: column;
         width: 100%;
     }
+}
+.fin{
+    margin: auto;
+    text-align: center;
 }
