@@ -105,16 +105,41 @@
                     </div>
                 </div>
             </div>
+        
+             <!-- Imagen 4 -->
+             <div class="orden">
+                <div id="img7" class="img_show div" style="display:block;">
+                    <button class="boton" onclick="modal4()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
+                    </button>
+                    <a target="_bank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1733374540/calle5_pfujtg.jpg" download="calle4" class="dowload">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle">
+                    </a>
+                    <div class="zom" onclick="zom(), showImage4()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1733375126/ca_e5_preview_dek4f8.jpg" alt="Vista previa de la calle 4 restaurada">
+                    </div>
+                </div>
+
+				<div id="img8" class="img_oculta div">
+                    <button class="boton" onclick="modal4()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
+                    </button>
+                    <div class="zom" onclick="zom(), showImage4()">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1733374567/calle5_d0jdzg.jpg" alt="Otra vista de la calle histórica">
+                    </div>
+                </div>
+            </div>
         </section>
 
         <p style="justify-content: center; text-align: center;">Imágenes faltantes en proceso...</p>
 
         <!-- Vista a gran escala -->
         <div id="zom" class="vista_grande" style="display:none;">
-            <div onclick="zom(), close1(), close2(), close3()" class="img_zom">
+            <div onclick="zom(), close1(), close2(), close3(), close4()" class="img_zom">
                 <img id="f1" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg">
                 <img id="f2" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324936/calle2-r_x5jphi.jpg">
                 <img id="f3" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325018/calle4-r_tdeksh.jpg">
+                <img id="f4" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1733374540/calle5_pfujtg.jpg">
             </div>
         </div>
 

@@ -37,6 +37,11 @@ function showImage3() {
 	var f2 = document.getElementById("f3");
 	f2.style.display = "block" ; 
 }
+function showImage4() {
+	var f2 = document.getElementById("f4");
+	f2.style.display = "block" ; 
+}
+
 
 function close1(){
 	var f1 = document.getElementById("f1");
@@ -50,6 +55,11 @@ function close3(){
 	var f1 = document.getElementById("f3");
 f1.style.display = "none";  
 }
+function close4(){
+	var f1 = document.getElementById("f4");
+f1.style.display = "none";  
+}
+
 
 // Función para abrir la vista previa de las imágenes en zoom
 function modal1() {
@@ -63,7 +73,9 @@ function modal2() {
 function modal3() {
 	toggleImageVisibility("img5", "img6");
 }
-
+function modal4() {
+	toggleImageVisibility("img7", "img8");
+}
 // Función para mostrar/ocultar el formulario de subida de imagen
 function up() {
 	var upDiv = document.getElementById("up");
