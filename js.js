@@ -41,6 +41,14 @@ function showImage4() {
 	var f2 = document.getElementById("f4");
 	f2.style.display = "block" ; 
 }
+function showImage6() {
+	var f2 = document.getElementById("f6");
+	f2.style.display = "block" ; 
+}
+function showImage7() {
+	var f2 = document.getElementById("f7");
+	f2.style.display = "block" ; 
+}
 
 
 function close1(){
@@ -57,6 +65,14 @@ f1.style.display = "none";
 }
 function close4(){
 	var f1 = document.getElementById("f4");
+f1.style.display = "none";  
+}
+function close6(){
+	var f1 = document.getElementById("f6");
+f1.style.display = "none";  
+}
+function close7(){
+	var f1 = document.getElementById("f7");
 f1.style.display = "none";  
 }
 
