@@ -1,7 +1,3 @@
-//FUncion de loader
-    window.addEventListener("load",function(){
-	document.getElementById("loader").classList.toggle("loader2")
-});
 
 
 // Función para cambiar entre imágenes (de forma general)
