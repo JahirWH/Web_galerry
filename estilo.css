@@ -248,6 +248,7 @@ border: solid 1px rgb(25, 25, 25 );
 }
 
 /* Ventana emergente */
+
 .up {
     align-content: center;
     text-align: center;
@@ -264,7 +265,7 @@ border: solid 1px rgb(25, 25, 25 );
 
 .up_div {
     width: 40%;
-    height: 50%;
+    height: 60%;
     background-color: white;
     border-radius: 20px;
     margin: auto;
@@ -272,10 +273,31 @@ border: solid 1px rgb(25, 25, 25 );
     display: flex;
 }
 
+
+
+
+/* 📂 Input de archivos oculto */
+.drop-container input {
+    display: none;
+}
+
+/* 📤 Texto dentro del área de carga */
+.drop-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+
 .up_frame {
-    width: 100%;
-    height: auto;
-    display: grid;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin: auto;
 }
 
 .up_div p {
@@ -329,6 +351,25 @@ border: solid 1px rgb(25, 25, 25 );
 .drop-container:hover .drop-title {
     color: #222;
 }
+/* 🖼 Área de arrastrar y soltar */
+.drop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: #ffffff;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.drop-container:hover {
+    background: #007bff10;
+    border-color: #0056b3;
+}
 
 .drop-title {
     color: #444;
@@ -352,29 +393,24 @@ border: solid 1px rgb(25, 25, 25 );
     border: solid 1px rgb(0, 0, 0);
 }
 
-/* Botón de envío */
+
+
+/* 🎯 Botón de envío */
 .btn-envio {
-    width: 30%;
-    margin: auto;
-    height: auto;
-    list-style: none;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     font-size: 16px;
-    background-color: #d3d3d4;
-    color: #474545;
-    border: solid 1px black;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn-envio:hover {
-    transition-timing-function: 0.5s;
-    background-color: #a3a2a2;
-    color: rgb(15, 15, 15);
-    padding: 5px;
+    background: #0056b3;
 }
+
 
 /* Media Queries para hacer la página responsiva */
 @media (max-width: 1024px) {

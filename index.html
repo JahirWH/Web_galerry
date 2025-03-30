@@ -172,13 +172,14 @@
         <div class="up" style="display:none;" id="up" onclick="up()">
             <div class="up_div">
                 <form class="up_frame" action="subir_imagen.php" method="POST" enctype="multipart/form-data">
-                    <label for="images" class="drop-container" id="dropcontainer">
-                        <span class="drop-title">Da click aquí para subir</span>
-                        o
-                        <input type="file" id="images" name="imagen" accept="image/*" required>
-                    </label>
-                    <input type="submit" class="btn-envio" value="ENVIAR">
-                </form>
+                <label for="images" class="drop-container" id="dropcontainer">
+                    <span class="drop-title">📤 Da click aquí para subir</span>
+                    <p>o arrastra y suelta tu imagen</p>
+                    <input type="file" id="images" name="imagen" accept="image/*" required>
+                </label>
+                <input type="submit" class="btn-envio" value="ENVIAR">
+            </form>
+
             </div>
         </div>
     </main>
