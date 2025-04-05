@@ -1,7 +1,7 @@
 ## 🖼️ Galería de Fotos Históricas
 
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Activa-brightgreen)
+![Status](https://img.shields.io/badge/Status-Archived-brightgreen)
 
 ![App Screenshot](./cap.png)
 
