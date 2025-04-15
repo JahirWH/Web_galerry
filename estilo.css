@@ -485,3 +485,74 @@ border: solid 1px rgb(25, 25, 25 );
     margin: auto;
     text-align: center;
 }
+
+
+/*comentarios*/
+
+
+.comentarios {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fdf6e3;
+  border: 1px solid #d8c9a7;
+  padding: 30px;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #4b3b2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.comentarios h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d8c9a7;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #c5b68d;
+  background: #fffaf0;
+  color: #3d2d1b;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+form button {
+  background-color: #a3906f;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #806d54;
+}
+
+.comentario {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fffaf0;
+  border: 1px dashed #c5b68d;
+  border-radius: 6px;
+}
+
+.comentario strong {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comentario small {
+  color: #826e5b;
+  font-size: 12px;
+}

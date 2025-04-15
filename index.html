@@ -168,6 +168,20 @@
             </div>
         </div>
 
+        <section class="comentarios">
+          <h3>Comentarios</h3>
+          <form action="guardar.php" method="POST">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <textarea name="mensaje" rows="4" placeholder="Escribe tu comentario" required></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+
+          <div id="comentarios">
+            <?php include('comentarios.php'); ?>
+          </div>
+</section>
+
+
         <!-- Formulario de subida de imágenes -->
         <div class="up" style="display:none;" id="up" onclick="up()">
             <div class="up_div">
@@ -190,3 +204,5 @@
 
 </body>
 </html>
+
+
