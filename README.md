@@ -1,32 +1,12 @@
-## 🖼️ Galería de Fotos Históricas
+# React + Vite
 
-![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Archived-brightgreen)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-![App Screenshot](./cap.webp)
+Currently, two official plugins are available:
 
-## Descripción
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-**Galería de fotos simple con un poco de JavaScript.**  
-Esta web fue creada para compartir imágenes antiguas de un municipio, restauradas y mejoradas usando herramientas como **GIMP** y **Photoshop**. Es una forma de preservar y mostrar la historia local de manera visual y accesible.
+## Expanding the ESLint configuration
 
----
-##  Características
-
-- Visualización de fotos restauradas en alta calidad.
-- Interfaz simple, ligera y compatible con dispositivos móviles.
-- Funcionalidad para **descargar** las imágenes directamente.
----
-##  Tecnologías Usadas
-- **HTML + CSS**: Estructura y estilos de la página.
-- **JavaScript**: Animaciones, interactividad básica y descargas.
-- **GIMP / Photoshop**: Restauración y mejora de imágenes.
----
-##  Licencia y Uso
-- Esta plantilla es completamente **libre para copiar, modificar y mejorar**.  
-- Ideal para proyectos culturales, archivos históricos o cualquier persona interesada en crear una galería sencilla pero significativa.
----
-##  Créditos
-
-Hecho con cariño para revivir y compartir la historia local.  
-¿Ideas o mejoras? ¡Los pull requests son bienvenidos!
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

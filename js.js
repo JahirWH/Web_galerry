@@ -1,5 +1,3 @@
-
-
 // Función para cambiar entre imágenes (de forma general)
 function toggleImageVisibility(image1Id, image2Id) {
 	var image1 = document.getElementById(image1Id);
@@ -98,4 +96,37 @@ function modal4() {
 function up() {
 	var upDiv = document.getElementById("up");
     upDiv.style.display = (upDiv.style.display === "block") ? "none" : "block";  // Alterna entre mostrar/ocultar
+}
+
+
+// lectura del json y covercion a html
+
+function loadJSON() {
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', '/datos.json', true);
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4 && xhr.status === 200) {
+			var jsonResponse = JSON.parse(xhr.responseText);
+			var htmlContent = '';
+
+			for (var i = 0; i < jsonResponse.length; i++) {
+				htmlContent += '<div class="orden">' +
+								'<div id="img${id} " class="img_show div" style="display:block;">' +
+									'<button class="boton" onclick="modal1()">' +
+										'<img loading="lazy" src="{imagen}" />' +
+									'</button>' +
+									'<a target="_bank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg" download="calle1" class="dowload">' +
+										'<img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle" />' +
+									'</a>' +
+									'<div class="zom" onclick="zom(), showImage1()">' +
+										'<img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324582/calle1_preview_utnl69.jpg" alt="Vista previa de la calle" />' +
+									'</div>' +
+								'</div>' +
+								'</div>';
+			}
+
+			document.getElementById('galeria').innerHTML = htmlContent;
+		}
+	};
+	xhr.send();
 }
