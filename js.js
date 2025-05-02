@@ -1,3 +1,5 @@
+
+
 // Función para cambiar entre imágenes (de forma general)
 function toggleImageVisibility(image1Id, image2Id) {
 	var image1 = document.getElementById(image1Id);
@@ -114,22 +116,28 @@ function loadJSON() {
 					<div class="orden">
 						<div id="img${item.id}" class="img_show div" style="display:block;">
 							<button class="boton" onclick="modal${item.id}()">
-								<img loading="lazy" src="${item.img_boton}" alt="${item.titulo}" />
+								<img loading="lazy" src="./img/img.png" alt="${item.titulo}" />
 							</button>
-							<a target="_bank" href="${item.img_para_descarga}" download="${item.titulo}" class="dowload">
-								<img loading="lazy" src="${item.img_descarga}" alt="Descargar ${item.titulo}" />
+							
+							<a target="_bank" href="${item.img_restaurada}" download="${item.titulo}" class="dowload">
+								<img loading="lazy" src="./img/descarga.png" alt="Descargar ${item.titulo}" />
 							</a>
+
 							<div class="zom" onclick="zom(), showImage${item.id}()">
-								<img loading="lazy" src="${item.img_restaurada}" alt="Vista previa de ${item.titulo}" />
+								<img loading="lazy" src="${item.img_preview}" alt="Vista previa de ${item.titulo}" />
 							</div>
 						</div>
-						<div id="img${item.id}_alt" class="img_oculta div">
+
+						<div id="img${item.id2}" class="img_oculta div">
+
 							<button class="boton" onclick="modal${item.id}()">
-								<img loading="lazy" src="${item.img_original}" alt="Otra vista de ${item.titulo}" />
+								<img loading="lazy" src="./img/img.png" alt="Otra vista de ${item.titulo}" />
 							</button>
+
 							<div class="zom" onclick="zom(), showImage${item.id}()">
 								<img loading="lazy" src="${item.img_original}" alt="Otra vista de ${item.titulo}" />
 							</div>
+
 						</div>
 					</div>
 				`;

@@ -357,9 +357,8 @@ border: solid 1px rgb(25, 25, 25 );
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
     background: #ffffff;
-    border: 2px dashed #007bff;
+    border: 2px dashed #252525;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
@@ -368,7 +367,7 @@ border: solid 1px rgb(25, 25, 25 );
 
 .drop-container:hover {
     background: #007bff10;
-    border-color: #0056b3;
+    border-color: #3b3b3b;
 }
 
 .drop-title {
@@ -397,7 +396,7 @@ border: solid 1px rgb(25, 25, 25 );
 
 /* 🎯 Botón de envío */
 .btn-envio {
-    background: #007bff;
+    background: #404041;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -408,7 +407,8 @@ border: solid 1px rgb(25, 25, 25 );
 }
 
 .btn-envio:hover {
-    background: #0056b3;
+    background: #dddedf;
+    color: black;
 }
 
 
