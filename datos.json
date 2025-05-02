@@ -7,7 +7,15 @@
         "img_preview": "https://res.cloudinary.com/dr9van0op/image/upload/v1732324582/calle1_preview_utnl69.jpg",
         "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg",
         "img_original": "https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg"
+    },
+    {
+        "id": 2,
+        "id2":3,
+        "titulo": "El arte de la calle",
+        "descripcion": "Explorando la intersección entre el arte urbano y la cultura local.",
+        "img_preview": "https://res.cloudinary.com/dr9van0op/image/upload/v1732324582/calle2_preview_ynqj5v.jpg",
+        "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle2-r_uxxg1a.jpg",
+        "img_original": "https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle2_ebxk8b.jpg"
     }
-
 ]
 
