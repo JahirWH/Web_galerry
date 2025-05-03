@@ -1,150 +1,167 @@
 
+// Módulo para manejar la galería de imágenes
+const GaleriaApp = (function() {
+    // Elementos DOM que se usarán frecuentemente
+    const elementos = {
+        galeria: document.getElementById('galeria'),
+        vistaGrande: document.getElementById('zom'),
+        formularioSubida: document.getElementById('up')
+    };
+    
+    // Almacenamiento de datos e imágenes actuales
+    const estado = {
+        imagenes: [],
+        imagenActual: null
+    };
+    
+    // Inicializa la galería cargando los datos del JSON
+    function inicializar() {
+        cargarImagenesDesdeJSON();
+    }
+    
+    // Carga las imágenes desde el archivo JSON
+    function cargarImagenesDesdeJSON() {
+        fetch('./datos.json')
+            .then(respuesta => respuesta.json())
+            .then(datos => {
+                estado.imagenes = datos;
+                renderizarGaleria(datos);
+            })
+            .catch(error => {
+                console.error('Error al cargar los datos de imágenes:', error);
+                elementos.galeria.innerHTML = '<p>Error al cargar las imágenes. Por favor, intenta más tarde.</p>';
+            });
+    }
+    
+    // Construye el HTML para la galería de imágenes
+	<!-- Modifica esta parte en la función renderizarGaleria de tu archivo js.js -->
 
-// Función para cambiar entre imágenes (de forma general)
-function toggleImageVisibility(image1Id, image2Id) {
-	var image1 = document.getElementById(image1Id);
-
-var image2 = document.getElementById(image2Id);
-
-    // Cambia entre mostrar/ocultar las imágenes
-if (image1.style.display === "block") {
-	image1.style.display = "none";
-	image2.style.display = "block";
-} else {
-	image2.style.display = "none";
-	image1.style.display = "block";
-}
-}
-
-// Función para mostrar/ocultar el zoom
-function zom() { 
-	var zoomDiv = document.getElementById("zom");
-zoomDiv.style.display = (zoomDiv.style.display === "none" || zoomDiv.style.display === "") ? "block" : "none";
-}
-
-
-// Función para mostrar una imagen en el div #f1
-function showImage1() { 
-	var zoomDiv = document.getElementById("f1");
-zoomDiv.style.display = (zoomDiv.style.display === "none" || zoomDiv.style.display === "") ? "block" : "none";
-}
-// Función para mostrar una imagen en el div #f2
-
-function showImage2() {
-	var f2 = document.getElementById("f2");
-	f2.style.display = "block" ; 
-}
-
-function showImage3() {
-	var f2 = document.getElementById("f3");
-	f2.style.display = "block" ; 
-}
-function showImage4() {
-	var f2 = document.getElementById("f4");
-	f2.style.display = "block" ; 
-}
-function showImage6() {
-	var f2 = document.getElementById("f6");
-	f2.style.display = "block" ; 
-}
-function showImage7() {
-	var f2 = document.getElementById("f7");
-	f2.style.display = "block" ; 
-}
-
-
-function close1(){
-	var f1 = document.getElementById("f1");
-f1.style.display = "none";  
-}
-function close2(){
-	var f1 = document.getElementById("f2");
-f1.style.display = "none"; 
-}
-function close3(){
-	var f1 = document.getElementById("f3");
-f1.style.display = "none";  
-}
-function close4(){
-	var f1 = document.getElementById("f4");
-f1.style.display = "none";  
-}
-function close6(){
-	var f1 = document.getElementById("f6");
-f1.style.display = "none";  
-}
-function close7(){
-	var f1 = document.getElementById("f7");
-f1.style.display = "none";  
-}
-
-
-// Función para abrir la vista previa de las imágenes en zoom
-function modal1() {
-	toggleImageVisibility("img1", "img2");
-}
-
-function modal2() {
-	toggleImageVisibility("img3", "img4");
-}
-
-function modal3() {
-	toggleImageVisibility("img5", "img6");
-}
-function modal4() {
-	toggleImageVisibility("img7", "img8");
-}
-// Función para mostrar/ocultar el formulario de subida de imagen
-function up() {
-	var upDiv = document.getElementById("up");
-    upDiv.style.display = (upDiv.style.display === "block") ? "none" : "block";  // Alterna entre mostrar/ocultar
-}
-
-
-// lectura del json y covercion a html
-
-function loadJSON() {
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET', './datos.json', true);
-	xhr.onreadystatechange = function() {
-		if (xhr.readyState === 4 && xhr.status === 200) {
-			var jsonResponse = JSON.parse(xhr.responseText);
-			var htmlContent = '';
-
-			jsonResponse.forEach(function(item) {
-				htmlContent += `
-					<div class="orden">
-						<div id="img${item.id}" class="img_show div" style="display:block;">
-							<button class="boton" onclick="modal${item.id}()">
-								<img loading="lazy" src="./img/img.png" alt="${item.titulo}" />
-							</button>
-							
-							<a target="_bank" href="${item.img_restaurada}" download="${item.titulo}" class="dowload">
-								<img loading="lazy" src="./img/descarga.png" alt="Descargar ${item.titulo}" />
-							</a>
-
-							<div class="zom" onclick="zom(), showImage${item.id}()">
-								<img loading="lazy" src="${item.img_preview}" alt="Vista previa de ${item.titulo}" />
-							</div>
+	function renderizarGaleria(imagenes) {
+		if (!elementos.galeria) return;
+		
+		const htmlContenido = imagenes.map(imagen => {
+			return `
+				<div class="orden" data-id="${imagen.id}">
+					<div class="img_show div" style="display:block;" data-modo="restaurada">
+						<button class="boton" onclick="GaleriaApp.alternarVistas(${imagen.id})">
+							<img loading="lazy" src="./img/img.png" alt="${imagen.titulo}" />
+						</button>
+						
+						<a target="_blank" href="${imagen.img_restaurada}" download="${imagen.titulo}" class="dowload">
+							<img loading="lazy" src="./img/descarga.png" alt="Descargar ${imagen.titulo}" />
+						</a>
+	
+						<div class="zom" onclick="GaleriaApp.mostrarVistaGrande('${imagen.img_restaurada}')">
+							<img loading="lazy" src="${imagen.img_preview}" alt="Vista previa de ${imagen.titulo}" />
 						</div>
-
-						<div id="img${item.id2}" class="img_oculta div">
-
-							<button class="boton" onclick="modal${item.id}()">
-								<img loading="lazy" src="./img/img.png" alt="Otra vista de ${item.titulo}" />
-							</button>
-
-							<div class="zom" onclick="zom(), showImage${item.id}()">
-								<img loading="lazy" src="${item.img_original}" alt="Otra vista de ${item.titulo}" />
-							</div>
-
+						
+						<!-- Añadimos la información de título y fecha -->
+						<div class="img-info">
+							<div class="img-titulo">${imagen.titulo}</div>
+							<div class="img-fecha">${imagen.fecha}</div>
 						</div>
 					</div>
-				`;
-			});
+	
+					<div class="img_oculta div" style="display:none;" data-modo="original">
+						<button class="boton" onclick="GaleriaApp.alternarVistas(${imagen.id})">
+							<img loading="lazy" src="./img/img.png" alt="Otra vista de ${imagen.titulo}" />
+						</button>
+	
+						<div class="zom" onclick="GaleriaApp.mostrarVistaGrande('${imagen.img_Norestaurada}')">
+							<img loading="lazy" src="${imagen.img_Norestaurada}" alt="Otra vista de ${imagen.titulo}" />
+						</div>
+						
+						<!-- También añadimos la información en la vista original -->
+						<div class="img-info">
+							<div class="img-titulo">${imagen.titulo}</div>
+							<div class="img-fecha">${imagen.fecha}</div>
+						</div>
+					</div>
+				</div>
+			`;
+		}).join('');
+		
+		elementos.galeria.innerHTML = htmlContenido;
+	}
+    
+    // Alterna entre la imagen restaurada y la original
+    function alternarVistas(id) {
+        const contenedorImagen = document.querySelector(`.orden[data-id="${id}"]`);
+        if (!contenedorImagen) return;
+        
+        const vistaRestaurada = contenedorImagen.querySelector('[data-modo="restaurada"]');
+        const vistaOriginal = contenedorImagen.querySelector('[data-modo="original"]');
+        
+        if (vistaRestaurada.style.display === "block") {
+            vistaRestaurada.style.display = "none";
+            vistaOriginal.style.display = "block";
+        } else {
+            vistaOriginal.style.display = "none";
+            vistaRestaurada.style.display = "block";
+        }
+    }
+    
+    // Muestra la vista grande de la imagen
+    function mostrarVistaGrande(urlImagen) {
+        if (!elementos.vistaGrande) return;
+        
+        // Limpia cualquier contenido previo
+        const contenedorImagen = elementos.vistaGrande.querySelector('.img_zom');
+        contenedorImagen.innerHTML = `<img loading="lazy" src="${urlImagen}" alt="Imagen ampliada">`;
+        
+        // Muestra la vista grande
+        elementos.vistaGrande.style.display = "block";
+    }
+    
+    // Cierra la vista grande
+    function cerrarVistaGrande() {
+        if (!elementos.vistaGrande) return;
+        elementos.vistaGrande.style.display = "none";
+    }
+    
+    // Alterna la visibilidad del formulario de subida
+    function alternarFormularioSubida() {
+        if (!elementos.formularioSubida) return;
+        
+        const estaVisible = elementos.formularioSubida.style.display === "block";
+        elementos.formularioSubida.style.display = estaVisible ? "none" : "block";
+    }
+    
+    // API pública del módulo
+    return {
+        inicializar: inicializar,
+        alternarVistas: alternarVistas,
+        mostrarVistaGrande: mostrarVistaGrande,
+        cerrarVistaGrande: cerrarVistaGrande,
+        alternarFormularioSubida: alternarFormularioSubida
+    };
+})();
 
-			document.getElementById('galeria').innerHTML = htmlContent;
-		}
-	};
-	xhr.send();
+// Inicializar la aplicación cuando se cargue la página
+document.addEventListener('DOMContentLoaded', function() {
+    GaleriaApp.inicializar();
+});
+
+// Función para manejar el evento de carga de la página (para compatibilidad con el código existente)
+function loadJSON() {
+    GaleriaApp.inicializar();
+}
+
+// Función para alternar la visibilidad del formulario de subida (para compatibilidad con el código existente)
+function up() {
+    GaleriaApp.alternarFormularioSubida();
+}
+
+// Función para mostrar/ocultar el zoom (para compatibilidad con el código existente)
+function zom() {
+    const zoomDiv = document.getElementById("zom");
+    if (!zoomDiv) return;
+    
+    const estaVisible = zoomDiv.style.display === "block";
+    zoomDiv.style.display = estaVisible ? "none" : "block";
+    
+    // Si se está cerrando, también limpiamos el contenido
+    if (estaVisible) {
+        GaleriaApp.cerrarVistaGrande();
+    }
 }

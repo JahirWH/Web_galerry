@@ -7,161 +7,58 @@
     <meta name="keywords" content="fotos restauradas, Tlacuilotepec, Puebla, Talcuilo, historia, fotos antiguas, colaboración, galería de fotos">
     <meta name="tlacuilo" content="galeria">
     <title>Galería de Fotos Restauradas - Tlacuilotepec, Puebla y Talcuilo</title>
-    <link rel="icon" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732331199/iglesia_yzhb7b.ico" type="image/x-icon">
+    <link rel="icon" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732331199/iglesia_yzhb7b.ico" type="image/ico">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <script type="text/javascript" src="js.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9520616268561655" crossorigin="anonymous"></script>
 </head>
-<body onload="loadJSON()">
-  
-
+<body>
     <header class="titulo">
         <h1>tlacuilotepec.site</h1>
         <p class="name">Tlacuilotepec, Puebla, México</p>
-        <p onclick="up()" class="colabora">Subir</p>
+        <p onclick="GaleriaApp.alternarFormularioSubida()" class="colabora">Subir</p>
     </header>
 
     <main>
         <section id="wrapper" class="resumen">
-            <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" alt="Foto histórica de Tlacuilotepec">
+            <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" alt="Foto histórica de Tlacuilotepec">
             <div class="texto">
-                <h2><b> Resumen</b></h2>
+                <h2><b>Resumen</b></h2>
                 <p style="font-size: 20px;">
                     Esta es una pequeña galería de fotos restauradas que nos muestran cómo era el municipio hace años. Puedes colaborar enviándonos una foto antigua que tengas, no importa su estado. Las restauraremos y las subiremos a nuestra galería. ¡Tu colaboración es muy valiosa! Ponte en contacto a través del correo <a href="mailto:photos@tlacuilotepecfotos.site">photos@tlacuilotepecfotos.site</a>.
                 </p>
             </div>
         </section>
 
-        <!-- Galería de imágenes -->
+      
+
+        <!-- Galería de imágenes - Se cargará dinámicamente desde JavaScript -->
         <section class="lista" id="galeria">
-
-
-            <!-- Imagen 1 -->
-            <!-- <div class="orden">
-                <div id="img1" class="img_show div" style="display:block;">
-                    <button class="boton" onclick="modal1()">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
-                    </button>
-                    <a target="_bank" href="" download="calle1" class="dowload">
-                        <img  loading="lazy" src="" alt="Descargar foto histórica de la calle">
-                    </a>
-                    <div class="zom" onclick="zom(), showImage1()">
-                        <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324582/calle1_preview_utnl69.jpg" alt="Vista previa de la calle">
-                    </div>
-                </div>
-                
-                
-            </div> -->
-
-            <!-- Imagen 2 -->
-            <!-- <div class="orden">
-                <div id="img3" class="img_show div" style="display:block;">
-                    <button class="boton" onclick="modal2()">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
-                    </button>
-                    <a target="_bank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732324936/calle2-r_x5jphi.jpg" download="calle2" class="dowload">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle">
-                    </a>
-                    <div class="zom" onclick="zom(), showImage2()">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324651/calle2_preview_c3tjkk.jpg" alt="Vista previa de otra calle histórica">
-                    </div>
-                </div>
-
-				<div id="img4" class="img_oculta div">
-                    <button class="boton" onclick="modal2()">
-                        <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
-                    </button>
-                    <div class="zom" onclick="zom(), showImage2()">
-                        <img   src="" alt="Otra vista de la calle histórica">
-                    </div>
-                </div>
-            </div> -->
-
-            <!--agregada -->
-            <!-- <div class="orden">
-                <div  class="img_show div" style="display:block;">
-                    <a target="_bank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1734551210/799668553_251d59a653_o_tzilxx.jpg" download="calle0" class="dowload">
-                        <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle">
-                    </a>
-                    <div class="zom" onclick="zom(), showImage7()">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1734551210/799668553_251d59a653_o_tzilxx.jpg" alt="Vista previa ">
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Imagen 3 -->
-            <!-- <div class="orden">
-                <div id="img5" class="img_show div" style="display:block;">
-                    <button class="boton" onclick="modal3()">
-                        <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png" >
-                    </button>
-                    <a target="_bank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732325018/calle4-r_tdeksh.jpg" download="calle4" class="dowload">
-                        <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle">
-                    </a>
-                    <div class="zom" onclick="zom(), showImage3()">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324616/calle4_preview_zhb8m4.jpg" alt="Vista previa de la calle 4 restaurada">
-                    </div>
-                </div>
-
-				<div id="img6" class="img_oculta div">
-                    <button class="boton" onclick="modal3()">
-                        <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
-                    </button>
-                    <div class="zom" onclick="zom(), showImage3()">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324809/calle4_ij4gzu.jpg" alt="Otra vista de la calle histórica">
-                    </div>
-                </div>
-            </div> -->
-        
-            <!-- Agregada -->
-            <!-- <div class="orden">
-                <div  class="img_show div" style="display:block;">
-                    <a target="_bank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg" download="calle0" class="dowload">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle">
-                    </a>
-                    <div class="zom" onclick="zom(), showImage6()">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg" alt="Vista previa ">
-                    </div>
-                </div>
-            </div> -->
-             <!-- Imagen 4 -->
-             <!-- <div class="orden">
-                <div id="img7" class="img_show div" style="display:block;">
-                    <button class="boton" onclick="modal4()">
-                        <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
-                    </button>
-                    <a target="_bank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1733374540/calle5_pfujtg.jpg" download="calle4" class="dowload">
-                        <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325657/descarga_qi5d3r.png" alt="Descargar foto histórica de la calle">
-                    </a>
-                    <div class="zom" onclick="zom(), showImage4()">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1733375126/ca_e5_preview_dek4f8.jpg" alt="Vista previa de la calle 4 restaurada">
-                    </div>
-                </div>
-
-				<div id="img8" class="img_oculta div">
-                    <button class="boton" onclick="modal4()">
-                        <img   src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325638/img_xsdi6i.png">
-                    </button>
-                    <div class="zom" onclick="zom(), showImage4()">
-                        <img  loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1733374567/calle5_d0jdzg.jpg" alt="Otra vista de la calle histórica">
-                    </div>
-                </div>
-            </div> -->
+            <!-- El contenido se cargará desde JS -->
+            <div class="loading">Cargando imágenes...</div>
         </section>
 
         <p style="color: black; justify-content: center; text-align: center;">Imágenes faltantes en proceso...</p>
 
         <!-- Vista a gran escala -->
         <div id="zom" class="vista_grande" style="display:none;">
-            <div onclick="zom(), close1(), close2(), close3(), close4(), close6(), close7()" class="img_zom">
-                <img  loading="lazy" id="f1" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg">
-                <img  loading="lazy" id="f2" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324936/calle2-r_x5jphi.jpg">
-                <img  loading="lazy" id="f3" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325018/calle4-r_tdeksh.jpg">
-                <img  loading="lazy" id="f4" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1733374540/calle5_pfujtg.jpg">
-                <img  loading="lazy" id="f6" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg">
-                <img  loading="lazy" id="f7" class="img_oculta" src="https://res.cloudinary.com/dr9van0op/image/upload/v1734551210/799668553_251d59a653_o_tzilxx.jpg">
-
+            <div class="img_zom" onclick="GaleriaApp.cerrarVistaGrande()">
+                <!-- Aquí se cargará dinámicamente la imagen ampliada -->
             </div>
         </div>
+
+         <!-- Contenedor para anuncios -->
+      <section class="anuncios">
+        <h3>Publicidad</h3>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9520616268561655"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </section>
 
         <section class="comentarios">
           <h3>Comentarios</h3>
@@ -174,29 +71,30 @@
           <div id="comentarios">
             <?php include('comentarios.php'); ?>
           </div>
-</section>
-
+        </section>
 
         <!-- Formulario de subida de imágenes -->
-        <div class="up" style="display:none;" id="up" onclick="up()">
+        <div class="up" style="display:none;" id="up">
             <div class="up_div">
                 <form class="up_frame" action="subir_imagen.php" method="POST" enctype="multipart/form-data">
-                <label for="images" class="drop-container" id="dropcontainer">
-                    <span class="drop-title">📤 Da click aquí para subir</span>
-                    <p>o arrastra y suelta tu imagen</p>
-                    <input type="file" id="images" name="imagen" accept="image/*" required>
-                </label>
-                <input type="submit" class="btn-envio" value="ENVIAR">
-            </form>
-
+                    <label for="images" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">📤 Da click aquí para subir</span>
+                        <p>o arrastra y suelta tu imagen</p>
+                        <input type="file" id="images" name="imagen" accept="image/*" required>
+                    </label>
+                    <input type="submit" class="btn-envio" value="ENVIAR">
+                </form>
+                <button class="cerrar-btn" onclick="GaleriaApp.alternarFormularioSubida()">Cerrar</button>
             </div>
         </div>
     </main>
+     
 
-  <div class="fin">
-    <p>&copy; Copyright 2025  - All Rights Reserved | </p>
-  </div>
+    <div class="fin">
+        <p>&copy; Copyright 2025 - All Rights Reserved |</p>
+    </div>
 
+    <!-- Carga el script al final para mejorar el rendimiento -->
+    <script type="text/javascript" src="js.js"></script>
 </body>
 </html>
-
