@@ -18,7 +18,9 @@ const GaleriaApp = (function() {
     function inicializar() {
         cargarImagenesDesdeJSON();
     }
-    
+    let url = 'https://api.jsonbin.io/v3/b/681659948a456b79669700c5';
+	// despues veo si utilizo binjson
+
     // Carga las imágenes desde el archivo JSON
     function cargarImagenesDesdeJSON() {
         fetch('./datos.json')
@@ -34,7 +36,6 @@ const GaleriaApp = (function() {
     }
     
     // Construye el HTML para la galería de imágenes
-	<!-- Modifica esta parte en la función renderizarGaleria de tu archivo js.js -->
 
 	function renderizarGaleria(imagenes) {
 		if (!elementos.galeria) return;

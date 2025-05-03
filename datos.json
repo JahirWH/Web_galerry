@@ -48,5 +48,16 @@
         "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1733375523/calle5_pfujtg.jpg",
         "img_Norestaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1733375430/calle5_d0jdzg.jpg",
         "creditos": "Archivo Familiar"
+    },
+    {
+        "id": 6,
+        "titulo": "Plaza Municipal",
+        "descripcion": "Danza en la plaza municipal.",
+        "fecha": " 1999 aprox",
+        "img_preview": "https://res.cloudinary.com/dr9van0op/image/upload/v1746289807/799668553_251d59a653_o_tzilxx_ky1gye.webp", 
+        "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg",
+        "img_Norestaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg",
+        "creditos": "Encontrado en la red"  
     }
+
 ]
