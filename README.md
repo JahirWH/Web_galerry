@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Archived-brightgreen)
 
-![App Screenshot](./img/cap.webp)
+![App Screenshot](./img/captura.webp)
 
 ## Descripción
 
