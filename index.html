@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería histórica de Tlacuilotepec, Puebla con fotos restauradas, historia del municipio, tradiciones y cultura local. Colabora enviando tus fotos antiguas.">
+    <meta name="keywords" content="Tlacuilotepec, Puebla, fotos históricas, galería, cultura, tradiciones, patrimonio, Talcuilo">
+    <title>Galería Histórica de Tlacuilotepec, Puebla - Fotos Restauradas</title>
+    <link rel="icon" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732331199/iglesia_yzhb7b.ico" type="image/ico">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <style>
+        /* Estilos para la galería */
+        body{
+            background-color: #FAF0E6;
+        }
+        .galeria-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .orden {
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .orden:hover {
+            transform: translateY(-5px);
+        }
+        
+        .img_show, .img_oculta {
+            padding: 1rem;
+        }
+        
+        .img_show img, .img_oculta img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .boton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(139, 69, 19, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+        
+        .boton img {
+            width: 16px;
+            height: 16px;
+            filter: invert(1);
+        }
+        
+        .dowload {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            background: rgba(139, 69, 19, 0.8);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+        
+        .dowload img {
+            width: 16px;
+            height: 16px;
+            filter: invert(1);
+        }
+        
+        .zom {
+            cursor: zoom-in;
+        }
+        
+        .img-info {
+            padding: 0.8rem 0;
+        }
+        
+        .img-titulo {
+            font-weight: bold;
+            color: #8B4513;
+            margin-bottom: 0.3rem;
+        }
+        
+        .img-fecha {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Vista grande */
+        .vista_grande {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .img_zom {
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+        }
+        
+        .img_zom img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+        }
+        
+        /* Formulario de subida */
+        .up {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .up_div {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .drop-container {
+            border: 2px dashed #8B4513;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            display: block;
+            cursor: pointer;
+        }
+        
+        .drop-title {
+            font-weight: bold;
+            color: #8B4513;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cerrar-btn {
+            background: #666;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        /* Secciones de contenido */
+        .content-section {
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            max-width: 1200px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .article-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        h2 {
+            color: #8B4513;
+            border-bottom: 3px solid #D2691E;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            color: #8B4513;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #D2691E;
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Header y footer */
+        .titulo {
+            background: #804D21;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-family:  "Playfair Display",robot;
+        }
+        
+        .titulo h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .subtitulo {
+            margin: 0.5rem 0 1.5rem;
+            /* font-style: italic; */
+            font-family: Helvetica;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background: white;
+            color: #8B4513;
+        }
+        .columnas{
+            columns: 2; list-style-type: square;
+        }
+        
+        .fin {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        .res{
+            display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 1rem;
+                margin: 1rem;
+            }
+            .content-section div{
+                display: block;
+            }
+            .res{
+                display: block;
+            }
+            
+           .comentarios{
+            width: 80%;
+
+           }
+            
+            nav {
+                gap: 0.5rem;
+            }
+            .titulo h1{
+                font-size: 30px;
+            }
+
+        }
+
+
+
+</style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9520616268561655" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="titulo">
+        <h1>tlacuilotepecfotos.site</h1>
+        <p class="subtitulo">Tlacuilotepec, Puebla, México</p>
+        <nav>
+            <a href="#historia">Historia</a>
+            <a href="#galeria">Galería</a>
+            <!-- <a href="#cultura">Cultura</a> -->
+            <a href="#datos">Datos</a>
+            <a href="#colaborar">Colaborar</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Resumen -->
+        <section id="resumen" class="content-section">
+            <div class="res" >
+                <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" alt="Calle principal de Tlacuilotepec en los años 50" style="width: 100%; border-radius: 8px;">
+                <div class="article-content">
+                    <h2 style="color: #8B4513; margin-bottom: 1rem;">Bienvenidos a nuestra galería histórica</h2>
+                    <p>Tlacuilotepec, municipio ubicado en la Sierra Norte de Puebla, conserva una rica historia que se remonta a la época prehispánica. Su nombre, de origen náhuatl, significa "en el cerro donde se escribe", haciendo referencia a las pictografías que los antiguos habitantes realizaban en las rocas de la región.</p>
+                    <p>Esta galería muestra fotografías restauradas que capturan la esencia de nuestro pueblo a través del tiempo. Puedes colaborar enviándonos fotos antiguas que tengas - no importa su estado. Las restauraremos y las agregaremos a esta colección.</p>
+                    <button onclick="GaleriaApp.alternarFormularioSubida()" style="background: #8B4513; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; margin-top: 1rem;">Subir fotografía</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anuncio superior -->
+        <section class="anuncios">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9520616268561655"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+
+        <!-- Sección de Historia -->
+        <section id="historia" class="content-section">
+            <h2>Historia de Tlacuilotepec</h2>
+            <div class="article-content">
+                <h3>Orígenes Prehispánicos</h3>
+                <p>Los primeros asentamientos en la región datan de la época prehispánica, cuando grupos nahuas se establecieron aprovechando la fertilidad de las tierras. El cerro principal servía como lugar sagrado donde realizaban ceremonias y plasmaban pictografías.</p>
+                
+                <h3>Época Colonial</h3>
+                <p>Durante el periodo colonial, Tlacuilotepec se consolidó como centro agrícola y religioso. La construcción de la iglesia parroquial, dedicada a San Miguel Arcángel, se inició en el siglo XVII y es un ejemplo destacado de la arquitectura religiosa de la región.</p>
+                
+                <h3>Siglo XX y Actualidad</h3>
+                <p>En el siglo XX, el municipio mantuvo su vocación agrícola mientras incorporaba servicios modernos. La llegada de la electricidad, el agua potable y las comunicaciones transformaron la vida cotidiana sin perder la esencia tradicional que lo caracteriza.</p>
+            </div>
+        </section>
+
+        <!-- Galería Principal -->
+        <section id="galeria" class="content-section">
+            <h2>Galería Fotográfica</h2>
+            <p>Nuestra colección incluye imágenes que abarcan desde principios del siglo XX hasta la década de 1980, mostrando la evolución arquitectónica, social y cultural de Tlacuilotepec.</p>
+            
+            <div class="galeria-container" id="galeria-container">
+                <div class="loading">Cargando imágenes históricas...</div>
+            </div>
+        </section>
+
+        <!-- Sección de Cultura -->
+        <!-- <section id="cultura" class="content-section">
+            <h2>Cultura y Tradiciones</h2>
+            <div class="article-content">
+                <h3>Festividades Principales</h3>
+                <p>La fiesta patronal en honor a San Miguel Arcángel (29 de septiembre) es la celebración más importante, con procesiones, danzas tradicionales y eventos culturales que atraen visitantes de toda la región.</p>
+                
+                <h3>Gastronomía Local</h3>
+                <p>Destacan el mole poblano, tamales de frijol, quesadillas de flor de calabaza y el tradicional atole agrio que se prepara durante las festividades religiosas.</p>
+                
+                <h3>Artesanías</h3>
+                <p>Los artesanos mantienen técnicas ancestrales como el trabajo en barro, tejido en telar de cintura y tallado en madera para crear utensilios y figuras religiosas.</p>
+            </div>
+        </section> -->
+
+        <!-- Sección de Datos -->
+        <section id="datos" class="content-section">
+            <h2>Datos del Municipio</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div style="background: #f8f8f8; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #D2691E;">
+                    <h4 style="color: #8B4513; margin-bottom: 1rem;">Ubicación</h4>
+                    <p><strong>Estado:</strong> Puebla</p>
+                    <p><strong>Región:</strong> Sierra Norte</p>
+                    <p><strong>Altitud:</strong> 2,180 msnm</p>
+                </div>
+                
+                <div style="background: #f8f8f8; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #D2691E;">
+                    <h4 style="color: #8B4513; margin-bottom: 1rem;">Población</h4>
+                    <p><strong>Habitantes:</strong> ~3,500</p>
+                    <p><strong>Comunidades:</strong> 12 localidades</p>
+                    <p><strong>Idiomas:</strong> Español, Náhuatl</p>
+                </div>
+                
+                <div style="background: #f8f8f8; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #D2691E;">
+                    <h4 style="color: #8B4513; margin-bottom: 1rem;">Clima</h4>
+                    <p><strong>Tipo:</strong> Templado subhúmedo</p>
+                    <p><strong>Temperatura:</strong> 12°C - 24°C</p>
+                    <p><strong>Lluvias:</strong> 800-1200mm anuales</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anuncio medio -->
+        <section class="anuncios">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9520616268561655"
+                 data-ad-slot="9876543210"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+
+        <!-- Sección de Colaboración -->
+        <section id="colaborar" class="content-section" style="background: #804D21; color: white;">
+            <h2 style="color: white; border: none; text-align: center; margin: 0;">¡Colabora con Nosotros!</h2>
+            <div class="article-content" style="color: white;">
+                <p style="text-align: center; font-size: 1.1rem; margin: 0;">¿Tienes fotografías antiguas de Tlacuilotepec? Tu contribución ayuda a preservar la memoria histórica de nuestro pueblo.</p>
+                
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <p><strong>Tipos de fotos que buscamos:</strong></p>
+                    <ul class="columna">
+                        <li>Retratos familiares</li>
+                        <li>Vistas de calles y plazas</li>
+                        <li>Edificios históricos</li>
+                        <li>Festividades y eventos</li>
+                        <li>Actividades comerciales</li>
+                        <li>Escenas cotidianas</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 1rem;">
+                    <button onclick="GaleriaApp.alternarFormularioSubida()" style="background: white; color: #8B4513; border: none; padding: 1rem 2rem; border-radius: 25px; cursor: pointer; font-weight: bold; margin: 0 1rem;">Subir fotos</button>
+                    <a href="mailto:photos@tlacuilotepecfotos.site" style="color: white; text-decoration: underline; margin: 0 1rem;">O contáctanos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vista ampliada de imágenes -->
+        <div id="zom" class="vista_grande">
+            <div class="img_zom" onclick="GaleriaApp.cerrarVistaGrande()">
+                <!-- Imagen ampliada se cargará aquí -->
+            </div>
+        </div>
+
+        <!-- Formulario de subida -->
+        <div class="up" id="up">
+            <div class="up_div">
+                <form class="up_frame" action="subir_imagen.php" method="POST" enctype="multipart/form-data">
+                    <label for="images" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">📤 Selecciona tu fotografía</span>
+                        <p>Formatos aceptados: JPG, PNG (Máx. 10MB)</p>
+                        <input type="file" id="images" name="imagen" accept="image/*" required>
+                    </label>
+                    <input type="text" name="descripcion" placeholder="Año aproximado, lugar y personas en la foto" style="width: 100%; padding: 0.8rem; margin: 1rem 0; border: 1px solid #ddd; border-radius: 4px;">
+                    <input type="text" name="contribuidor" placeholder="Tu nombre (opcional)" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;">
+                    <input type="submit" class="btn-envio" value="ENVIAR FOTOGRAFÍA" style="background: #8B4513; color: white; padding: 1rem; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold;">
+                </form>
+                <button class="cerrar-btn" onclick="GaleriaApp.alternarFormularioSubida()">Cancelar</button>
+            </div>
+        </div>
+    </main>
+
+
+
+<section class="comentarios">
+  <h3>Comentarios</h3>
+
+  <div class="contenedor_com">
+    <form class="form" action="guardar.php" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <textarea name="mensaje" rows="4" placeholder="Escribe tu comentario" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+ 
+</section>
+
+<section>
+     <div id="comentarios" class="comentarios_lista">
+    <?php include('comentarios.php'); ?>
+  </div>
+</section>
+
+    <style>
+    .comentarios {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.contenedor_com {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #aaa;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form button {
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: #42b983;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#comentarios {
+ display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 90%;
+  text-align: center;
+  justify-content: center;
+   padding: 15px;
+  background: #f6f1eb;
+  border: 2px solid #b8a58c;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(96, 74, 52, 0.1);
+  font-family: 'Georgia', serif;
+  margin: auto;
+}
+
+
+
+.comentario {
+  align-self: auto;
+  background-color: #eae0d5;
+  padding: 15px 20px;
+  width: calc(100% / 4);
+  max-height: 220px;
+  overflow-y: auto;
+
+  border-radius: 12px 12px 4px 12px;
+  box-shadow: 3px 3px 8px rgba(70, 50, 30, 0.15);
+  border: 1px solid #c2b09a;
+
+  text-align: left;
+  font-size: 16px;
+  color: #4a3b2c;
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  transition: background 0.3s;
+}
+.comentario:hover {
+  background-color: #d6c8b1;
+}
+
+.comentario .nombre {
+  font-weight: bold;
+  color: #5a4332;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.comentario .mensaje {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+</style>
+    <footer class="fin">
+        <p>&copy; 2025 Tlacuilotepec.site - Todos los derechos reservados</p>
+        <p>Proyecto de preservación histórica de Tlacuilotepec, Puebla</p>
+        <p>Contacto: <a href="mailto:photos@tlacuilotepecfotos.site" style="color: #D2691E;">photos@tlacuilotepecfotos.site</a></p>
+    </footer>
+    <script src="js.js"></script>
+    <!-- mas mediqueris -->
+    <style>
+        @media (max-width: 768px) {
+            .comentarios{
+                width: 70%;
+            }
+        }
+        @media (max-width: 500px){
+            .titulo h1{
+                font-size: 20px;
+            }
+            #comentarios{
+                width: 80%;
+            }
+            p{
+                font-size: 16px;
+            }
+            .columnas{
+                columns: 1; list-style-type: square;
+            }
+        }
+    </style>
+
+</body>
+</html>

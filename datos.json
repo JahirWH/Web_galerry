@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "titulo": "Calle Benito Juárez",
+        "descripcion": "Una vista histórica de la calle principal Benito Juárez en el centro de Tlacuilotepec.",
+        "fecha": "aprox 1970",
+        "img_preview": "https://res.cloudinary.com/dr9van0op/image/upload/v1746289638/calle1_preview_utnl69_o2ayc8.webp",
+        "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg",
+        "img_Norestaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg",
+        "creditos": "Colección Familiar"
+    },
+    {
+        "id": 2,
+        "titulo": "Caballo en la calle",
+        "descripcion": "Escena cotidiana de un caballo en las calles empedradas de Tlacuilotepec.",
+        "fecha": " 1985 aprox",
+        "img_preview": "https://res.cloudinary.com/dr9van0op/image/upload/v1746289640/calle2_preview_c3tjkk_o4fdkg.webp",
+        "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg",
+        "img_Norestaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg",
+        "creditos": "Colección Particular"
+    },
+    {
+        "id": 3,
+        "titulo": "Calle arriba",
+        "descripcion": "Vista de una de las calles empinadas características de Tlacuilotepec.",
+        "fecha": " 1980 aprox",
+        "img_preview": "https://res.cloudinary.com/dr9van0op/image/upload/v1746289638/calle4_preview_zhb8m4_jpu8sl.webp",
+        "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1732338792/calle4-r_tdeksh.jpg",
+        "img_Norestaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1732593401/calle4_ij4gzu.jpg",
+        "creditos": "Archivo Familiar"
+    },
+    {
+        "id": 4,
+        "titulo": "Señor posando en la calle",
+        "descripcion": "Retrato de un habitante local posando en una de las calles del municipio.",
+        "fecha": " 1978 aprox",
+        "img_preview": "https://res.cloudinary.com/dr9van0op/image/upload/v1746289766/799668569_68e5b8e709_o_dlb7r7_vu0qn0.webp",
+        "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg",
+        "img_Norestaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg",
+        "creditos": "Encontrado en la red"
+    },
+    {
+        "id": 5,
+        "titulo": "Semana Santa",
+        "descripcion": "Celebración tradicional de Semana Santa en las calles de Tlacuilotepec.",
+        "fecha": "2005 aprox",
+        "img_preview": "https://res.cloudinary.com/dr9van0op/image/upload/v1746289638/ca_e5_preview_dek4f8_nuzd7m.webp",
+        "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1733375523/calle5_pfujtg.jpg",
+        "img_Norestaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1733375430/calle5_d0jdzg.jpg",
+        "creditos": "Archivo Familiar"
+    },
+    {
+        "id": 6,
+        "titulo": "Plaza Municipal",
+        "descripcion": "Danza en la plaza municipal.",
+        "fecha": " 1999 aprox",
+        "img_preview": "https://res.cloudinary.com/dr9van0op/image/upload/v1746289807/799668553_251d59a653_o_tzilxx_ky1gye.webp", 
+        "img_restaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg",
+        "img_Norestaurada": "https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg",
+        "creditos": "Encontrado en la red"  
+    }
+
+]
