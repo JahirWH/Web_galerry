@@ -27,10 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-        // Limitar el tamaño del archivo 
-        $maxTamano = 6 * 1024 * 1024; 
+        // Limitar el tamaño del archivo (por ejemplo, 3MB)
+        $maxTamano = 4 * 1024 * 1024; // 3MB
         if ($tamanoArchivo > $maxTamano) {
-            echo "Error: El archivo es demasiado grande. El tamaño máximo es 6MB.";
+            echo "Error: El archivo es demasiado grande. El tamaño máximo es 4MB.";
             exit;
         }
 

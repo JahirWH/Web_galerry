@@ -1,5 +1,5 @@
 <?php
-$conexion = new mysqli("histing", "nombre_base", "pass", "nombre de la tabla");
+$conexion = new mysqli("pdb1043.awardspace.net", "4554922_blog", "Nw]H1360Xkjh", "4554922_blog");
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
@@ -10,5 +10,5 @@ $mensaje = $conexion->real_escape_string($_POST['mensaje']);
 $sql = "INSERT INTO comentarios (nombre, mensaje) VALUES ('$nombre', '$mensaje')";
 $conexion->query($sql);
 
-header("Location: index.html"); 
+header("Location: index.html"); // O el archivo que desees
 ?>

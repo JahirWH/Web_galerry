@@ -1,1 +1,14 @@
-#hi
+User-agent: *
+Allow: /
+
+# Bloquea carpetas innecesarias (si existen)
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /private/
+
+# Permite imágenes para ser indexadas
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap (muy importante para SEO)
+Sitemap: http://www.tlacuilotepecfotos.site/sitemap.xml

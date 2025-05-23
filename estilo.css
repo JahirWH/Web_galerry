@@ -136,6 +136,10 @@ transition-duration: 0.8s;
 }
 
 
+/* Efecto hover */
+.orden:hover, 
+.orden:active {
+}
 
 /* Contenedores */
 .div {
@@ -198,7 +202,7 @@ transition-duration: 0.8s;
     margin-bottom: 2px;
     letter-spacing: 1px;
 }
-.img-fecha{
+.img-fecha {
     font-size: 15px;
     font-style: italic;
     opacity: 0.8;

@@ -1,5 +1,5 @@
 <?php
-$conexion = new mysqli("servidor", "nombre baser", "pass", "nombre de la tabla");
+$conexion = new mysqli("pdb1043.awardspace.net", "4554922_blog", "Nw]H1360Xkjh", "4554922_blog");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
