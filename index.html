@@ -355,12 +355,210 @@
         </section>
 
         <!-- Galería Principal -->
-        <section id="galeria" class="content-section">
+        <!-- <section id="galeria" class="content-section">
             <h2>Galería Fotográfica</h2>
             <p>Nuestra colección incluye imágenes que abarcan desde principios del siglo XX hasta la década de 1980, mostrando la evolución arquitectónica, social y cultural de Tlacuilotepec.</p>
             
             <div class="galeria-container" id="galeria-container">
                 <div class="loading">Cargando imágenes históricas...</div>
+            </div>
+        </section> -->
+
+
+
+
+         <section id="galeria" class="content-section">
+            <h2>Galería Fotográfica</h2>
+            <p>Nuestra colección incluye imágenes que abarcan desde principios del siglo XX hasta la década de 1980, mostrando la evolución arquitectónica, social y cultural de Tlacuilotepec.</p>
+            
+            <div class="galeria-container" id="galeria-container">
+                
+                <!-- Imagen 1: Calle Benito Juárez -->
+                <div class="orden" data-id="1">
+                    <div class="img_show div" style="display:block;" data-modo="restaurada">
+                        <button class="boton" onclick="alternarVistas(1)"></button>
+                        
+                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg" download="Calle Benito Juárez - Tlacuilotepec 1970" class="dowload"></a>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289638/calle1_preview_utnl69_o2ayc8.webp" alt="Vista previa de Calle Benito Juárez" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Calle Benito Juárez</div>
+                            <div class="img-fecha">aprox 1970</div>
+                        </div>
+                    </div>
+        
+                    <div class="img_oculta div" style="display:none;" data-modo="original">
+                        <button class="boton" onclick="alternarVistas(1)"></button>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg" alt="Versión original de Calle Benito Juárez" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Calle Benito Juárez (Original)</div>
+                            <div class="img-fecha">aprox 1970</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 2: Caballo en la calle -->
+                <div class="orden" data-id="2">
+                    <div class="img_show div" style="display:block;" data-modo="restaurada">
+                        <button class="boton" onclick="alternarVistas(2)"></button>
+                        
+                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg" download="Caballo en la calle - Tlacuilotepec 1985" class="dowload"></a>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289640/calle2_preview_c3tjkk_o4fdkg.webp" alt="Vista previa de Caballo en la calle" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Caballo en la calle</div>
+                            <div class="img-fecha"> 1985 aprox</div>
+                        </div>
+                    </div>
+        
+                    <div class="img_oculta div" style="display:none;" data-modo="original">
+                        <button class="boton" onclick="alternarVistas(2)"></button>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg" alt="Versión original de Caballo en la calle" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Caballo en la calle (Original)</div>
+                            <div class="img-fecha"> 1985 aprox</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 3: Calle arriba -->
+                <div class="orden" data-id="3">
+                    <div class="img_show div" style="display:block;" data-modo="restaurada">
+                        <button class="boton" onclick="alternarVistas(3)"></button>
+                        
+                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732338792/calle4-r_tdeksh.jpg" download="Calle arriba - Tlacuilotepec 1980" class="dowload"></a>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732338792/calle4-r_tdeksh.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289638/calle4_preview_zhb8m4_jpu8sl.webp" alt="Vista previa de Calle arriba" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Calle arriba</div>
+                            <div class="img-fecha"> 1980 aprox</div>
+                        </div>
+                    </div>
+        
+                    <div class="img_oculta div" style="display:none;" data-modo="original">
+                        <button class="boton" onclick="alternarVistas(3)"></button>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732593401/calle4_ij4gzu.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732593401/calle4_ij4gzu.jpg" alt="Versión original de Calle arriba" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Calle arriba (Original)</div>
+                            <div class="img-fecha"> 1980 aprox</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 4: Señor posando en la calle -->
+                <div class="orden" data-id="4">
+                    <div class="img_show div" style="display:block;" data-modo="restaurada">
+                        <button class="boton" onclick="alternarVistas(4)"></button>
+                        
+                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg" download="Señor posando en la calle - Tlacuilotepec 1978" class="dowload"></a>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289766/799668569_68e5b8e709_o_dlb7r7_vu0qn0.webp" alt="Vista previa de Señor posando en la calle" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Señor posando en la calle</div>
+                            <div class="img-fecha"> 1978 aprox</div>
+                        </div>
+                    </div>
+        
+                    <div class="img_oculta div" style="display:none;" data-modo="original">
+                        <button class="boton" onclick="alternarVistas(4)"></button>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg" alt="Versión original de Señor posando en la calle" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Señor posando en la calle (Original)</div>
+                            <div class="img-fecha"> 1978 aprox</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 5: Semana Santa -->
+                <div class="orden" data-id="5">
+                    <div class="img_show div" style="display:block;" data-modo="restaurada">
+                        <button class="boton" onclick="alternarVistas(5)"></button>
+                        
+                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1733375523/calle5_pfujtg.jpg" download="Semana Santa - Tlacuilotepec 2005" class="dowload"></a>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1733375523/calle5_pfujtg.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289638/ca_e5_preview_dek4f8_nuzd7m.webp" alt="Vista previa de Semana Santa" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Semana Santa</div>
+                            <div class="img-fecha">2005 aprox</div>
+                        </div>
+                    </div>
+        
+                    <div class="img_oculta div" style="display:none;" data-modo="original">
+                        <button class="boton" onclick="alternarVistas(5)"></button>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1733375430/calle5_d0jdzg.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1733375430/calle5_d0jdzg.jpg" alt="Versión original de Semana Santa" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Semana Santa (Original)</div>
+                            <div class="img-fecha">2005 aprox</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 6: Plaza Municipal -->
+                <div class="orden" data-id="6">
+                    <div class="img_show div" style="display:block;" data-modo="restaurada">
+                        <button class="boton" onclick="alternarVistas(6)"></button>
+                        
+                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg" download="Plaza Municipal - Tlacuilotepec 1999" class="dowload"></a>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289807/799668553_251d59a653_o_tzilxx_ky1gye.webp" alt="Vista previa de Plaza Municipal" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Plaza Municipal</div>
+                            <div class="img-fecha"> 1999 aprox</div>
+                        </div>
+                    </div>
+        
+                    <div class="img_oculta div" style="display:none;" data-modo="original">
+                        <button class="boton" onclick="alternarVistas(6)"></button>
+        
+                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg')">
+                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg" alt="Versión original de Plaza Municipal" />
+                        </div>
+                        
+                        <div class="img-info">
+                            <div class="img-titulo">Plaza Municipal (Original)</div>
+                            <div class="img-fecha"> 1999 aprox</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
