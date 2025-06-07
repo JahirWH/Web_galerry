@@ -3,15 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Galería histórica de Tlacuilotepec, Puebla con fotos restauradas, historia del municipio, tradiciones y cultura local. Colabora enviando tus fotos antiguas.">
-    <meta name="keywords" content="Tlacuilotepec, Puebla, fotos históricas, galería, cultura, tradiciones, patrimonio, Talcuilo">
-    <title>Galería Histórica de Tlacuilotepec, Puebla - Fotos Restauradas</title>
+    <meta name="description" content="Galería histórica de Tlacuilotepec, Puebla con fotos restauradas, historia del municipio, tradiciones y cultura local. Colabora enviando tus fotos antiguas. Descubre la rica historia de este pueblo mágico de la Sierra Norte de Puebla.">
+    <meta name="keywords" content="Tlacuilotepec, Puebla, fotos históricas, galería, cultura, tradiciones, patrimonio, Talcuilo, Sierra Norte, turismo, historia México, fotografía antigua, restauración fotos">
+    <title>Galería Histórica de Tlacuilotepec, Puebla - Fotos Restauradas y Historia del Municipio</title>
     <link rel="icon" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732331199/iglesia_yzhb7b.ico" type="image/ico">
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <style>
         /* Estilos para la galería */
         body{
             background-color: #FAF0E6;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
         }
         .galeria-container {
             display: grid;
@@ -212,13 +214,19 @@
             padding-bottom: 0.5rem;
         }
         
+        h4 {
+            color: #8B4513;
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
         /* Header y footer */
         .titulo {
             background: #804D21;
             color: white;
             text-align: center;
             padding: 2rem;
-            font-family:  "Playfair Display",robot;
+            font-family: "Playfair Display", serif;
         }
         
         .titulo h1 {
@@ -228,7 +236,6 @@
         
         .subtitulo {
             margin: 0.5rem 0 1.5rem;
-            /* font-style: italic; */
             font-family: Helvetica;
         }
         
@@ -266,7 +273,110 @@
         .res{
             display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
         }
-        
+
+        /* Nuevos estilos para contenido adicional */
+        .datos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .dato-card {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #D2691E;
+            transition: transform 0.3s ease;
+        }
+
+        .dato-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .timeline {
+            border-left: 3px solid #D2691E;
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #D2691E;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: #8B4513;
+            font-size: 1.2rem;
+        }
+
+        .personalidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .personalidad-card {
+            background: linear-gradient(135deg, #f8f4f0 0%, #e8ddd4 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 1px solid #d4c4b0;
+        }
+
+        .economia-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tradicion-item {
+            background: #faf7f3;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 5px solid #8B4513;
+        }
+
+        .lista-destacada {
+            background: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 1px solid #d0e7ff;
+        }
+
+        .sitios-interes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .sitio-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 4px solid #8B4513;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .content-section {
@@ -282,7 +392,6 @@
             
            .comentarios{
             width: 80%;
-
            }
             
             nav {
@@ -292,22 +401,131 @@
                 font-size: 30px;
             }
 
+            .datos-grid,
+            .personalidades-grid,
+            .economia-sections,
+            .sitios-interes {
+                grid-template-columns: 1fr;
+            }
         }
 
+        @media (max-width: 500px){
+            .titulo h1{
+                font-size: 20px;
+            }
+            #comentarios{
+                width: 80%;
+            }
+            p{
+                font-size: 16px;
+            }
+            .columnas{
+                columns: 1; list-style-type: square;
+            }
+        }
 
+        /* Estilos de comentarios */
+        .comentarios {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: sans-serif;
+        }
 
-</style>
+        .contenedor_com {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #aaa;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .form button {
+            width: fit-content;
+            padding: 10px 20px;
+            background-color: #42b983;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #comentarios {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            width: 90%;
+            text-align: center;
+            justify-content: center;
+            padding: 15px;
+            background: #f6f1eb;
+            border: 2px solid #b8a58c;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(96, 74, 52, 0.1);
+            font-family: 'Georgia', serif;
+            margin: auto;
+        }
+
+        .comentario {
+            align-self: auto;
+            background-color: #eae0d5;
+            padding: 15px 20px;
+            width: calc(100% / 4);
+            max-height: 220px;
+            overflow-y: auto;
+            border-radius: 12px 12px 4px 12px;
+            box-shadow: 3px 3px 8px rgba(70, 50, 30, 0.15);
+            border: 1px solid #c2b09a;
+            text-align: left;
+            font-size: 16px;
+            color: #4a3b2c;
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            transition: background 0.3s;
+        }
+        
+        .comentario:hover {
+            background-color: #d6c8b1;
+        }
+
+        .comentario .nombre {
+            font-weight: bold;
+            color: #5a4332;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .comentario .mensaje {
+            font-size: 15px;
+            line-height: 1.4;
+        }
+    </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9520616268561655" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="titulo">
         <h1>tlacuilotepecfotos.site</h1>
-        <p class="subtitulo">Tlacuilotepec, Puebla, México</p>
+        <p class="subtitulo">Tlacuilotepec, Puebla, México - Preservando Nuestra Historia</p>
         <nav>
             <a href="#historia">Historia</a>
             <a href="#galeria">Galería</a>
-            <!-- <a href="#cultura">Cultura</a> -->
+            <a href="#cultura">Cultura</a>
             <a href="#datos">Datos</a>
+            <a href="#turismo">Turismo</a>
             <a href="#colaborar">Colaborar</a>
         </nav>
     </header>
@@ -315,12 +533,13 @@
     <main>
         <!-- Sección de Resumen -->
         <section id="resumen" class="content-section">
-            <div class="res" >
+            <div class="res">
                 <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" alt="Calle principal de Tlacuilotepec en los años 50" style="width: 100%; border-radius: 8px;">
                 <div class="article-content">
                     <h2 style="color: #8B4513; margin-bottom: 1rem;">Bienvenidos a nuestra galería histórica</h2>
                     <p>Tlacuilotepec, municipio ubicado en la Sierra Norte de Puebla, conserva una rica historia que se remonta a la época prehispánica. Su nombre, de origen náhuatl, significa "en el cerro donde se escribe", haciendo referencia a las pictografías que los antiguos habitantes realizaban en las rocas de la región.</p>
-                    <p>Esta galería muestra fotografías restauradas que capturan la esencia de nuestro pueblo a través del tiempo. Puedes colaborar enviándonos fotos antiguas que tengas - no importa su estado. Las restauraremos y las agregaremos a esta colección.</p>
+                    <!-- <p>Esta galería digital representa el esfuerzo colectivo de la comunidad por preservar la memoria histórica de nuestro querido pueblo. Cada fotografía restaurada cuenta una historia única, capturando momentos que definen la identidad y evolución de Tlacuilotepec a través de las décadas.</p> -->
+                    <p>Nuestro proyecto de restauración fotográfica utiliza técnicas modernas de digitalización y restauración para devolver la vida a imágenes que parecían perdidas para siempre. Puedes colaborar enviándonos fotos antiguas que tengas - no importa su estado. Las restauraremos y las agregaremos a esta colección histórica.</p>
                     <button onclick="GaleriaApp.alternarFormularioSubida()" style="background: #8B4513; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; margin-top: 1rem;">Subir fotografía</button>
                 </div>
             </div>
@@ -339,268 +558,141 @@
             </script>
         </section>
 
-        <!-- Sección de Historia -->
+          <!-- Galería Principal -->
+        <section id="galeria" class="content-section">
+            <h2>Galería Fotográfica Histórica</h2>
+            <p>Nuestra colección de fotografías históricas abarca más de un siglo de historia visual de Tlacuilotepec. Estas imágenes, cuidadosamente restauradas utilizando técnicas modernas de digitalización y retoque fotográfico, documentan la evolución arquitectónica, social y cultural de nuestro municipio desde principios del siglo XX hasta la década de 1980.</p>
+            
+            <p>Cada fotografía ha sido catalogada con información detallada sobre su fecha aproximada, ubicación, personajes identificados y contexto histórico. El proceso de restauración incluye corrección de color, eliminación de manchas y rasgaduras, y estabilización digital para garantizar su preservación a largo plazo.</p>
+            
+            <div class="lista-destacada">
+                <h4>Temáticas de nuestra colección:</h4>
+                <ul>
+                    <li><strong>Arquitectura religiosa:</strong> Evolución de la iglesia parroquial de San Miguel Arcángel, capillas familiares y espacios ceremoniales</li>
+                    <li><strong>Vida urbana:</strong> Desarrollo de las calles principales, el mercado local, espacios públicos y viviendas tradicionales</li>
+                    <li><strong>Actividades económicas:</strong> Agricultura tradicional, comercio local, talleres artesanales y actividades ganaderas</li>
+                    <li><strong>Celebraciones:</strong> Fiestas patronales, bodas, bautizos, festividades cívicas y ceremonias tradicionales</li>
+                    <li><strong>Educación:</strong> Primeras escuelas, maestros, estudiantes y eventos académicos</li>
+                    <li><strong>Retratos familiares:</strong> Familias prominentes, grupos comunitarios y personalidades locales</li>
+                </ul>
+            </div>
+            
+            <div class="galeria-container" id="galeria-container">
+                <!-- Aquí irían las imágenes de ejemplo que puedes agregar -->
+                <div class="orden">
+                    <div class="img_show">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" alt="Calle Principal 1950" class="zom">
+                        <div class="img-info">
+                            <div class="img-titulo">Calle Principal - Años 50</div>
+                            <div class="img-fecha">Circa 1950 | Centro de Tlacuilotepec</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="loading">Cargando más imágenes históricas...</div>
+            </div>
+        </section>
+
+        <!-- Sección de Historia Expandida -->
         <section id="historia" class="content-section">
-            <h2>Historia de Tlacuilotepec</h2>
+            <h2>Historia Completa de Tlacuilotepec</h2>
             <div class="article-content">
-                <h3>Orígenes Prehispánicos</h3>
-                <p>Los primeros asentamientos en la región datan de la época prehispánica, cuando grupos nahuas se establecieron aprovechando la fertilidad de las tierras. El cerro principal servía como lugar sagrado donde realizaban ceremonias y plasmaban pictografías.</p>
+                <h3>Orígenes y Fundación</h3>
+                <p>Tlacuilotepec fue fundado por comunidades otomíes y totonacas en la época prehispánica, siendo tributario del reino de Texcoco. Durante la Colonia perteneció al distrito de Huauchinango y en 1895 obtuvo la categoría de municipio libre.</p>
                 
-                <h3>Época Colonial</h3>
-                <p>Durante el periodo colonial, Tlacuilotepec se consolidó como centro agrícola y religioso. La construcción de la iglesia parroquial, dedicada a San Miguel Arcángel, se inició en el siglo XVII y es un ejemplo destacado de la arquitectura religiosa de la región.</p>
-                
-                <h3>Siglo XX y Actualidad</h3>
-                <p>En el siglo XX, el municipio mantuvo su vocación agrícola mientras incorporaba servicios modernos. La llegada de la electricidad, el agua potable y las comunicaciones transformaron la vida cotidiana sin perder la esencia tradicional que lo caracteriza.</p>
+                <h3>Hechos Históricos Destacados</h3>
+                <p>En diciembre de 1923, el pueblo de Cuautepec (hoy en Tlacuilotepec) fue sede temporal del gobierno del estado de Puebla, con un acta firmada por el gobernador Froylán C. Manjarrez y el diputado Gilberto Bosques Saldívar. Este hecho histórico marca un momento importante en la vida política del municipio.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">Época Prehispánica</div>
+                        <p>Fundación por comunidades otomíes y totonacas. Tributario del reino de Texcoco.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1895</div>
+                        <p>Obtiene la categoría de municipio libre.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1923</div>
+                        <p>Cuautepec es sede temporal del gobierno estatal.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Galería Principal -->
-        <!-- <section id="galeria" class="content-section">
-            <h2>Galería Fotográfica</h2>
-            <p>Nuestra colección incluye imágenes que abarcan desde principios del siglo XX hasta la década de 1980, mostrando la evolución arquitectónica, social y cultural de Tlacuilotepec.</p>
-            
-            <div class="galeria-container" id="galeria-container">
-                <div class="loading">Cargando imágenes históricas...</div>
-            </div>
-        </section> -->
-
-
-
-
-         <section id="galeria" class="content-section">
-            <h2>Galería Fotográfica</h2>
-            <p>Nuestra colección incluye imágenes que abarcan desde principios del siglo XX hasta la década de 1980, mostrando la evolución arquitectónica, social y cultural de Tlacuilotepec.</p>
-            
-            <div class="galeria-container" id="galeria-container">
-                
-                <!-- Imagen 1: Calle Benito Juárez -->
-                <div class="orden" data-id="1">
-                    <div class="img_show div" style="display:block;" data-modo="restaurada">
-                        <button class="boton" onclick="alternarVistas(1)"></button>
-                        
-                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg" download="Calle Benito Juárez - Tlacuilotepec 1970" class="dowload"></a>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732324702/calle1-r_yix6yv.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289638/calle1_preview_utnl69_o2ayc8.webp" alt="Vista previa de Calle Benito Juárez" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Calle Benito Juárez</div>
-                            <div class="img-fecha">aprox 1970</div>
-                        </div>
-                    </div>
-        
-                    <div class="img_oculta div" style="display:none;" data-modo="original">
-                        <button class="boton" onclick="alternarVistas(1)"></button>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732324645/calle1_clxm8l.jpg" alt="Versión original de Calle Benito Juárez" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Calle Benito Juárez (Original)</div>
-                            <div class="img-fecha">aprox 1970</div>
-                        </div>
-                    </div>
+        <!-- Sección de Personajes Ilustres -->
+        <section class="content-section">
+            <h2>Personajes Ilustres</h2>
+            <div class="personalidades-grid">
+                <div class="personalidad-card">
+                    <h4>Leonardo Animas (1874)</h4>
+                    <p>Destacado escritor local, autor de la obra literaria "Los Cuatro Colosos de la Educación de México", que refleja la tradición cultural local.</p>
                 </div>
-
-                <!-- Imagen 2: Caballo en la calle -->
-                <div class="orden" data-id="2">
-                    <div class="img_show div" style="display:block;" data-modo="restaurada">
-                        <button class="boton" onclick="alternarVistas(2)"></button>
-                        
-                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg" download="Caballo en la calle - Tlacuilotepec 1985" class="dowload"></a>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289640/calle2_preview_c3tjkk_o4fdkg.webp" alt="Vista previa de Caballo en la calle" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Caballo en la calle</div>
-                            <div class="img-fecha"> 1985 aprox</div>
-                        </div>
-                    </div>
-        
-                    <div class="img_oculta div" style="display:none;" data-modo="original">
-                        <button class="boton" onclick="alternarVistas(2)"></button>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732407819/calle2-r_x5jphi.jpg" alt="Versión original de Caballo en la calle" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Caballo en la calle (Original)</div>
-                            <div class="img-fecha"> 1985 aprox</div>
-                        </div>
-                    </div>
+                <div class="personalidad-card">
+                    <h4>Teniente Coronel Fortino Ortíz Islas</h4>
+                    <p>Militar distinguido que se destacó en el ámbito castrense local, contribuyendo a la historia militar del municipio.</p>
                 </div>
-
-                <!-- Imagen 3: Calle arriba -->
-                <div class="orden" data-id="3">
-                    <div class="img_show div" style="display:block;" data-modo="restaurada">
-                        <button class="boton" onclick="alternarVistas(3)"></button>
-                        
-                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732338792/calle4-r_tdeksh.jpg" download="Calle arriba - Tlacuilotepec 1980" class="dowload"></a>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732338792/calle4-r_tdeksh.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289638/calle4_preview_zhb8m4_jpu8sl.webp" alt="Vista previa de Calle arriba" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Calle arriba</div>
-                            <div class="img-fecha"> 1980 aprox</div>
-                        </div>
-                    </div>
-        
-                    <div class="img_oculta div" style="display:none;" data-modo="original">
-                        <button class="boton" onclick="alternarVistas(3)"></button>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1732593401/calle4_ij4gzu.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1732593401/calle4_ij4gzu.jpg" alt="Versión original de Calle arriba" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Calle arriba (Original)</div>
-                            <div class="img-fecha"> 1980 aprox</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Imagen 4: Señor posando en la calle -->
-                <div class="orden" data-id="4">
-                    <div class="img_show div" style="display:block;" data-modo="restaurada">
-                        <button class="boton" onclick="alternarVistas(4)"></button>
-                        
-                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg" download="Señor posando en la calle - Tlacuilotepec 1978" class="dowload"></a>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289766/799668569_68e5b8e709_o_dlb7r7_vu0qn0.webp" alt="Vista previa de Señor posando en la calle" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Señor posando en la calle</div>
-                            <div class="img-fecha"> 1978 aprox</div>
-                        </div>
-                    </div>
-        
-                    <div class="img_oculta div" style="display:none;" data-modo="original">
-                        <button class="boton" onclick="alternarVistas(4)"></button>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1734551199/799668569_68e5b8e709_o_dlb7r7.jpg" alt="Versión original de Señor posando en la calle" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Señor posando en la calle (Original)</div>
-                            <div class="img-fecha"> 1978 aprox</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Imagen 5: Semana Santa -->
-                <div class="orden" data-id="5">
-                    <div class="img_show div" style="display:block;" data-modo="restaurada">
-                        <button class="boton" onclick="alternarVistas(5)"></button>
-                        
-                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1733375523/calle5_pfujtg.jpg" download="Semana Santa - Tlacuilotepec 2005" class="dowload"></a>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1733375523/calle5_pfujtg.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289638/ca_e5_preview_dek4f8_nuzd7m.webp" alt="Vista previa de Semana Santa" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Semana Santa</div>
-                            <div class="img-fecha">2005 aprox</div>
-                        </div>
-                    </div>
-        
-                    <div class="img_oculta div" style="display:none;" data-modo="original">
-                        <button class="boton" onclick="alternarVistas(5)"></button>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1733375430/calle5_d0jdzg.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1733375430/calle5_d0jdzg.jpg" alt="Versión original de Semana Santa" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Semana Santa (Original)</div>
-                            <div class="img-fecha">2005 aprox</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Imagen 6: Plaza Municipal -->
-                <div class="orden" data-id="6">
-                    <div class="img_show div" style="display:block;" data-modo="restaurada">
-                        <button class="boton" onclick="alternarVistas(6)"></button>
-                        
-                        <a target="_blank" href="https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg" download="Plaza Municipal - Tlacuilotepec 1999" class="dowload"></a>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1746289807/799668553_251d59a653_o_tzilxx_ky1gye.webp" alt="Vista previa de Plaza Municipal" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Plaza Municipal</div>
-                            <div class="img-fecha"> 1999 aprox</div>
-                        </div>
-                    </div>
-        
-                    <div class="img_oculta div" style="display:none;" data-modo="original">
-                        <button class="boton" onclick="alternarVistas(6)"></button>
-        
-                        <div class="zom" onclick="mostrarVistaGrande('https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg')">
-                            <img loading="lazy" src="https://res.cloudinary.com/dr9van0op/image/upload/v1734552503/799668553_251d59a653_o_tzilxx.jpg" alt="Versión original de Plaza Municipal" />
-                        </div>
-                        
-                        <div class="img-info">
-                            <div class="img-titulo">Plaza Municipal (Original)</div>
-                            <div class="img-fecha"> 1999 aprox</div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <!-- Sección de Cultura -->
-        <!-- <section id="cultura" class="content-section">
+        <!-- Sección de Cultura y Tradiciones -->
+        <section id="cultura" class="content-section">
             <h2>Cultura y Tradiciones</h2>
             <div class="article-content">
                 <h3>Festividades Principales</h3>
-                <p>La fiesta patronal en honor a San Miguel Arcángel (29 de septiembre) es la celebración más importante, con procesiones, danzas tradicionales y eventos culturales que atraen visitantes de toda la región.</p>
+                <p>El festejo más importante es la fiesta patronal del Señor (Cristo) Rey, que se celebra el 24 de agosto. Este día se realizan misas solemnes, rezos y una procesión con la imagen de Cristo Rey, acompañadas de carreras de caballos, juegos pirotécnicos y jaripeo.</p>
                 
-                <h3>Gastronomía Local</h3>
-                <p>Destacan el mole poblano, tamales de frijol, quesadillas de flor de calabaza y el tradicional atole agrio que se prepara durante las festividades religiosas.</p>
+                <h3>Semana Santa y Día de Muertos</h3>
+                <p>Durante la Semana Santa se organiza una feria local con misas, procesiones y danzas tradicionales como la danza de los aztecas o de los voladores. El Día de Todos Santos y Fieles Difuntos (1 y 2 de noviembre) se conmemora con altares familiares y ofrendas florales.</p>
                 
-                <h3>Artesanías</h3>
-                <p>Los artesanos mantienen técnicas ancestrales como el trabajo en barro, tejido en telar de cintura y tallado en madera para crear utensilios y figuras religiosas.</p>
+                <h3>Artesanías y Gastronomía</h3>
+                <p>Las artesanías tradicionales incluyen alfarería (barricas, ollas), cestería (canastas) y bordados regionales. La gastronomía local destaca por el mole poblano, tamales, barbacoa y pipián, así como dulces de conservas de fruta y bebidas tradicionales como el café local y el aguardiente de caña o de guayaba.</p>
             </div>
-        </section> -->
+        </section>
 
-        <!-- Sección de Datos -->
-        <section id="datos" class="content-section">
-            <h2>Datos del Municipio</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                <div style="background: #f8f8f8; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #D2691E;">
-                    <h4 style="color: #8B4513; margin-bottom: 1rem;">Ubicación</h4>
-                    <p><strong>Estado:</strong> Puebla</p>
-                    <p><strong>Región:</strong> Sierra Norte</p>
-                    <p><strong>Altitud:</strong> 2,180 msnm</p>
-                </div>
+        <!-- Sección de Geografía -->
+        <section class="content-section">
+            <h2>Geografía y Medio Físico</h2>
+            <div class="article-content">
+                <h3>Ubicación y Límites</h3>
+                <p>Tlacuilotepec se ubica en la parte noroeste del estado de Puebla, en la Sierra Norte poblana. Limita al norte con el municipio de Jalpan (y el estado de Hidalgo), al sur con Huauchinango y Naupan, al oeste con Xicotepec y al noroeste con Tlaxco (Tlaxcala).</p>
                 
-                <div style="background: #f8f8f8; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #D2691E;">
-                    <h4 style="color: #8B4513; margin-bottom: 1rem;">Población</h4>
-                    <p><strong>Habitantes:</strong> ~3,500</p>
-                    <p><strong>Comunidades:</strong> 12 localidades</p>
-                    <p><strong>Idiomas:</strong> Español, Náhuatl</p>
-                </div>
+                <h3>Relieve y Clima</h3>
+                <p>El relieve es muy accidentado y montañoso, con numerosos cerros como Guajolote, Camello, La Joya, Cerro Grande, El Cerrito, Agua Linda, Tlalayote y La Cumbre. La altitud media es de 731 msnm, con rangos desde 260 m hasta 1,680 m. El clima es semicálido subhúmedo con lluvias todo el año.</p>
                 
-                <div style="background: #f8f8f8; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #D2691E;">
-                    <h4 style="color: #8B4513; margin-bottom: 1rem;">Clima</h4>
-                    <p><strong>Tipo:</strong> Templado subhúmedo</p>
-                    <p><strong>Temperatura:</strong> 12°C - 24°C</p>
-                    <p><strong>Lluvias:</strong> 800-1200mm anuales</p>
-                </div>
+                <h3>Hidrografía</h3>
+                <p>El municipio forma parte de la vertiente hidrográfica del golfo de México, en las cuencas de los ríos Tuxpan y Cazones. Destacan el río San Marcos, el río Acalman y el río Blanco, además de numerosos arroyos intermitentes.</p>
+            </div>
+        </section>
+
+        <!-- Sección de Población -->
+        <section class="content-section">
+            <h2>Población y Localidades</h2>
+            <div class="article-content">
+                <h3>Demografía</h3>
+                <p>De acuerdo con el censo de 2020, Tlacuilotepec tenía 15,977 habitantes, con una distribución de 51% mujeres y 49% hombres. El municipio se integra por 62 localidades, en su mayoría rurales.</p>
+                
+                <h3>Localidades Principales</h3>
+                <ul class="lista-destacada">
+                    <li>Tlacuilotepec (cabecera municipal): ~1,430 habitantes</li>
+                    <li>San Pedro Petlacotla: ~1,767 habitantes</li>
+                    <li>Papaloctipan: ~1,592 habitantes</li>
+                    <li>Plan de Ayala: ~824 habitantes</li>
+                    <li>Itzatlán: ~753 habitantes</li>
+                    <li>Cuautepec: ~766 habitantes</li>
+                    <li>Santa María: ~558 habitantes</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección de Eventos Recientes -->
+        <section class="content-section">
+            <h2>Eventos Recientes</h2>
+            <div class="article-content">
+                <h3>Fenómenos Naturales</h3>
+                <p>En septiembre de 2021, una serie de lluvias intensas provocó varios derrumbes en la región, incluyendo un deslave que bloqueó completamente la carretera que comunica Tlacuilotepec con Temaxcalapa. Estos eventos llevaron a la intervención de autoridades estatales para la rehabilitación de caminos y la atención de la población afectada.</p>
+                
+                <h3>Desarrollo Actual</h3>
+                <p>El municipio participa activamente en los planes de desarrollo estatales y federales, trabajando en la mejora de infraestructura y servicios para sus habitantes.</p>
             </div>
         </section>
 
