@@ -3,530 +3,60 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Galería histórica de Tlacuilotepec, Puebla con fotos restauradas, historia del municipio, tradiciones y cultura local. Colabora enviando tus fotos antiguas. Descubre la rica historia de este pueblo mágico de la Sierra Norte de Puebla.">
-    <meta name="keywords" content="Tlacuilotepec, Puebla, fotos históricas, galería, cultura, tradiciones, patrimonio, Talcuilo, Sierra Norte, turismo, historia México, fotografía antigua, restauración fotos">
-    <title>Galería Histórica de Tlacuilotepec, Puebla - Fotos Restauradas y Historia del Municipio</title>
+    <meta name="description" content="Descubre 100+ fotos históricas restauradas de Tlacuilotepec, Puebla (1920-1980). Historia, cultura y tradiciones de la Sierra Norte poblana. ¡Contribuye con tus fotos antiguas!">
+    <meta name="keywords" content="Tlacuilotepec Puebla, fotos históricas restauradas, galería histórica, Sierra Norte Puebla, turismo cultural México, historia prehispánica, Cristo Rey Tlacuilotepec, municipio Huauchinango, patrimonio cultural mexicano">
+    <meta name="author" content="Tlacuilotepec Fotos Históricas">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Fotos Históricas de Tlacuilotepec Puebla | Galería Restaurada 1920-1980">
+    <meta property="og:description" content="Explora la historia visual de Tlacuilotepec con fotos restauradas. Descubre tradiciones, arquitectura y cultura de la Sierra Norte de Puebla.">
+    <meta property="og:image" content="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle-principal-tlacuilotepec-1950.jpg">
+    <meta property="og:url" content="https://tlacuilotepecfotos.site">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    
+    <title>Fotos Históricas de Tlacuilotepec Puebla | Galería Restaurada 1920-1980</title>
+    <link rel="canonical" href="https://tlacuilotepecfotos.site">
     <link rel="icon" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732331199/iglesia_yzhb7b.ico" type="image/ico">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <style>
-        /* Estilos para la galería */
-        body{
-            background-color: #FAF0E6;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-        }
-        .galeria-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .orden {
-            background: #f9f9f9;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-        
-        .orden:hover {
-            transform: translateY(-5px);
-        }
-        
-        .img_show, .img_oculta {
-            padding: 1rem;
-        }
-        
-        .img_show img, .img_oculta img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        
-        .boton {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(139, 69, 19, 0.8);
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-        }
-        
-        .boton img {
-            width: 16px;
-            height: 16px;
-            filter: invert(1);
-        }
-        
-        .dowload {
-            position: absolute;
-            top: 10px;
-            right: 50px;
-            background: rgba(139, 69, 19, 0.8);
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-        }
-        
-        .dowload img {
-            width: 16px;
-            height: 16px;
-            filter: invert(1);
-        }
-        
-        .zom {
-            cursor: zoom-in;
-        }
-        
-        .img-info {
-            padding: 0.8rem 0;
-        }
-        
-        .img-titulo {
-            font-weight: bold;
-            color: #8B4513;
-            margin-bottom: 0.3rem;
-        }
-        
-        .img-fecha {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        /* Vista grande */
-        .vista_grande {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .img_zom {
-            max-width: 90%;
-            max-height: 90vh;
-            position: relative;
-        }
-        
-        .img_zom img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 8px;
-        }
-        
-        /* Formulario de subida */
-        .up {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .up_div {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 500px;
-            width: 90%;
-        }
-        
-        .drop-container {
-            border: 2px dashed #8B4513;
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            display: block;
-            cursor: pointer;
-        }
-        
-        .drop-title {
-            font-weight: bold;
-            color: #8B4513;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .cerrar-btn {
-            background: #666;
-            color: white;
-            border: none;
-            padding: 0.8rem;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 1rem;
-        }
-        
-        /* Secciones de contenido */
-        .content-section {
-            background: white;
-            margin: 2rem auto;
-            padding: 2rem;
-            max-width: 1200px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .article-content {
-            line-height: 1.8;
-            font-size: 1.1rem;
-            color: #333;
-        }
-        
-        h2 {
-            color: #8B4513;
-            border-bottom: 3px solid #D2691E;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        h3 {
-            color: #8B4513;
-            margin: 2rem 0 1rem 0;
-            font-size: 1.5rem;
-            border-bottom: 2px solid #D2691E;
-            padding-bottom: 0.5rem;
-        }
-        
-        h4 {
-            color: #8B4513;
-            margin: 1.5rem 0 0.5rem 0;
-            font-size: 1.2rem;
-        }
-        
-        /* Header y footer */
-        .titulo {
-            background: #804D21;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            font-family: "Playfair Display", serif;
-        }
-        
-        .titulo h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        
-        .subtitulo {
-            margin: 0.5rem 0 1.5rem;
-            font-family: Helvetica;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        nav a:hover {
-            background: white;
-            color: #8B4513;
-        }
-        .columnas{
-            columns: 2; list-style-type: square;
-        }
-        
-        .fin {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        .res{
-            display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
-        }
+   
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Museum",
+      "name": "Galería Histórica de Tlacuilotepec",
+      "description": "Galería digital de fotografías históricas restauradas de Tlacuilotepec, Puebla, México",
+      "url": "https://tlacuilotepecfotos.site",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tlacuilotepec",
+        "addressRegion": "Puebla",
+        "addressCountry": "México"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.0833",
+        "longitude": "-98.0833"
+      },
+      "sameAs": [
+        "https://tlacuilotepecfotos.site"
+      ]
+    }
+    </script>
 
-        /* Nuevos estilos para contenido adicional */
-        .datos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .dato-card {
-            background: #f8f8f8;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #D2691E;
-            transition: transform 0.3s ease;
-        }
-
-        .dato-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .timeline {
-            border-left: 3px solid #D2691E;
-            margin: 2rem 0;
-            padding-left: 2rem;
-        }
-
-        .timeline-item {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            background: #D2691E;
-            border-radius: 50%;
-            border: 3px solid white;
-        }
-
-        .timeline-year {
-            font-weight: bold;
-            color: #8B4513;
-            font-size: 1.2rem;
-        }
-
-        .personalidades-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .personalidad-card {
-            background: linear-gradient(135deg, #f8f4f0 0%, #e8ddd4 100%);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border: 1px solid #d4c4b0;
-        }
-
-        .economia-sections {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .tradicion-item {
-            background: #faf7f3;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            border-left: 5px solid #8B4513;
-        }
-
-        .lista-destacada {
-            background: #f0f8ff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            border: 1px solid #d0e7ff;
-        }
-
-        .sitios-interes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .sitio-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-top: 4px solid #8B4513;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .content-section {
-                padding: 1rem;
-                margin: 1rem;
-            }
-            .content-section div{
-                display: block;
-            }
-            .res{
-                display: block;
-            }
-            
-           .comentarios{
-            width: 80%;
-           }
-            
-            nav {
-                gap: 0.5rem;
-            }
-            .titulo h1{
-                font-size: 30px;
-            }
-
-            .datos-grid,
-            .personalidades-grid,
-            .economia-sections,
-            .sitios-interes {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 500px){
-            .titulo h1{
-                font-size: 20px;
-            }
-            #comentarios{
-                width: 80%;
-            }
-            p{
-                font-size: 16px;
-            }
-            .columnas{
-                columns: 1; list-style-type: square;
-            }
-        }
-
-        /* Estilos de comentarios */
-        .comentarios {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            font-family: sans-serif;
-        }
-
-        .contenedor_com {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
-        }
-
-        .form input,
-        .form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #aaa;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        .form button {
-            width: fit-content;
-            padding: 10px 20px;
-            background-color: #42b983;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        #comentarios {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            width: 90%;
-            text-align: center;
-            justify-content: center;
-            padding: 15px;
-            background: #f6f1eb;
-            border: 2px solid #b8a58c;
-            border-radius: 10px;
-            box-shadow: inset 0 0 10px rgba(96, 74, 52, 0.1);
-            font-family: 'Georgia', serif;
-            margin: auto;
-        }
-
-        .comentario {
-            align-self: auto;
-            background-color: #eae0d5;
-            padding: 15px 20px;
-            width: calc(100% / 4);
-            max-height: 220px;
-            overflow-y: auto;
-            border-radius: 12px 12px 4px 12px;
-            box-shadow: 3px 3px 8px rgba(70, 50, 30, 0.15);
-            border: 1px solid #c2b09a;
-            text-align: left;
-            font-size: 16px;
-            color: #4a3b2c;
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-            transition: background 0.3s;
-        }
-        
-        .comentario:hover {
-            background-color: #d6c8b1;
-        }
-
-        .comentario .nombre {
-            font-weight: bold;
-            color: #5a4332;
-            margin-bottom: 6px;
-            font-size: 14px;
-            font-style: italic;
-        }
-
-        .comentario .mensaje {
-            font-size: 15px;
-            line-height: 1.4;
-        }
-    </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9520616268561655" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="titulo">
-        <h1>tlacuilotepecfotos.site</h1>
-        <p class="subtitulo">Tlacuilotepec, Puebla, México - Preservando Nuestra Historia</p>
-        <nav>
-            <a href="#historia">Historia</a>
-            <a href="#galeria">Galería</a>
-            <a href="#cultura">Cultura</a>
-            <a href="#datos">Datos</a>
-            <a href="#turismo">Turismo</a>
-            <a href="#colaborar">Colaborar</a>
+    <header class="titulo" role="banner">
+        <h1>Galería Histórica de Tlacuilotepec, Puebla</h1>
+        <p class="subtitulo">Sierra Norte de Puebla, México - Preservando Nuestra Historia Visual</p>
+        <nav role="navigation" aria-label="Navegación principal">
+            <a href="#historia" aria-label="Historia de Tlacuilotepec">Historia</a>
+            <a href="#galeria" aria-label="Galería fotográfica histórica">Galería</a>
+            <a href="#cultura" aria-label="Cultura y tradiciones">Cultura</a>
+            <a href="#datos" aria-label="Datos del municipio">Datos</a>
+            <a href="#turismo" aria-label="Turismo en Tlacuilotepec">Turismo</a>
+            <a href="#colaborar" aria-label="Colaborar con fotos">Colaborar</a>
         </nav>
     </header>
 
@@ -534,19 +64,27 @@
         <!-- Sección de Resumen -->
         <section id="resumen" class="content-section">
             <div class="res">
-                <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" alt="Calle principal de Tlacuilotepec en los años 50" style="width: 100%; border-radius: 8px;">
+                <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" 
+                     alt="Calle principal de Tlacuilotepec Puebla en los años 1950, mostrando arquitectura colonial, comercios locales y vida cotidiana del municipio de la Sierra Norte" 
+                     style="width: 100%; border-radius: 8px;"
+                     loading="lazy">
                 <div class="article-content">
-                    <h2 style="color: #8B4513; margin-bottom: 1rem;">Bienvenidos a nuestra galería histórica</h2>
-                    <p>Tlacuilotepec, municipio ubicado en la Sierra Norte de Puebla, conserva una rica historia que se remonta a la época prehispánica. Su nombre, de origen náhuatl, significa "en el cerro donde se escribe", haciendo referencia a las pictografías que los antiguos habitantes realizaban en las rocas de la región.</p>
-                    <!-- <p>Esta galería digital representa el esfuerzo colectivo de la comunidad por preservar la memoria histórica de nuestro querido pueblo. Cada fotografía restaurada cuenta una historia única, capturando momentos que definen la identidad y evolución de Tlacuilotepec a través de las décadas.</p> -->
-                    <p>Nuestro proyecto de restauración fotográfica utiliza técnicas modernas de digitalización y restauración para devolver la vida a imágenes que parecían perdidas para siempre. Puedes colaborar enviándonos fotos antiguas que tengas - no importa su estado. Las restauraremos y las agregaremos a esta colección histórica.</p>
-                    <button onclick="GaleriaApp.alternarFormularioSubida()" style="background: #8B4513; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; margin-top: 1rem;">Subir fotografía</button>
+                    <h2 style="color: #8B4513; margin-bottom: 1rem;">Bienvenidos a nuestra galería histórica digital</h2>
+                    <p><strong>Tlacuilotepec</strong>, municipio histórico ubicado en la <em>Sierra Norte de Puebla</em>, conserva una rica herencia cultural que se remonta a la época prehispánica. Su nombre, de origen náhuatl, significa <strong>"en el cerro donde se escribe"</strong>, haciendo referencia a las pictografías que los antiguos habitantes otomíes y totonacas realizaban en las rocas de la región.</p>
+                    
+                    <p>Nuestro proyecto de <strong>restauración fotográfica digital</strong> utiliza técnicas modernas de digitalización y restauración para devolver la vida a imágenes históricas de <em>Tlacuilotepec</em> que parecían perdidas para siempre. Cada fotografía documenta la evolución del municipio desde 1920 hasta 1980.</p>
+                    
+                    <button onclick="GaleriaApp.alternarFormularioSubida()" 
+                            style="background: #8B4513; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; margin-top: 1rem;"
+                            aria-label="Subir fotografía histórica">
+                        📸 Subir fotografía histórica
+                    </button>
                 </div>
             </div>
         </section>
 
         <!-- Anuncio superior -->
-        <section class="anuncios">
+        <section class="anuncios" aria-label="Publicidad">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-9520616268561655"
@@ -560,60 +98,68 @@
 
           <!-- Galería Principal -->
         <section id="galeria" class="content-section">
-            <h2>Galería Fotográfica Histórica</h2>
-            <p>Nuestra colección de fotografías históricas abarca más de un siglo de historia visual de Tlacuilotepec. Estas imágenes, cuidadosamente restauradas utilizando técnicas modernas de digitalización y retoque fotográfico, documentan la evolución arquitectónica, social y cultural de nuestro municipio desde principios del siglo XX hasta la década de 1980.</p>
+            <h2>Galería Fotográfica Histórica de Tlacuilotepec</h2>
+            <p>Nuestra colección de <strong>fotografías históricas de Tlacuilotepec</strong> abarca más de un siglo de historia visual del municipio poblano. Estas imágenes, cuidadosamente restauradas utilizando técnicas modernas de digitalización y retoque fotográfico, documentan la evolución arquitectónica, social y cultural de nuestro <em>municipio de la Sierra Norte</em> desde principios del siglo XX hasta la década de 1980.</p>
             
-            <p>Cada fotografía ha sido catalogada con información detallada sobre su fecha aproximada, ubicación, personajes identificados y contexto histórico. El proceso de restauración incluye corrección de color, eliminación de manchas y rasgaduras, y estabilización digital para garantizar su preservación a largo plazo.</p>
+            <p>Cada fotografía ha sido catalogada con información detallada sobre su fecha aproximada, ubicación en <strong>Tlacuilotepec</strong>, personajes identificados y contexto histórico. El proceso de restauración incluye corrección de color, eliminación de manchas y rasgaduras, y estabilización digital para garantizar su preservación a largo plazo.</p>
             
             <div class="lista-destacada">
-                <h4>Temáticas de nuestra colección:</h4>
+                <h3>Temáticas de nuestra colección histórica:</h3>
                 <ul>
-                    <li><strong>Arquitectura religiosa:</strong> Evolución de la iglesia parroquial de San Miguel Arcángel, capillas familiares y espacios ceremoniales</li>
-                    <li><strong>Vida urbana:</strong> Desarrollo de las calles principales, el mercado local, espacios públicos y viviendas tradicionales</li>
-                    <li><strong>Actividades económicas:</strong> Agricultura tradicional, comercio local, talleres artesanales y actividades ganaderas</li>
-                    <li><strong>Celebraciones:</strong> Fiestas patronales, bodas, bautizos, festividades cívicas y ceremonias tradicionales</li>
-                    <li><strong>Educación:</strong> Primeras escuelas, maestros, estudiantes y eventos académicos</li>
-                    <li><strong>Retratos familiares:</strong> Familias prominentes, grupos comunitarios y personalidades locales</li>
+                    <li><strong>Arquitectura religiosa:</strong> Evolución de la <a href="#cultura">iglesia parroquial de San Miguel Arcángel</a>, capillas familiares y espacios ceremoniales</li>
+                    <li><strong>Vida urbana en Tlacuilotepec:</strong> Desarrollo de las calles principales, el mercado local, espacios públicos y viviendas tradicionales</li>
+                    <li><strong>Actividades económicas:</strong> Agricultura tradicional de la Sierra Norte, comercio local, talleres artesanales y actividades ganaderas</li>
+                    <li><strong>Celebraciones tradicionales:</strong> <a href="#cultura">Fiestas patronales del Cristo Rey</a>, bodas, bautizos, festividades cívicas y ceremonias tradicionales</li>
+                    <li><strong>Educación histórica:</strong> Primeras escuelas de Tlacuilotepec, maestros, estudiantes y eventos académicos</li>
+                    <li><strong>Retratos familiares:</strong> Familias prominentes del municipio, grupos comunitarios y personalidades locales</li>
                 </ul>
             </div>
             
             <div class="galeria-container" id="galeria-container">
-                <!-- Aquí irían las imágenes de ejemplo que puedes agregar -->
                 <div class="orden">
                     <div class="img_show">
-                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" alt="Calle Principal 1950" class="zom">
+                        <img src="https://res.cloudinary.com/dr9van0op/image/upload/v1732325067/calle3_t5sihk.jpg" 
+                             alt="Vista histórica de la calle principal de Tlacuilotepec en 1950, mostrando comercios locales, arquitectura colonial y actividad comercial del centro del municipio poblano" 
+                             class="zom"
+                             loading="lazy">
                         <div class="img-info">
-                            <div class="img-titulo">Calle Principal - Años 50</div>
-                            <div class="img-fecha">Circa 1950 | Centro de Tlacuilotepec</div>
+                            <div class="img-titulo">Calle Principal de Tlacuilotepec - Años 50</div>
+                            <div class="img-fecha">Circa 1950 | Centro histórico de Tlacuilotepec, Puebla</div>
                         </div>
                     </div>
                 </div>
-                <div class="loading">Cargando más imágenes históricas...</div>
+                <div class="loading">Cargando más imágenes históricas de Tlacuilotepec...</div>
             </div>
         </section>
 
         <!-- Sección de Historia Expandida -->
         <section id="historia" class="content-section">
-            <h2>Historia Completa de Tlacuilotepec</h2>
+            <h2>Historia Completa de Tlacuilotepec, Puebla</h2>
             <div class="article-content">
-                <h3>Orígenes y Fundación</h3>
-                <p>Tlacuilotepec fue fundado por comunidades otomíes y totonacas en la época prehispánica, siendo tributario del reino de Texcoco. Durante la Colonia perteneció al distrito de Huauchinango y en 1895 obtuvo la categoría de municipio libre.</p>
+                <h3>Orígenes Prehispánicos y Fundación</h3>
+                <p><strong>Tlacuilotepec</strong> fue fundado por comunidades <em>otomíes y totonacas</em> en la época prehispánica, siendo tributario del poderoso reino de Texcoco. El municipio se encuentra estratégicamente ubicado en la <strong>Sierra Norte de Puebla</strong>, región que conectaba las tierras altas con las costas del Golfo de México.</p>
                 
-                <h3>Hechos Históricos Destacados</h3>
-                <p>En diciembre de 1923, el pueblo de Cuautepec (hoy en Tlacuilotepec) fue sede temporal del gobierno del estado de Puebla, con un acta firmada por el gobernador Froylán C. Manjarrez y el diputado Gilberto Bosques Saldívar. Este hecho histórico marca un momento importante en la vida política del municipio.</p>
+                <p>Durante la época colonial, el territorio perteneció al distrito de <em>Huauchinango</em> y en <strong>1895 obtuvo la categoría de municipio libre</strong>, consolidando su autonomía administrativa en la región poblana.</p>
+                
+                <h3>Hechos Históricos Destacados del Municipio</h3>
+                <p>En diciembre de <strong>1923</strong>, el pueblo de Cuautepec (actualmente parte de Tlacuilotepec) fue sede temporal del gobierno del estado de Puebla, con un acta histórica firmada por el gobernador Froylán C. Manjarrez y el diputado Gilberto Bosques Saldívar. Este evento marca un momento crucial en la vida política del municipio de la Sierra Norte.</p>
 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-year">Época Prehispánica</div>
-                        <p>Fundación por comunidades otomíes y totonacas. Tributario del reino de Texcoco.</p>
+                        <p>Fundación por comunidades otomíes y totonacas. Tributario del reino de Texcoco. Desarrollo de pictografías en rocas locales.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">Período Colonial</div>
+                        <p>Integración al distrito de Huauchinango. Construcción de la iglesia de San Miguel Arcángel.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">1895</div>
-                        <p>Obtiene la categoría de municipio libre.</p>
+                        <p>Tlacuilotepec obtiene la categoría de municipio libre en el estado de Puebla.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">1923</div>
-                        <p>Cuautepec es sede temporal del gobierno estatal.</p>
+                        <p>Cuautepec es sede temporal del gobierno estatal poblano - evento histórico único.</p>
                     </div>
                 </div>
             </div>
@@ -636,63 +182,65 @@
 
         <!-- Sección de Cultura y Tradiciones -->
         <section id="cultura" class="content-section">
-            <h2>Cultura y Tradiciones</h2>
+            <h2>Cultura y Tradiciones de Tlacuilotepec</h2>
             <div class="article-content">
-                <h3>Festividades Principales</h3>
-                <p>El festejo más importante es la fiesta patronal del Señor (Cristo) Rey, que se celebra el 24 de agosto. Este día se realizan misas solemnes, rezos y una procesión con la imagen de Cristo Rey, acompañadas de carreras de caballos, juegos pirotécnicos y jaripeo.</p>
+                <h3>Festividades Principales del Municipio</h3>
+                <p>El festejo más importante de <strong>Tlacuilotepec</strong> es la <em>fiesta patronal del Señor (Cristo) Rey</em>, que se celebra el <strong>24 de agosto</strong>. Este día se realizan misas solemnes, rezos tradicionales y una procesión solemne con la imagen de Cristo Rey, acompañadas de carreras de caballos típicas de la Sierra Norte, juegos pirotécnicos y jaripeo tradicional mexicano.</p>
                 
-                <h3>Semana Santa y Día de Muertos</h3>
-                <p>Durante la Semana Santa se organiza una feria local con misas, procesiones y danzas tradicionales como la danza de los aztecas o de los voladores. El Día de Todos Santos y Fieles Difuntos (1 y 2 de noviembre) se conmemora con altares familiares y ofrendas florales.</p>
+                <h3>Semana Santa y Día de Muertos en Tlacuilotepec</h3>
+                <p>Durante la <strong>Semana Santa</strong> se organiza una feria local tradicional con misas, procesiones religiosas y danzas ancestrales como la <em>danza de los aztecas</em> o de los voladores. El <strong>Día de Todos Santos y Fieles Difuntos</strong> (1 y 2 de noviembre) se conmemora con altares familiares tradicionales y ofrendas florales en el panteón municipal.</p>
                 
-                <h3>Artesanías y Gastronomía</h3>
-                <p>Las artesanías tradicionales incluyen alfarería (barricas, ollas), cestería (canastas) y bordados regionales. La gastronomía local destaca por el mole poblano, tamales, barbacoa y pipián, así como dulces de conservas de fruta y bebidas tradicionales como el café local y el aguardiente de caña o de guayaba.</p>
+                <h3>Artesanías y Gastronomía Tradicional</h3>
+                <p>Las <strong>artesanías tradicionales de Tlacuilotepec</strong> incluyen alfarería especializada (barricas, ollas de barro), cestería (canastas de palma) y bordados regionales únicos de la Sierra Norte poblana.</p>
+                
+                <p>La <em>gastronomía local</em> destaca por el auténtico <strong>mole poblano</strong>, tamales tradicionales, barbacoa de hoyo y pipián rojo. Los dulces locales incluyen conservas de fruta de temporada y bebidas tradicionales como el café de altura cultivado en la sierra y el aguardiente artesanal de caña o de guayaba.</p>
             </div>
         </section>
 
         <!-- Sección de Geografía -->
-        <section class="content-section">
-            <h2>Geografía y Medio Físico</h2>
+        <section id="datos" class="content-section">
+            <h2>Geografía y Ubicación de Tlacuilotepec</h2>
             <div class="article-content">
-                <h3>Ubicación y Límites</h3>
-                <p>Tlacuilotepec se ubica en la parte noroeste del estado de Puebla, en la Sierra Norte poblana. Limita al norte con el municipio de Jalpan (y el estado de Hidalgo), al sur con Huauchinango y Naupan, al oeste con Xicotepec y al noroeste con Tlaxco (Tlaxcala).</p>
+                <h3>Ubicación Estratégica y Límites Territoriales</h3>
+                <p><strong>Tlacuilotepec</strong> se ubica estratégicamente en la parte noroeste del estado de Puebla, en el corazón de la <em>Sierra Norte poblana</em>. El municipio limita al norte con <a href="#turismo">Jalpan y el estado de Hidalgo</a>, al sur con los municipios de Huauchinango y Naupan, al oeste con Xicotepec y al noroeste con Tlaxco, Tlaxcala.</p>
                 
-                <h3>Relieve y Clima</h3>
-                <p>El relieve es muy accidentado y montañoso, con numerosos cerros como Guajolote, Camello, La Joya, Cerro Grande, El Cerrito, Agua Linda, Tlalayote y La Cumbre. La altitud media es de 731 msnm, con rangos desde 260 m hasta 1,680 m. El clima es semicálido subhúmedo con lluvias todo el año.</p>
+                <h3>Relieve Montañoso y Clima de la Sierra</h3>
+                <p>El relieve de <strong>Tlacuilotepec</strong> es muy accidentado y montañoso, característico de la Sierra Norte de Puebla, con numerosos cerros emblemáticos como Guajolote, Camello, La Joya, Cerro Grande, El Cerrito, Agua Linda, Tlalayote y La Cumbre. La altitud media del municipio es de <strong>731 metros sobre el nivel del mar</strong>, con rangos desde 260 m hasta 1,680 m. El clima es <em>semicálido subhúmedo con lluvias todo el año</em>, ideal para la agricultura tradicional.</p>
                 
-                <h3>Hidrografía</h3>
-                <p>El municipio forma parte de la vertiente hidrográfica del golfo de México, en las cuencas de los ríos Tuxpan y Cazones. Destacan el río San Marcos, el río Acalman y el río Blanco, además de numerosos arroyos intermitentes.</p>
+                <h3>Hidrografía de la Región</h3>
+                <p>El municipio forma parte de la vertiente hidrográfica del <strong>Golfo de México</strong>, en las cuencas de los ríos Tuxpan y Cazones. Destacan el <em>río San Marcos</em>, el <em>río Acalman</em> y el <em>río Blanco</em>, además de numerosos arroyos intermitentes que alimentan la rica biodiversidad de la Sierra Norte poblana.</p>
             </div>
         </section>
 
         <!-- Sección de Población -->
         <section class="content-section">
-            <h2>Población y Localidades</h2>
+            <h2>Población y Localidades de Tlacuilotepec</h2>
             <div class="article-content">
-                <h3>Demografía</h3>
-                <p>De acuerdo con el censo de 2020, Tlacuilotepec tenía 15,977 habitantes, con una distribución de 51% mujeres y 49% hombres. El municipio se integra por 62 localidades, en su mayoría rurales.</p>
+                <h3>Demografía del Municipio</h3>
+                <p>De acuerdo con el <strong>censo nacional de 2020</strong>, Tlacuilotepec tenía <em>15,977 habitantes</em>, con una distribución equilibrada de 51% mujeres y 49% hombres. El municipio poblano se integra por <strong>62 localidades</strong>, en su mayoría rurales que conservan las tradiciones de la Sierra Norte.</p>
                 
-                <h3>Localidades Principales</h3>
+                <h3>Principales Localidades del Municipio</h3>
                 <ul class="lista-destacada">
-                    <li>Tlacuilotepec (cabecera municipal): ~1,430 habitantes</li>
-                    <li>San Pedro Petlacotla: ~1,767 habitantes</li>
-                    <li>Papaloctipan: ~1,592 habitantes</li>
-                    <li>Plan de Ayala: ~824 habitantes</li>
-                    <li>Itzatlán: ~753 habitantes</li>
-                    <li>Cuautepec: ~766 habitantes</li>
-                    <li>Santa María: ~558 habitantes</li>
+                    <li><strong>Tlacuilotepec (cabecera municipal):</strong> Aproximadamente 1,430 habitantes - centro administrativo y cultural</li>
+                    <li><strong>San Pedro Petlacotla:</strong> 1,767 habitantes - importante comunidad agrícola</li>
+                    <li><strong>Papaloctipan:</strong> 1,592 habitantes - zona ganadera tradicional</li>
+                    <li><strong>Plan de Ayala:</strong> 824 habitantes - comunidad histórica</li>
+                    <li><strong>Itzatlán:</strong> 753 habitantes - zona cafetalera</li>
+                    <li><strong>Cuautepec:</strong> 766 habitantes - sitio histórico gubernamental</li>
+                    <li><strong>Santa María:</strong> 558 habitantes - comunidad artesanal</li>
                 </ul>
             </div>
         </section>
 
         <!-- Sección de Eventos Recientes -->
         <section class="content-section">
-            <h2>Eventos Recientes</h2>
+            <h2>Desarrollo Actual de Tlacuilotepec</h2>
             <div class="article-content">
-                <h3>Fenómenos Naturales</h3>
-                <p>En septiembre de 2021, una serie de lluvias intensas provocó varios derrumbes en la región, incluyendo un deslave que bloqueó completamente la carretera que comunica Tlacuilotepec con Temaxcalapa. Estos eventos llevaron a la intervención de autoridades estatales para la rehabilitación de caminos y la atención de la población afectada.</p>
+                <h3>Fenómenos Naturales y Resiliencia</h3>
+                <p>En septiembre de <strong>2021</strong>, una serie de lluvias intensas características de la Sierra Norte provocó varios derrumbes en la región, incluyendo un deslave significativo que bloqueó temporalmente la carretera que comunica <em>Tlacuilotepec con Temaxcalapa</em>. Estos eventos naturales llevaron a la intervención coordinada de autoridades estatales y federales para la rehabilitación de caminos y la atención integral de la población afectada.</p>
                 
-                <h3>Desarrollo Actual</h3>
-                <p>El municipio participa activamente en los planes de desarrollo estatales y federales, trabajando en la mejora de infraestructura y servicios para sus habitantes.</p>
+                <h3>Proyectos de Desarrollo Municipal</h3>
+                <p>El municipio de <strong>Tlacuilotepec</strong> participa activamente en los planes de desarrollo estatales y federales, trabajando en la mejora continua de infraestructura turística, servicios públicos y conectividad digital para sus habitantes y visitantes de la Sierra Norte poblana.</p>
             </div>
         </section>
 
@@ -709,176 +257,145 @@
             </script>
         </section>
 
+        <!-- Sección de Turismo -->
+        <section id="turismo" class="content-section">
+            <h2>Turismo en Tlacuilotepec, Sierra Norte de Puebla</h2>
+            <div class="article-content">
+                <h3>Atractivos Turísticos Principales</h3>
+                <p><strong>Tlacuilotepec</strong> ofrece experiencias únicas de <em>turismo cultural y natural</em> en la Sierra Norte de Puebla:</p>
+                
+                <ul class="lista-destacada">
+                    <li><strong>Iglesia de San Miguel Arcángel:</strong> Templo colonial con arquitectura religiosa histórica</li>
+                    <li><strong>Sitios arqueológicos:</strong> Pictografías prehispánicas en rocas naturales</li>
+                    <li><strong>Rutas de senderismo:</strong> Cerros Guajolote, La Cumbre y miradores naturales</li>
+                    <li><strong>Turismo gastronómico:</strong> Mole poblano auténtico y café de altura</li>
+                    <li><strong>Festivales culturales:</strong> Fiesta del Cristo Rey (agosto) y celebraciones tradicionales</li>
+                    <li><strong>Ecoturismo:</strong> Ríos San Marcos y Acalman para actividades acuáticas</li>
+                </ul>
+                
+                <h3>Ruta Turística Sierra Norte</h3>
+                <p>Tlacuilotepec forma parte de la <strong>ruta turística de la Sierra Norte de Puebla</strong>, conectando con <em>Huauchinango, Xicotepec y Cuetzalan</em>, ofreciendo un circuito completo de turismo cultural y natural en la región poblana.</p>
+            </div>
+        </section>
+
         <!-- Sección de Colaboración -->
         <section id="colaborar" class="content-section" style="background: #804D21; color: white;">
-            <h2 style="color: white; border: none; text-align: center; margin: 0;">¡Colabora con Nosotros!</h2>
+            <h2 style="color: white; border: none; text-align: center; margin: 0;">¡Colabora Preservando la Historia de Tlacuilotepec!</h2>
             <div class="article-content" style="color: white;">
-                <p style="text-align: center; font-size: 1.1rem; margin: 0;">¿Tienes fotografías antiguas de Tlacuilotepec? Tu contribución ayuda a preservar la memoria histórica de nuestro pueblo.</p>
+                <p style="text-align: center; font-size: 1.1rem; margin: 0;">¿Tienes <strong>fotografías antiguas de Tlacuilotepec</strong>? Tu contribución ayuda a preservar la memoria histórica visual de nuestro querido municipio poblano para las futuras generaciones.</p>
                 
                 <div style="max-width: 600px; margin: 0 auto;">
-                    <p><strong>Tipos de fotos que buscamos:</strong></p>
+                    <p><strong>Tipos de fotos históricas que buscamos:</strong></p>
                     <ul class="columna">
-                        <li>Retratos familiares</li>
-                        <li>Vistas de calles y plazas</li>
-                        <li>Edificios históricos</li>
-                        <li>Festividades y eventos</li>
-                        <li>Actividades comerciales</li>
-                        <li>Escenas cotidianas</li>
+                        <li>📸 Retratos familiares históricos</li>
+                        <li>🏘️ Vistas de calles y plazas</li>
+                        <li>⛪ Edificios históricos y religiosos</li>
+                        <li>🎉 Festividades y eventos tradicionales</li>
+                        <li>🛒 Actividades comerciales antiguas</li>
+                        <li>👥 Escenas de vida cotidiana</li>
                     </ul>
                 </div>
                 
                 <div style="text-align: center; margin-top: 1rem;">
-                    <button onclick="GaleriaApp.alternarFormularioSubida()" style="background: white; color: #8B4513; border: none; padding: 1rem 2rem; border-radius: 25px; cursor: pointer; font-weight: bold; margin: 0 1rem;">Subir fotos</button>
-                    <a href="mailto:photos@tlacuilotepecfotos.site" style="color: white; text-decoration: underline; margin: 0 1rem;">O contáctanos</a>
+                    <button onclick="GaleriaApp.alternarFormularioSubida()" 
+                            style="background: white; color: #8B4513; border: none; padding: 1rem 2rem; border-radius: 25px; cursor: pointer; font-weight: bold; margin: 0 1rem;"
+                            aria-label="Subir fotos históricas de Tlacuilotepec">
+                        📤 Subir fotos históricas
+                    </button>
+                    <a href="mailto:photos@tlacuilotepecfotos.site" 
+                       style="color: white; text-decoration: underline; margin: 0 1rem;"
+                       aria-label="Contactar por email">
+                        ✉️ Contáctanos por email
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Vista ampliada de imágenes -->
-        <div id="zom" class="vista_grande">
+        <div id="zom" class="vista_grande" role="dialog" aria-label="Vista ampliada de imagen">
             <div class="img_zom" onclick="GaleriaApp.cerrarVistaGrande()">
                 <!-- Imagen ampliada se cargará aquí -->
             </div>
         </div>
 
         <!-- Formulario de subida -->
-        <div class="up" id="up">
+        <div class="up" id="up" role="dialog" aria-label="Formulario para subir fotografías">
             <div class="up_div">
                 <form class="up_frame" action="subir_imagen.php" method="POST" enctype="multipart/form-data">
                     <label for="images" class="drop-container" id="dropcontainer">
-                        <span class="drop-title">📤 Selecciona tu fotografía</span>
+                        <span class="drop-title">📤 Selecciona tu fotografía histórica</span>
                         <p>Formatos aceptados: JPG, PNG (Máx. 10MB)</p>
-                        <input type="file" id="images" name="imagen" accept="image/*" required>
+                        <input type="file" id="images" name="imagen" accept="image/*" required aria-label="Seleccionar archivo de imagen">
                     </label>
-                    <input type="text" name="descripcion" placeholder="Año aproximado, lugar y personas en la foto" style="width: 100%; padding: 0.8rem; margin: 1rem 0; border: 1px solid #ddd; border-radius: 4px;">
-                    <input type="text" name="contribuidor" placeholder="Tu nombre (opcional)" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;">
-                    <input type="submit" class="btn-envio" value="ENVIAR FOTOGRAFÍA" style="background: #8B4513; color: white; padding: 1rem; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold;">
+                    <input type="text" 
+                           name="descripcion" 
+                           placeholder="Año aproximado, lugar específico en Tlacuilotepec y personas en la foto" 
+                           style="width: 100%; padding: 0.8rem; margin: 1rem 0; border: 1px solid #ddd; border-radius: 4px;"
+                           aria-label="Descripción de la fotografía">
+                    <input type="text" 
+                           name="contribuidor" 
+                           placeholder="Tu nombre (opcional)" 
+                           style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;"
+                           aria-label="Nombre del contribuidor">
+                    <input type="submit" 
+                           class="btn-envio" 
+                           value="ENVIAR FOTOGRAFÍA HISTÓRICA" 
+                           style="background: #8B4513; color: white; padding: 1rem; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold;"
+                           aria-label="Enviar fotografía">
                 </form>
-                <button class="cerrar-btn" onclick="GaleriaApp.alternarFormularioSubida()">Cancelar</button>
+                <button class="cerrar-btn" 
+                        onclick="GaleriaApp.alternarFormularioSubida()"
+                        aria-label="Cancelar y cerrar formulario">
+                    Cancelar
+                </button>
             </div>
         </div>
     </main>
 
+    <!-- Sección de Comentarios -->
+    <section class="comentarios">
+        <h2>Comentarios sobre Tlacuilotepec</h2>
+        <div class="contenedor_com">
+            <form class="form" action="guardar.php" method="POST">
+                <input type="text" name="nombre" placeholder="Tu nombre" required aria-label="Nombre">
+                <textarea name="mensaje" rows="4" placeholder="Comparte tus recuerdos o información sobre Tlacuilotepec" required aria-label="Mensaje"></textarea>
+                <button type="submit" aria-label="Enviar comentario">Enviar comentario</button>
+            </form>
+        </div>
+        <div id="comentarios" class="comentarios_lista">
+            <?php include('comentarios.php'); ?>
+        </div>
+    </section>
 
-
-<section class="comentarios">
-  <h3>Comentarios</h3>
-
-  <div class="contenedor_com">
-    <form class="form" action="guardar.php" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <textarea name="mensaje" rows="4" placeholder="Escribe tu comentario" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-
- 
-</section>
-
-<section>
-     <div id="comentarios" class="comentarios_lista">
-    <?php include('comentarios.php'); ?>
-  </div>
-</section>
-
-    <style>
-    .comentarios {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  font-family: sans-serif;
-}
-
-.contenedor_com {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-
-.form input,
-.form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 2px solid #aaa;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-.form button {
-  width: fit-content;
-  padding: 10px 20px;
-  background-color: #42b983;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#comentarios {
- display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  width: 90%;
-  text-align: center;
-  justify-content: center;
-   padding: 15px;
-  background: #f6f1eb;
-  border: 2px solid #b8a58c;
-  border-radius: 10px;
-  box-shadow: inset 0 0 10px rgba(96, 74, 52, 0.1);
-  font-family: 'Georgia', serif;
-  margin: auto;
-}
-
-
-
-.comentario {
-  align-self: auto;
-  background-color: #eae0d5;
-  padding: 15px 20px;
-  width: calc(100% / 4);
-  max-height: 220px;
-  overflow-y: auto;
-
-  border-radius: 12px 12px 4px 12px;
-  box-shadow: 3px 3px 8px rgba(70, 50, 30, 0.15);
-  border: 1px solid #c2b09a;
-
-  text-align: left;
-  font-size: 16px;
-  color: #4a3b2c;
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-  transition: background 0.3s;
-}
-.comentario:hover {
-  background-color: #d6c8b1;
-}
-
-.comentario .nombre {
-  font-weight: bold;
-  color: #5a4332;
-  margin-bottom: 6px;
-  font-size: 14px;
-  font-style: italic;
-}
-
-.comentario .mensaje {
-  font-size: 15px;
-  line-height: 1.4;
-}
-
-</style>
-    <footer class="fin">
-        <p>&copy; 2025 Tlacuilotepec.site - Todos los derechos reservados</p>
-        <p>Proyecto de preservación histórica de Tlacuilotepec, Puebla</p>
-        <p>Contacto: <a href="mailto:photos@tlacuilotepecfotos.site" style="color: #D2691E;">photos@tlacuilotepecfotos.site</a></p>
+    <footer class="fin" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Acerca de Tlacuilotepec.site</h3>
+                <p>Portal dedicado a preservar y compartir la rica historia visual del municipio de Tlacuilotepec, Puebla. Nuestro objetivo es mantener viva la memoria histórica de nuestra comunidad para las futuras generaciones.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#resumen" aria-label="Ir a la sección de resumen">Resumen Histórico</a></li>
+                    <li><a href="#galeria" aria-label="Ir a la galería fotográfica">Galería Fotográfica</a></li>
+                    <li><a href="#historia" aria-label="Ir a la historia completa">Historia Completa</a></li>
+                    <li><a href="#cultura" aria-label="Ir a la sección de cultura">Cultura y Tradiciones</a></li>
+                    <li><a href="#colaborar" aria-label="Ir a la sección de colaboración">Colabora con Nosotros</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>¿Tienes fotos históricas o información sobre Tlacuilotepec?</p>
+                <a href="mailto:photos@tlacuilotepecfotos.site" aria-label="Enviar correo electrónico">✉️ Contáctanos</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tlacuilotepec.site - Todos los derechos reservados</p>
+            <p>Municipio de Tlacuilotepec, Sierra Norte de Puebla, México</p>
+        </div>
     </footer>
     <script src="js.js"></script>
     <!-- mas mediqueris -->
