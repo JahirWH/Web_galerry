@@ -334,6 +334,7 @@
                            placeholder="Tu nombre (opcional)" 
                            style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;"
                            aria-label="Nombre del contribuidor">
+                    <input type="text" name="website" style="display:none">
                     <input type="submit" 
                            class="btn-envio" 
                            value="ENVIAR FOTOGRAFÍA HISTÓRICA" 
@@ -354,8 +355,8 @@
         <h2>Comentarios sobre Tlacuilotepec</h2>
         <div class="contenedor_com">
             <form class="form" action="guardar.php" method="POST">
-                <input type="text" name="nombre" placeholder="Tu nombre" required aria-label="Nombre">
-                <textarea name="mensaje" rows="4" placeholder="Comparte tus recuerdos o información sobre Tlacuilotepec" required aria-label="Mensaje"></textarea>
+                <input type="text" name="nombre" placeholder="Tu nombre" required minlength="2" pattern=".*\\S.*" aria-label="Nombre">
+                <textarea name="mensaje" rows="4" placeholder="Comparte tus recuerdos..." required minlength="5" pattern=".*\\S.*" aria-label="Mensaje"></textarea>
                 <button type="submit" aria-label="Enviar comentario">Enviar comentario</button>
             </form>
         </div>
