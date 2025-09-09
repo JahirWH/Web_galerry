@@ -3,3 +3,7 @@
 /config.php
 /mejoras_sugeridas.txt
 /setup_spam_protection.sql
+/.vscode/*
+/node_modules/*
+/vendor/*
+/.env
