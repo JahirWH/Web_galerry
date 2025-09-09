@@ -165,6 +165,46 @@ const GaleriaApp = (function() {
 document.addEventListener('DOMContentLoaded', function() {
     GaleriaApp.inicializar();
     
+    // Inicializar el formulario de comentarios
+    const comentarioForm = document.getElementById('comentario-form');
+    if (comentarioForm) {
+        // Registrar tiempo de inicio cuando el usuario interactúa con el formulario
+        const tiempoInicio = Date.now();
+        document.getElementById('tiempo_formulario').value = tiempoInicio;
+        
+        // Contador de caracteres para el textarea
+        const mensaje = document.getElementById('mensaje');
+        const contadorCaracteres = document.querySelector('.caracteres-restantes');
+        
+        if (mensaje && contadorCaracteres) {
+            mensaje.addEventListener('input', function() {
+                const caracteresRestantes = 1000 - this.value.length;
+                contadorCaracteres.textContent = `${caracteresRestantes} caracteres restantes`;
+            });
+        }
+        
+        // Validación del formulario
+        comentarioForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value.trim();
+            const mensaje = document.getElementById('mensaje').value.trim();
+            
+            if (nombre.length < 2 || nombre.length > 100) {
+                alert('El nombre debe tener entre 2 y 100 caracteres.');
+                return;
+            }
+            
+            if (mensaje.length < 10 || mensaje.length > 1000) {
+                alert('El mensaje debe tener entre 10 y 1000 caracteres.');
+                return;
+            }
+            
+            // Si todo está bien, enviar el formulario
+            this.submit();
+        });
+    }
+    
     // Smooth scroll para navegación
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

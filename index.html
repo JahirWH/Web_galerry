@@ -329,9 +329,9 @@
         <h2>Comentarios sobre Tlacuilotepec</h2>
         <div class="contenedor_com">
             <form class="form" action="guardar.php" method="POST" id="comentario-form">
-                <input type="text" name="nombre" placeholder="Tu nombre" required minlength="2" pattern=".*\\S.*" aria-label="Nombre">
+                <input type="text" name="nombre" placeholder="Tu nombre" required minlength="4"  aria-label="Nombre">
                 <textarea name="mensaje" rows="4" placeholder="Comparte tus recuerdos..." required minlength="5" pattern=".*\\S.*" aria-label="Mensaje"></textarea>
-                <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                <!-- <input type="text" name="website" tabindex="-1" autocomplete="off"> -->
                 <button type="submit" aria-label="Enviar comentario">Enviar comentario</button>
             </form>
         </div>
