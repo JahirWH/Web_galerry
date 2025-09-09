@@ -70,11 +70,18 @@ const GaleriaApp = (function() {
                             <img loading="lazy" src="./img/descarga.png" alt="Descargar ${imagen.titulo}" />
                         </a>
         
-                        <div class="zom" onclick="GaleriaApp.mostrarVistaGrande('${imagen.img_restaurada}')">
-                            <img loading="lazy" src="${imagen.img_preview}" alt="Vista previa de ${imagen.titulo}" />
-                        </div>
-                        
-                        <div class="img-info">
+                                <div class="zom" onclick="GaleriaApp.mostrarVistaGrande('${imagen.img_restaurada}')" role="button" tabindex="0">
+                                    <img loading="lazy" 
+                                         srcset="${imagen.img_preview} 300w,
+                                                 ${imagen.img_restaurada} 800w"
+                                         sizes="(max-width: 600px) 300px,
+                                                800px"
+                                         src="${imagen.img_preview}" 
+                                         alt="Vista histórica de ${imagen.titulo} - ${imagen.fecha}"
+                                         itemprop="image"
+                                         width="800"
+                                         height="600" />
+                                </div>                        <div class="img-info">
                             <div class="img-titulo">${imagen.titulo}</div>
                             <div class="img-fecha">${imagen.fecha}</div>
                         </div>
@@ -168,6 +175,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Anti-spam: Tracking de tiempo de formulario
+    const comentarioForm = document.getElementById('comentario-form');
+    if (comentarioForm) {
+        // Registrar tiempo de inicio cuando el usuario interactúa con el formulario
+        const inputs = comentarioForm.querySelectorAll('input, textarea');
+        let tiempoRegistrado = false;
+        
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                if (!tiempoRegistrado) {
+                    // Enviar tiempo de inicio al servidor via session
+                    fetch('guardar.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: 'set_form_time=1'
+                    }).catch(() => {}); // Ignora errores
+                    tiempoRegistrado = true;
+                }
+            });
+        });
+    }
 });
 
 // Función para manejar el evento de carga de la página (para compatibilidad con el código existente)

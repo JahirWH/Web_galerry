@@ -19,33 +19,7 @@
     <link rel="icon" href="https://res.cloudinary.com/dr9van0op/image/upload/v1732331199/iglesia_yzhb7b.ico" type="image/ico">
     <link rel="stylesheet" type="text/css" href="estilo.css">
    
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Museum",
-      "name": "Galería Histórica de Tlacuilotepec",
-      "description": "Galería digital de fotografías históricas restauradas de Tlacuilotepec, Puebla, México",
-      "url": "https://tlacuilotepecfotos.site",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tlacuilotepec",
-        "addressRegion": "Puebla",
-        "addressCountry": "México"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "20.0833",
-        "longitude": "-98.0833"
-      },
-      "sameAs": [
-        "https://tlacuilotepecfotos.site"
-      ]
-    }
-    </script>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9520616268561655" crossorigin="anonymous"></script>
-</head>
+    </head>
 <body>
     <header class="titulo" role="banner">
         <h1>Galería Histórica de Tlacuilotepec, Puebla</h1>
@@ -354,9 +328,10 @@
     <section class="comentarios">
         <h2>Comentarios sobre Tlacuilotepec</h2>
         <div class="contenedor_com">
-            <form class="form" action="guardar.php" method="POST">
+            <form class="form" action="guardar.php" method="POST" id="comentario-form">
                 <input type="text" name="nombre" placeholder="Tu nombre" required minlength="2" pattern=".*\\S.*" aria-label="Nombre">
                 <textarea name="mensaje" rows="4" placeholder="Comparte tus recuerdos..." required minlength="5" pattern=".*\\S.*" aria-label="Mensaje"></textarea>
+                <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
                 <button type="submit" aria-label="Enviar comentario">Enviar comentario</button>
             </form>
         </div>
@@ -418,4 +393,33 @@
     </style>
 
 </body>
+<script data-goatcounter="https://ahir.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Museum",
+      "name": "Galería Histórica de Tlacuilotepec",
+      "description": "Galería digital de fotografías históricas restauradas de Tlacuilotepec, Puebla, México",
+      "url": "https://tlacuilotepecfotos.site",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tlacuilotepec",
+        "addressRegion": "Puebla",
+        "addressCountry": "México"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.0833",
+        "longitude": "-98.0833"
+      },
+      "sameAs": [
+        "https://tlacuilotepecfotos.site"
+      ]
+    }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9520616268561655" crossorigin="anonymous"></script>
+
 </html>
