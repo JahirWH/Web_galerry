@@ -1,10 +1,28 @@
 <?php
-$conexion = new mysqli("servidor", "usuario", "contraseña", "nombre_base");
 
-$conexion->set_charset("utf8mb4");
+// Manejo de errores
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', 'error.log');
 
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+try {
+    // Conexión a la base de datos
+    $conexion = new mysqli("hostserver", "usuario", "password", "nombre_base_datos");
+    
+    // Configurar el conjunto de caracteres
+    $conexion->set_charset("utf8mb4");
+
+    // Verificar la conexión
+    if ($conexion->connect_error) {
+        throw new Exception("Error de conexión a la base de datos: " . $conexion->connect_error);
+    }
+} catch (Exception $e) {
+    // Registrar el error en el log
+    error_log($e->getMessage());
+    // Mostrar mensaje amigable al usuario
+    echo "<p>Lo sentimos, hay un problema temporal con el servicio de comentarios. Por favor, intenta más tarde.</p>";
+    exit();
 }
 
 $sql = "SELECT nombre, mensaje, fecha FROM comentarios ORDER BY fecha DESC";
