@@ -1,1 +1,7 @@
-#hi
+User-agent: *
+Allow: /
+Disallow: /subir_imagen.php
+Disallow: /guardar.php
+
+# Sitemap
+Sitemap: https://tlacuilotepec.site/sitemap.xml
