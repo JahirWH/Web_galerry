@@ -294,16 +294,28 @@
         <!-- Formulario de subida -->
         <div class="up" id="up" role="dialog" aria-label="Formulario para subir fotografías">
             <div class="up_div">
-                <form class="up_frame"  method="POST" enctype="multipart/form-data">
-                    <label for="images" class="drop-container" id="dropcontainer">
+                <form class="up_frame" id="formularioSubida" enctype="multipart/form-data">
+                    <label for="img" class="drop-container" id="dropcontainer">
                         <span class="drop-title">📤 Selecciona tu fotografía histórica</span>
-                        <p>Formatos aceptados: JPG, PNG (Máx. 10MB)</p>
-                        <input type="file" id="images" name="imagen" accept="image/*" required aria-label="Seleccionar archivo de imagen">
+                        <p>Formatos aceptados: JPG, PNG (Máx. 6MB)</p>
+                        <input type="file" id="img" name="imagen" accept="image/jpeg,image/png" required aria-label="Seleccionar archivo de imagen">
                     </label>
+                    <div>
+                        <img id="preview" src="" alt="Vista previa" style="max-width: 100%; max-height: 300px; display: none; margin: 1rem 0; border-radius: 4px;">
+                    </div>
+                    <div id="estadoSubida" style="display: none; padding: 0.8rem; margin: 1rem 0; border-radius: 4px; text-align: center; font-weight: bold;"></div>
+                    <!-- <input type="text" 
+                           id="imagen_url"
+                           name="imagen_url" 
+                           placeholder="URL de la imagen (se completa automáticamente)" 
+                           style="width: 100%; padding: 0.8rem; margin: 1rem 0; border: 1px solid #ddd; border-radius: 4px;" 
+                           readonly
+                           aria-label="URL de la imagen"> -->
                     <input type="text" 
                            name="descripcion" 
                            placeholder="Año aproximado, lugar específico en Tlacuilotepec y personas en la foto" 
                            style="width: 100%; padding: 0.8rem; margin: 1rem 0; border: 1px solid #ddd; border-radius: 4px;"
+                           required
                            aria-label="Descripción de la fotografía">
                     <input type="text" 
                            name="contribuidor" 
@@ -311,13 +323,20 @@
                            style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px;"
                            aria-label="Nombre del contribuidor">
                     <input type="text" name="website" style="display:none">
-                    <script src="subida.js"></script>
-                    <input type="submit" 
-                            onload="enviar_img()"         
+                    <button type="button" 
+                           onclick="enviar_img()"
                            class="btn-envio" 
-                           value="ENVIAR FOTOGRAFÍA HISTÓRICA" 
-                           style="background: #8B4513; color: white; padding: 1rem; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold;"
-                           aria-label="Enviar fotografía">
+                           id="btnSubirNube"
+                           style="background: #8B4513; color: white; padding: 1rem; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; margin-bottom: 0.5rem;"
+                           aria-label="Seleccionar y subir fotografía">
+                        📤 SUBIR FOTOGRAFÍA A LA NUBE
+                    </button>
+                    <input type="submit" 
+                           class="btn-envio" 
+                           id="btnEnviarArchivo"
+                           value="✅ ENVIAR AL ARCHIVO" 
+                           style="background: #228B22; color: white; padding: 1rem; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold;"
+                           aria-label="Enviar fotografía al servidor">
                 </form>
                 <button class="cerrar-btn" 
                         onclick="GaleriaApp.alternarFormularioSubida()"
@@ -326,6 +345,7 @@
                 </button>
             </div>
         </div>
+        <script src="subida.js"></script>
     </main>
 
     <!-- Sección de Comentarios -->
