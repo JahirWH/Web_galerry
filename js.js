@@ -1,3 +1,6 @@
+
+const urlAPI = 'https://api.jsonbin.io/v3/b/681659948a456b79669700c5';
+
 // Módulo para manejar la galería de imágenes
 const GaleriaApp = (function() {
     // Elementos DOM
@@ -19,7 +22,6 @@ const GaleriaApp = (function() {
     }
     
     // URL de la API
-    const urlAPI = 'https://api.jsonbin.io/v3/b/681659948a456b79669700c5';
 
     // Carga las imágenes desde la API
     function cargarImagenesDesdeAPI() {
@@ -131,6 +133,8 @@ const GaleriaApp = (function() {
         
         // Limpia cualquier contenido previo
         const contenedorImagen = elementos.vistaGrande.querySelector('.img_zom');
+        if (!contenedorImagen) return;
+        
         contenedorImagen.innerHTML = `<img loading="lazy" src="${urlImagen}" alt="Imagen ampliada">`;
         
         // Muestra la vista grande
@@ -166,57 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
     GaleriaApp.inicializar();
     
     // Inicializar el formulario de comentarios
-    const comentarioForm = document.getElementById('comentario-form');
-    if (comentarioForm) {
-        // Registrar tiempo de inicio cuando el usuario interactúa con el formulario
-        const tiempoInicio = Date.now();
-        document.getElementById('tiempo_formulario').value = tiempoInicio;
-        
-        // Contador de caracteres para el textarea
-        const mensaje = document.getElementById('mensaje');
-        const contadorCaracteres = document.querySelector('.caracteres-restantes');
-        
-        if (mensaje && contadorCaracteres) {
-            mensaje.addEventListener('input', function() {
-                const caracteresRestantes = 1000 - this.value.length;
-                contadorCaracteres.textContent = `${caracteresRestantes} caracteres restantes`;
-            });
-        }
-        
-        // Validación del formulario
-        comentarioForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nombre = document.getElementById('nombre').value.trim();
-            const mensaje = document.getElementById('mensaje').value.trim();
-            
-            if (nombre.length < 2 || nombre.length > 100) {
-                alert('El nombre debe tener entre 2 y 100 caracteres.');
-                return;
-            }
-            
-            if (mensaje.length < 10 || mensaje.length > 1000) {
-                alert('El mensaje debe tener entre 10 y 1000 caracteres.');
-                return;
-            }
-            
-            // Si todo está bien, enviar el formulario
-            this.submit();
-        });
-    }
-    
-    // Smooth scroll para navegación
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-    
-    // Anti-spam: Tracking de tiempo de formulario
     const comentarioForm = document.getElementById('comentario-form');
     if (comentarioForm) {
         // Registrar tiempo de inicio cuando el usuario interactúa con el formulario
