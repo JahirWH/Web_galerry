@@ -30,6 +30,10 @@
     <meta property="og:locale" content="es_MX">
     <meta property="og:site_name" content="Galería Histórica de Tlacuilotepec">
     
+    <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
     <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -98,13 +102,14 @@
     </head>
 <body onload="GaleriaApp.inicializar()">
     <header class="titulo" role="banner">
-        <h1>Galería Histórica de Tlacuilotepec, Puebla</h1>
-        <p class="subtitulo">Sierra Norte de Puebla, México - Preservando Nuestra Historia Visual</p>
+        <h1> História y Turismo de Tlacuilotepec, Puebla</h1>
+        <p class="subtitulo">Sierra Norte de Puebla, México </p>
+        <p class="subtitulo">Senderismo, rutas, cascadas</p>
         <nav role="navigation" aria-label="Navegación principal">
             <a href="#historia" aria-label="Historia de Tlacuilotepec">Historia</a>
             <a href="#galeria" aria-label="Galería fotográfica histórica">Galería</a>
             <a href="#cultura" aria-label="Cultura y tradiciones">Cultura</a>
-            <a href="#datos" aria-label="Datos del municipio">Datos</a>
+            <!-- <a href="#datos" aria-label="Datos del municipio">Datos</a> -->
             <a href="#turismo" aria-label="Turismo en Tlacuilotepec">Turismo</a>
             <a href="#colaborar" aria-label="Colaborar con fotos">Colaborar</a>
         </nav>
@@ -113,13 +118,26 @@
     <main>
         <!-- Sección de Resumen -->
         <section id="resumen" class="content-section">
+            <div class="listado">
+                <h2>Resumen de Tlacuilotepec, Puebla</h2>
+                <ul class="lista-destacada">
+                    <li><a href="#historia" aria-label="Ir a Historia">Fundación: orígenes prehispánicos y coloniales</a></li>
+                    <li><a href="#lugares" aria-label="Ir a Lugares y Rutas">Rutas: senderismo y miradores</a></li>
+                    <li><a href="#historia" aria-label="Ir a Historia">Municipio libre: 1895</a></li>
+                    <li><a href="#cultura" aria-label="Ir a Cultura">Festividades principales: Cristo Rey (24 de agosto)</a></li>
+                    <li><a href="#turismo" aria-label="Ir a Turismo">Atractivos turísticos: iglesia, pictografías, ríos</a></li>
+                </ul>
+            </div>
             <div class="res">
                 <img src="https://res.cloudinary.com/dr9van0op/image/upload/q_80,f_auto/v1732325067/calle3_t5sihk.jpg" 
                      alt="Calle principal de Tlacuilotepec Puebla en los años 1950, mostrando arquitectura colonial, comercios locales y vida cotidiana del municipio de la Sierra Norte" 
                      style="width: 100%; border-radius: 8px;"
                      loading="lazy">
+                
+            </div>
+            <div class="info">
                 <div class="article-content">
-                    <h2 style="color: #8B4513; margin-bottom: 1rem;">Bienvenidos a nuestra galería histórica digital</h2>
+                    <!-- <h2 style="color: #8B4513; margin-bottom: 1rem;">Bienvenidos a nuestra galería histórica digital</h2> -->
                     <p><strong>Tlacuilotepec</strong>, municipio histórico ubicado en la <em>Sierra Norte de Puebla</em>, conserva una rica herencia cultural que se remonta a la época prehispánica. Su nombre, de origen náhuatl, significa <strong>"en el cerro donde se escribe"</strong>, haciendo referencia a las pictografías que los antiguos habitantes otomíes y totonacas realizaban en las rocas de la región.</p>
                     
                     <p>Nuestro proyecto de <strong>restauración fotográfica digital</strong> utiliza técnicas modernas de digitalización y restauración para devolver la vida a imágenes históricas de <em>Tlacuilotepec</em> que parecían perdidas para siempre. Cada fotografía documenta la evolución del municipio desde 1920 hasta 1980.</p>
@@ -131,6 +149,7 @@
                     </button>
                 </div>
             </div>
+            
         </section>
 
         <!-- Anuncio superior -->
@@ -147,7 +166,7 @@
         </section> -->
 
           <!-- Galería Principal -->
-        <section id="galeria" class="content-section">
+        <section id="galeria" class="content-section-two">
             <h2>Galería Fotográfica Histórica de Tlacuilotepec</h2>
             <p>Nuestra colección de <strong>fotografías históricas de Tlacuilotepec</strong> abarca más de un siglo de historia visual del municipio poblano. Estas imágenes, cuidadosamente restauradas utilizando técnicas modernas de digitalización y retoque fotográfico, documentan la evolución arquitectónica, social y cultural de nuestro <em>municipio de la Sierra Norte</em> desde principios del siglo XX hasta la década de 1980.</p>
             
@@ -182,8 +201,70 @@
             </div>
         </section>
 
+
+
+        <!-- Sección de Lugares y Rutas -->
+        <section id="lugares" class="content-section-one">
+            <h2>Lugares y Rutas de Tlacuilotepec</h2>
+            <p>Explora los sitios  de <strong>Tlacuilotepec</strong> a través de nuestras naturalesa de la Sierra Norte poblana.</p>
+            
+            <div class="lugares-grid">
+                <div class="lugar-card">
+                    <div class="lugar-imagen">
+                        <img src="img/sh1.jpeg" 
+                             alt="Camino hacia la cumbre de Tlacuilotepec" 
+                             loading="lazy">
+                    </div>
+                    <div class="lugar-info">
+                        <div class="lugar-titulo">Camino hacia la La silleta</div>
+                        <div class="lugar-dato">Ruta de senderismo | Sierra Norte, Tlacuilotepec</div>
+                    </div>
+                </div>
+
+                <div class="lugar-card">
+                    <div class="lugar-imagen">
+                        <img src="img/sh5.jpeg" 
+                             alt="Lugar o ruta turística de Tlacuilotepec" 
+                             loading="lazy">
+                    </div>
+                    <div class="lugar-info">
+                        <div class="lugar-titulo">Camino hacia cuatepec</div>
+                        <div class="lugar-dato">Municipio Tlacuilotepec</div>
+                    </div>
+                </div>
+
+                <div class="lugar-card">
+                    <div class="lugar-imagen">
+                        <img src="img/sh3.jpeg" 
+                             alt="Iglesia o sitio histórico de Tlacuilotepec" 
+                             loading="lazy">
+                    </div>
+                    <div class="lugar-info">
+                        <div class="lugar-titulo">Camino hacia cuatepec</div>
+                        <div class="lugar-dato">| Río San Marcos | Municipio de Tlacuilotepec</div>
+                    </div>
+                </div>
+
+                <div class="lugar-card">
+                    <div class="lugar-imagen">
+                        <img src="img/sh4.jpeg" 
+                             alt="Cerro o mirador de Tlacuilotepec" 
+                             loading="lazy">
+                    </div>
+                    <div class="lugar-info">
+                        <div class="lugar-titulo">Cerro La Cumbre</div>
+                        <div class="lugar-dato">Mirador panorámico | Municipio de Tlacuilotepec</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
         <!-- Sección de Historia Expandida -->
-        <section id="historia" class="content-section">
+        <section id="historia" class="content-section-one">
             <h2>Historia Completa de Tlacuilotepec, Puebla</h2>
             <div class="article-content">
                 <h3>Orígenes Prehispánicos y Fundación</h3>
@@ -213,7 +294,7 @@
         </section>
 
         <!-- Sección de Personajes Ilustres -->
-        <section class="content-section">
+        <section class="content-section-one">
             <h2>Personajes Ilustres</h2>
             <div class="personalidades-grid">
                 <div class="personalidad-card">
@@ -228,7 +309,7 @@
         </section>
 
         <!-- Sección de Cultura y Tradiciones -->
-        <section id="cultura" class="content-section">
+        <section id="cultura" class="content-section-one">
             <h2>Cultura y Tradiciones de Tlacuilotepec</h2>
             <div class="article-content">
                 <h3>Festividades Principales del Municipio</h3>
@@ -245,7 +326,7 @@
         </section>
 
         <!-- Sección de Geografía -->
-        <section id="datos" class="content-section">
+        <section id="datos" class="content-section-one">
             <h2>Geografía y Ubicación de Tlacuilotepec</h2>
             <div class="article-content">
                 <h3>Ubicación Estratégica y Límites Territoriales</h3>
@@ -260,7 +341,7 @@
         </section>
 
         <!-- Sección de Población -->
-        <section class="content-section">
+        <section class="content-section-one">
             <h2>Población y Localidades de Tlacuilotepec</h2>
             <div class="article-content">
                 <h3>Demografía del Municipio</h3>
@@ -279,8 +360,10 @@
             </div>
         </section>
 
+
+
         <!-- Sección de Eventos Recientes -->
-        <section class="content-section">
+        <section class="content-section-one">
             <h2>Desarrollo Actual de Tlacuilotepec</h2>
             <div class="article-content">
                 <h3>Fenómenos Naturales y Resiliencia</h3>
@@ -306,7 +389,7 @@
         </section> -->
 
         <!-- Sección de Turismo -->
-        <section id="turismo" class="content-section">
+        <section id="turismo" class="content-section-one">
             <h2>Turismo en Tlacuilotepec, Sierra Norte de Puebla</h2>
             <div class="article-content">
                 <h3>Atractivos Turísticos Principales</h3>
@@ -330,7 +413,7 @@
         <section id="colaborar" class="content-section" style="background: #804D21; color: white;">
             <h2 style="color: white; border: none; text-align: center; margin: 0;">¡Colabora Preservando la Historia de Tlacuilotepec!</h2>
             <div class="article-content" style="color: white;">
-                <p style="text-align: center; font-size: 1.1rem; margin: 0;">¿Tienes <strong>fotografías antiguas de Tlacuilotepec</strong>? Tu contribución ayuda a preservar la memoria histórica visual de nuestro querido municipio poblano para las futuras generaciones.</p>
+                <p style="text-align: center; font-size: 1.1rem; margin: 0;background: #9d9d9d;">¿Tienes <strong>fotografías antiguas de Tlacuilotepec</strong>? Tu contribución ayuda a preservar la memoria histórica visual de nuestro querido municipio poblano para las futuras generaciones.</p>
                 
                 <div style="max-width: 600px; margin: 0 auto;">
                     <p><strong>Tipos de fotos históricas que buscamos:</strong></p>
