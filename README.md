@@ -3,8 +3,9 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Archived-brightgreen)
 
-![App Screenshot](./img/captura.webp)
+ <img width="1204" height="584" alt="demo" src="https://github.com/user-attachments/assets/c53e8281-7a99-4d75-93b5-849a0a596afd" />
 
+<!-- <img width="1204" height="584" alt="demo" src="https://github.com/user-attachments/assets/7b35db82-88ed-4ee2-8de0-5e195f747261" /> -->
 ## Descripción
 
 **Galería de fotos simple con un poco de JavaScript.**  
